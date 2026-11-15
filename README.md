@@ -3,7 +3,8 @@
 跨平台下载管理器（Rust + Tauri 2）。分段并发下载、断点续传、浏览器扩展资源嗅探、视频格式解析与音轨合并（yt-dlp + ffmpeg sidecar）。
 目前**只发布 Windows x64**；macOS / Linux 仅通过 CI 的编译与单测，产物未构建、运行时未验证。
 
-当前版本 **1.0.5**。发布说明见 [docs/release-notes-v1.0.5.md](docs/release-notes-v1.0.5.md)，
+当前版本 **1.1.1**（本版把产品名从 Fetchweir 改为 Grabio，见 [命名决策](docs/命名决策.md)）。
+发布说明见 [docs/release-notes-v1.1.1.md](docs/release-notes-v1.1.1.md)，
 其中区分「已实测 / 未验证 / 被环境挡住」并写明原因。
 
 **发布口径**：推送 tag 后 CI 构建两个安装范围包并上传 Release（`.github/workflows/release.yml`），
