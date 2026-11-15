@@ -61,8 +61,9 @@ jobs:
         run: |
           # 颜色/字号/行高/间距/圆角/描边/控件高度必须走 docs/界面设计规范.md 的 token；
           # 字面值只允许出现在 src/styles.css 顶部的 token 定义区。
+          # --strict：例外清单里“已失效”的条目也算失败，避免清单只增不减。
           # 这里失败就不出包：宁可不发版，也不要带着散落的硬编码尺寸发出去。
-          node tools/Check-FwUiTokens.mjs
+          node tools/Check-FwUiTokens.mjs --strict
 
       - name: 安装前端依赖
         run: npm ci --no-audit --no-fund
