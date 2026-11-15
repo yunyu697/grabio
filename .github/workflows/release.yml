@@ -56,6 +56,14 @@ jobs:
         with:
           node-version: 20
 
+      - name: 界面设计 token 检查（发布闸门）
+        shell: pwsh
+        run: |
+          # 颜色/字号/行高/间距/圆角/描边/控件高度必须走 docs/界面设计规范.md 的 token；
+          # 字面值只允许出现在 src/styles.css 顶部的 token 定义区。
+          # 这里失败就不出包：宁可不发版，也不要带着散落的硬编码尺寸发出去。
+          node tools/Check-FwUiTokens.mjs
+
       - name: 安装前端依赖
         run: npm ci --no-audit --no-fund
 
