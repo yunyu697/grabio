@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "files": [
+      "src/app.js",
+      "src/index.html",
+      "src/styles.css"
+    ],
+    "errors": 0,
+    "errorsExcepted": 0,
+    "infos": 0,
+    "exceptions": 0,
+    "staleExceptions": 0
+  },
+  "errors": [],
+  "infos": [],
+  "excepted": [],
+  "staleExceptions": []
+}

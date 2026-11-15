@@ -1,21 +1,23 @@
 # 界面 token 检查证据（v2：阶梯收敛 + 角色闸门 + 真实视觉验收）
 
-- 规范：[docs/界面设计规范.md](../../界面设计规范.md)（v2）
+- 规范：[docs/界面设计规范.md](../../界面设计规范.md)（v2.1）
 - 检查脚本：[tools/Check-FwUiTokens.mjs](../../../tools/Check-FwUiTokens.mjs)
+- 对比度脚本：[tools/Check-FwContrast.mjs](../../../tools/Check-FwContrast.mjs)
 - 截图脚本：[tools/Capture-FwUiShots.ps1](../../../tools/Capture-FwUiShots.ps1)
-- 本轮扫描：[scan-v2.json](scan-v2.json)；上一轮收编结果保留为 v1 对照（[scan-after-tokens.json](scan-after-tokens.json)）
+- 本轮扫描：[scan-v3.json](scan-v3.json)；上一轮 [scan-v2.json](scan-v2.json)；v1 收编对照 [scan-after-tokens.json](scan-after-tokens.json)
 
 ## 1. 汇总
 
-| 指标 | 基线 v1.1.0 | v1 收编后 | **v2 收敛后** |
-| --- | --- | --- | --- |
-| error 违规 | 523 | 0 | **0** |
-| 例外放行 | 0 | 5 | **0** |
-| 过期例外 | 0 | 0 | **0** |
-| info（容器/装饰尺寸） | 93 | 96 | **91** |
+| 指标 | 基线 v1.1.0 | v1 收编后 | v2 收敛后 | **v2.1 收尾后** |
+| --- | --- | --- | --- | --- |
+| error 违规 | 523 | 0 | 0 | **0** |
+| 例外放行 | 0 | 5 | 0 | **0** |
+| 过期例外 | 0 | 0 | 0 | **0** |
+| info（未归类的容器尺寸） | 93 | 96 | 91 | **0** |
 
 v2 的 0 error 与 v1 性质不同：v1 只保证"用了 var()"，v2 还保证"该角色只用了允许的档位"。
-按选择器归并后的 info 61 组 / 91 条见第 5 节。
+v2.1 再进一步：原先 91 条 info 容器尺寸按 31 个角色锁成固定档位，越界直接报 `role-size`，
+不再有"永远 info"。角色表见第 5 节与规范 6.1 节。
 
 ## 2. 阶梯收敛（v1 → v2）
 
@@ -49,8 +51,9 @@ v1 用例外放行 5 个"魔法数"。v2 把它们全部改写成由 token 推�
 
 ## 4. 角色闸门（防"选错档"）
 
-脚本内置 10 个角色，每个角色绑定允许的字号集合与控件高度集合；命中角色但用了集合外的档位即报 `role-font` / `role-height` error。
-高度集合写成单值时，等于强制"同角色容器尺寸一致"（例如所有 `.btn.sm` 只能是 28）。角色表见规范 3.4 节。
+脚本内置 10 个字号/控件高度角色，每个角色绑定允许的字号集合与控件高度集合；命中角色但用了集合外的档位即报 `role-font` / `role-height` error。
+高度集合写成单值时，等于强制"同角色容器尺寸一致"（例如所有 `.btn.sm` 只能是 28）。角色表见规范 3.4 节；
+容器/装饰尺寸的角色表（31 个）见第 5 节。
 
 负向验证（临时副本注入，验证后已回退）：
 
@@ -60,43 +63,34 @@ v1 用例外放行 5 个"魔法数"。v2 把它们全部改写成由 token 推�
 | `.t-name{font-size:var(--fs-caption)}` | `role-font` 报错（正文 11 ∉ {13}） | 报错 ✓ |
 | `color:#123456` | `color` 报错（字面色值） | 报错 ✓ |
 
-## 5. 保留为 info 的容器/装饰尺寸（61 组 / 91 条，不阻塞）
+## 5. 容器/装饰尺寸的角色档位（31 个角色，info 归零）
 
-这些是一次性容器/装饰尺寸，写进 token 反而会让阶梯失真。完整明细见 `scan-v2.json` 的 `infos`：
+v2 的 91 条 info 不是"漏了"，但也不是可以长期放行的：下一轮加视图就会各自漂 1–2px。
+v2.1 把它们按角色收口，同角色只允许一组写死的固定档位（含响应式收窄档），越界报 `role-size`。
 
-| 选择器 | 尺寸 |
-| --- | --- |
-| `::-webkit-scrollbar` | 10×10 |
-| `.mark` / `.mark img` | 24×24 |
-| `.dot` | 6×6 |
-| `.wc` | 宽 34 |
-| `.mini-track` | 高 4 |
-| `.avatar` | 26×26 |
-| `.spark` | 120×16 |
-| `.field.w240/w190/w320/w420`、`.mini-select.w120` | 240 / 190 / min(320,34vw) / min(420,48vw) / max 120 |
-| `.stat .u` | 24×24，窄窗 20×20 |
-| `.bar` / `.bar.tall` / `.conn-row .bar` / `.video-job .track` | 5 / 6 / 3 / 4 |
-| `.seg-ticks span` | 宽 1 |
-| `.cb`、`.t-cb .cb`、`.radio` | 15×15 |
-| `.radio.on::after` | 7×7 |
-| `.tbtn` | 最小宽 24，窄窗 22 |
-| `.empty .big` / `.det-icon` / `.poster .play` | 54 / 52 / 46 |
-| `.modal-card` / `.modal-x` | min(940px,100%) / 28 |
-| `.thumb` / `.thumb.sm` / `.sn-thumb` | 40（窄窗 34） / 32 / 44×30（窄窗 34×24） |
-| `.t-sub .sep` / `.st .d` / `.seg i` / `.seg-legend b` / `.color-card .cc-dots i` | 2 / 5 / 8 / 8 / 9 |
-| `.t-bar .pct` / `.conn-row .id` / `.conn-row .sp` / `.out-item .k` | 34 / 34 / 64 / 26 |
-| `table.fmt` 各列 | 30 / 106 / 98 / 42 / 50 / 72 / 74 |
-| `.log` / `.vid-auth-raw pre` / `.update-notes` | 最大高 190 / 220 / 132 |
-| `.poster` | 高 200（窄窗 170） |
-| `.mini-select` / `.slider` / `.filter-bar .mini-select` / `.select-wrap` | max 230 / 150 / max 150 / 220 |
-| `.path-field .field` / `.update-card .set-row .field` | min(330,46vw) / min(300,42vw) |
-| `body.minw-demo .vp-frame` | 最小宽 900 |
-| `.sb`（图标轨） | 宽 44 / 40 |
-| `.det-url` | 最大宽 640 |
+| 分组 | 角色数 | 角色（允许值） |
+| --- | --- | --- |
+| 缩略图 | 3 | 列表 40/34、小 32、嗅探 44×30 / 34×24 |
+| 海报与播放 | 2 | 海报高 200/170、播放键 46 |
+| 头像与标记 | 4 | 头像 26、品牌 24、详情图标 52、空状态 54 |
+| 表格与定宽列 | 2 | 表格列 30/42/50/72/74/98/106、数字列 26/34/64 |
+| 输入类定宽 | 1 | 240/190/220/150、`min()` 组合、mini 下拉 max 120/150/230 |
+| 侧栏与外壳 | 4 | 侧栏图标轨 44/40、窗口控制 34、弹窗 940、滚动条 10 |
+| 小控件与点 | 8 | 复选/单选 15、选中点 7、状态点 6/5、图例 8/9、分隔 2、刻度 1、轨道 3/4/5/6、分段 8 |
+| 文本与滚动区 | 3 | 长文本 max 640、详情 URL 640、滚动区 max 132/190/220 |
+| 其它 | 4 | 速率图 120×16、统计底板 24/20、行内按钮最小宽 24/22、demo 画布 900 |
 
-`.sw` / `.sw::after` 已从 info 升为 token（`--sw-w` 40 / `--sw-knob` 16），`.ico` 已并入 `--ctl-sm`（28）。
+完整档位表见规范 6.1 节；脚本里的表是 `SIZE_ROLES`（31 项）。
 
-## 6. 视觉验收（真实 Tauri 构建，12 张）
+负向验证（临时副本注入，验证后已回退）：
+
+| 注入 | 期望 | 实测 |
+| --- | --- | --- |
+| `.thumb{width:36px}` | `role-size`（列表缩略图只允许 40/34） | 报错 ✓ |
+| `.avatar{width:30px}` | `role-size`（头像只允许 26） | 报错 ✓ |
+| `table.fmt th:nth-child(2){width:100px}` | `role-size`（表格列只允许 7 个固定值） | 报错 ✓ |
+
+## 6. 视觉验收（真实 Tauri 构建，16 张）
 
 用 `--debug --no-bundle` 构建真实产物（真实 WebView2、真实窗口尺寸），脚本按宽度/明暗/配色重设窗口、点选视图后截图。
 不用 `?demo`：demo 只有 960px 一个视口，验不出并档后的窄窗行为。
@@ -106,7 +100,8 @@ v1 用例外放行 5 个"魔法数"。v2 把它们全部改写成由 token 推�
 | 宽屏 1440 × 明/暗 | `main-1440-dark-violet.png`、`main-1440-light-violet.png` |
 | 窄屏 960 × 明/暗 | `main-960-dark-violet.png`、`main-960-light-violet.png` |
 | 最窄 760 × 明/暗 | `main-760-dark-violet.png`、`main-760-light-violet.png` |
-| 四套配色（1180×760） | `theme-violet-1180.png`、`theme-azure-1180.png`、`theme-emerald-1180.png`、`theme-amber-1180.png` |
+| 四套配色（1180×760，暗） | `theme-violet-1180.png`、`theme-azure-1180.png`、`theme-emerald-1180.png`、`theme-amber-1180.png` |
+| 四套配色（1180×760，明） | [visual-v3/](visual-v3/) 的 `theme-*-light-1180.png`（对比度调色后复拍） |
 | 设置页（长内容 + 表单） | `settings-1440-dark-violet.png`、`settings-760-light-violet.png` |
 
 （截图目录 [visual-v2/](visual-v2/)。为能真实验收 760 宽，`src-tauri/tauri.conf.json` 的 `minWidth` 由 900 调为 760。）
@@ -134,8 +129,8 @@ v1 用例外放行 5 个"魔法数"。v2 把它们全部改写成由 token 推�
 ## 8. 复现
 
 ```powershell
-node tools/Check-FwUiTokens.mjs --strict   # 期望：违规 0、例外 0、过期例外 0；exit 0
-node tools/Check-FwUiTokens.mjs --json > docs/evidence/ui-tokens/scan-v2.json
+node tools/Check-FwUiTokens.mjs --strict   # 期望：违规 0、例外 0、过期例外 0、info 0；exit 0
+node tools/Check-FwUiTokens.mjs --json > docs/evidence/ui-tokens/scan-v3.json
 node tools/Check-FwContrast.mjs            # 期望：8 套配色全部达标；exit 0
 node tools/Check-FwContrast.mjs --md > docs/evidence/ui-tokens/contrast-v2.md
 

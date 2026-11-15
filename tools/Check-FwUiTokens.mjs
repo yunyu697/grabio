@@ -83,6 +83,57 @@ function tokenOf(value) {
   return m ? m[1] : null;
 }
 
+// 容器/装饰尺寸之前只记 info，下一轮就会各自漂 1–2px。这里按“角色”收口：
+// 同一角色只能取同一组写死的固定档位（响应式收窄的档也算在集合里，例如缩略图 40/34）；
+// 出现集合外的值就报错，避免每加一个视图就发明 34/32/36 这种“差一点”的尺寸。
+// 未列角色的容器尺寸仍记 info——但角色表要覆盖重复出现的尺寸，不能长期留成“永远 info”。
+const SIZE_ROLES = [
+  { id: 'scrollbar', label: '滚动条', match: /::-webkit-scrollbar$/, allow: { width: ['10px'], height: ['10px'] } },
+  { id: 'brand-mark', label: '品牌标记', match: /^\.mark(?![a-z-])(\s+img)?$/, allow: { width: ['24px'], height: ['24px'] } },
+  // 6 = 侧栏状态点，5 = 徽标内小点：两个固定档，不是随手取 5/6
+  { id: 'status-dot', label: '状态点', match: /^\.dot(?![a-z-])$|^\.st\s+\.d$/, allow: { width: ['5px', '6px'], height: ['5px', '6px'] } },
+  { id: 'window-control', label: '窗口控制键', match: /^\.wc$/, allow: { width: ['34px'] } },
+  { id: 'avatar', label: '头像', match: /^\.avatar$/, allow: { width: ['26px'], height: ['26px'] } },
+  { id: 'spark', label: '速率迷你图', match: /^\.spark$/, allow: { width: ['120px'], height: ['16px'] } },
+  { id: 'field-width', label: '输入类定宽', match: /^\.field\.w(240|190|320|420)$|^\.mini-select(\.w120)?$|^\.filter-bar\s+\.mini-select$|^\.slider$|^\.select-wrap$|^\.path-field\s+\.field$|^\.update-card\s+\.set-row\s+\.field$/, allow: { width: ['240px', '190px', 'min(320px,34vw)', 'min(420px,48vw)', 'min(330px,46vw)', 'min(300px,42vw)', '150px', '220px'], 'max-width': ['120px', '230px', '150px'] } },
+  { id: 'stat-unit', label: '统计图标底板', match: /^\.stat\s+\.u$/, allow: { width: ['24px', '20px'], height: ['24px', '20px'] } },
+  // 3/4 为迷你轨道，5/6 为常规进度条：四个固定厚度，超出即漂移
+  { id: 'track', label: '进度/波形轨道', match: /^\.bar(\.tall)?$|^\.conn-row\s+\.bar$|^\.video-job\s+\.track$|^\.mini-track$/, allow: { height: ['3px', '4px', '5px', '6px'] } },
+  { id: 'tick', label: '刻度线', match: /^\.seg-ticks\s+span$/, allow: { width: ['1px'] } },
+  { id: 'checkbox', label: '复选框/单选框', match: /^\.cb$|^\.t-cb\s+\.cb$|^\.radio$/, allow: { width: ['15px'], height: ['15px'] } },
+  { id: 'checkbox-dot', label: '单选框选中点', match: /^\.radio\.on::after$/, allow: { width: ['7px'], height: ['7px'] } },
+  { id: 'inline-btn-width', label: '行内按钮最小宽', match: /^\.tbtn$/, allow: { 'min-width': ['24px', '22px'] } },
+  { id: 'empty-big', label: '空状态图标', match: /^\.empty\s+\.big$/, allow: { width: ['54px'], height: ['54px'] } },
+  { id: 'modal-card', label: '弹窗容器', match: /^\.modal-card$/, allow: { width: ['min(940px,100%)'] } },
+  { id: 'icon-button', label: '图标按钮', match: /^\.modal-x$/, allow: { width: ['28px'] } },
+  { id: 'thumb', label: '列表缩略图', match: /^\.thumb$/, allow: { width: ['40px', '34px'], height: ['40px', '34px'] } },
+  { id: 'thumb-sm', label: '小缩略图', match: /^\.thumb\.sm$/, allow: { width: ['32px'], height: ['32px'] } },
+  { id: 'sn-thumb', label: '嗅探缩略图', match: /^\.sn-thumb$/, allow: { width: ['44px', '34px'], height: ['30px', '24px'] } },
+  { id: 'separator', label: '分隔符', match: /^\.t-sub\s+\.sep$/, allow: { width: ['2px'], height: ['2px'] } },
+  { id: 'fixed-col', label: '定宽数字列', match: /^\.t-bar\s+\.pct$|^\.conn-row\s+\.id$|^\.conn-row\s+\.sp$|^\.out-item\s+\.k$/, allow: { width: ['26px', '34px', '64px'] } },
+  { id: 'detail-icon', label: '详情类型图标', match: /^\.det-icon$/, allow: { width: ['52px'], height: ['52px'] } },
+  { id: 'long-text', label: '长文本最大宽', match: /^\.det-url$/, allow: { 'max-width': ['640px'] } },
+  { id: 'seg-bar', label: '分段条块', match: /^\.seg\s+i$/, allow: { height: ['8px'] } },
+  { id: 'legend-swatch', label: '图例色块', match: /^\.seg-legend\s+b$|^\.color-card\s+\.cc-dots\s+i$/, allow: { width: ['8px', '9px'], height: ['8px', '9px'] } },
+  { id: 'scroll-box', label: '滚动区最大高', match: /^\.log$|^\.vid-auth-raw\s+pre$|^\.update-notes$/, allow: { 'max-height': ['132px', '190px', '220px'] } },
+  { id: 'poster', label: '视频海报', match: /^\.poster$/, allow: { height: ['200px', '170px'] } },
+  { id: 'poster-play', label: '海报播放键', match: /^\.poster\s+\.play$/, allow: { width: ['46px'], height: ['46px'] } },
+  { id: 'table-col', label: '格式表列宽', match: /^table\.fmt\s+th:nth-child\(\d\)$/, allow: { width: ['30px', '42px', '50px', '72px', '74px', '98px', '106px'] } },
+  { id: 'sidebar-rail', label: '侧栏图标轨', match: /^\.sb$/, allow: { width: ['44px', '40px'] } },
+  { id: 'demo-frame', label: 'demo 画布', match: /^body\.minw-demo\s+\.vp-frame$/, allow: { 'min-width': ['900px'] } }
+];
+
+function sizeRoleOf(sel) {
+  return SIZE_ROLES.find((r) => r.match.test(sel)) || null;
+}
+
+// 命中角色但用了集合外的值，就是“同角色尺寸漂了”，直接报错而不是记 info。
+function sizeSetOf(role, prop) {
+  return role.allow[prop] || [];
+}
+
+const normValue = (v) => v.replace(/\s+/g, '').toLowerCase();
+
 function walk(dir, out = []) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
     if (e.name === 'node_modules' || e.name.startsWith('.')) continue;
@@ -175,6 +226,20 @@ for (const file of files.filter((f) => f.endsWith('.css'))) {
         add('role-height', 'error', file, line, selector, decl,
           `「${role.label}」的高度只允许 ${role.height.join(' / ')}；换档会让同角色容器尺寸不一致`);
         continue;
+      }
+
+      // —— 容器/装饰尺寸的角色档位：命中角色就不允许漂到集合外 ——
+      if (SIZE_PROPS.test(prop) && LITERAL_PX.test(value) && !usesVar) {
+        const sizeRole = sizeRoleOf(selector);
+        if (sizeRole) {
+          const allowed = sizeSetOf(sizeRole, prop);
+          if (allowed.length && !allowed.map(normValue).includes(normValue(value))) {
+            add('role-size', 'error', file, line, selector, decl,
+              `「${sizeRole.label}」的 ${prop} 只允许 ${allowed.join(' / ')}；同角色尺寸必须一致，不要为新位置再发明一档`);
+            continue;
+          }
+          if (allowed.length) continue;
+        }
       }
 
       if (LITERAL_COLOR.test(value) && !/^url\(/.test(value)) {
