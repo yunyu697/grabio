@@ -1,36 +1,5 @@
 {
-  "version": 1,
-  "comment": "界面 token 检查的例外清单。每条必须写 reason（为什么这里不能/不该用 token）。检查脚本：tools/Check-FwUiTokens.mjs；规范：docs/界面设计规范.md。",
-  "entries": [
-    {
-      "rule": "spacing",
-      "file": "src/styles.css",
-      "match": "left:-12px",
-      "reason": "侧栏选中指示条的位移 = 侧栏内边距 12px 的负值，属于派生值；侧栏内边距改动时必须同步改这里，不进间距阶梯"
-    },
-    {
-      "rule": "spacing",
-      "file": "src/styles.css",
-      "match": "bottom:66px",
-      "reason": "列表区为批量操作条让出的高度 = 批量条 54px + 12px 间距，与 .task-bulk 的 height 绑定，属派生值"
-    },
-    {
-      "rule": "spacing",
-      "file": "src/styles.css",
-      "match": "left:18px",
-      "reason": "开关滑块位移 = 轨道宽 36 − 滑块 14 − 两侧留白 2×2，几何派生值，不参与间距阶梯"
-    },
-    {
-      "rule": "spacing",
-      "file": "src/styles.css",
-      "match": "bottom:52px",
-      "reason": "轻提示离底距离 = 状态栏 30px + 22px 呼吸位，跟随外壳高度，属派生值"
-    },
-    {
-      "rule": "spacing",
-      "file": "src/styles.css",
-      "match": "top:52px",
-      "reason": "窄窗提示离顶距离 = 标题栏 44px + 8px 间距，跟随外壳高度，属派生值"
-    }
-  ]
+  "version": 2,
+  "comment": "界面 token 检查的例外清单。每条必须写 reason（为什么这里不能/不该用 token）。检查脚本：tools/Check-FwUiTokens.mjs；规范：docs/界面设计规范.md。第二轮收敛后上一版 5 条例外全部改成 calc 推导（开关位移、选中条位移、轻提示/窄窗提示位置、批量条让位），清单已清空——不是放宽规则，而是不再需要例外。",
+  "entries": []
 }

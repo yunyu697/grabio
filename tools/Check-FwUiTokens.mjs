@@ -37,11 +37,50 @@ const SIZE_PROPS = /^(width|height|min-width|min-height|max-width|max-height)$/;
 const LITERAL_COLOR = /#[0-9a-fA-F]{3,8}\b|rgba?\(|hsla?\(/;
 const LITERAL_PX = /-?\d+(?:\.\d+)?px/;
 
+// 角色 → 允许的 token 档位。这是“防选错档”的核心：
+// 同一个角色只允许落在它自己那几档上，用了阶梯里别的档位（比如主按钮突然 28px、次级按钮突然 36px）
+// 就报错；同一角色的高度集合只有 1 个值时，等于强制“同角色容器尺寸一致”。
+// 未列出的选择器只做字面值检查，不做角色约束——角色表宁缺毋滥，不硬凑。
+const ROLES = [
+  { id: 'btn-inline', label: '行内紧凑按钮', match: /^\.tbtn(?![a-z-])|^\.vp-dock\s*button$/, font: ['--fs-body'], height: ['--ctl-xs'] },
+  { id: 'btn-secondary', label: '次级按钮', match: /^\.btn\.sm(?![a-z-])|^\.chip(?![a-z-])|^\.mini-select(?![a-z-])|^\.modal-x(?![a-z-])|^\.ico(?![a-z-])/, font: ['--fs-body'], height: ['--ctl-sm'] },
+  { id: 'btn-primary', label: '主按钮', match: /^\.btn(?![a-z-])/, font: ['--fs-body'], height: ['--ctl-md'] },
+  { id: 'field', label: '输入框', match: /^\.field(?![a-z-])|^\.color-card(?![a-z-])|^\.select-wrap\s+select$/, font: ['--fs-body'], height: ['--ctl-md'] },
+  { id: 'nav', label: '导航项', match: /^\.sb(?![a-z-])|^\.set-nav\s+a$/, font: ['--fs-base'], height: ['--ctl-lg'] },
+  { id: 'row', label: '列表行', match: /^\.task(?![a-z-])|^\.sn(?![a-z-])/, font: ['--fs-base'], height: ['--row-h'] },
+  { id: 'heading', label: '标题', match: /^\.h1(?![a-z-])|^\.det-title(?![a-z-])|^\.vid-info\s+h2$|^\.big-speed$/, font: ['--fs-title', '--fs-head', '--fs-display'], height: [] },
+  { id: 'text-body', label: '正文', match: /^body$|^\.sec-h(?![a-z-])|^\.t-name(?![a-z-])|^\.h2(?![a-z-])|^\.brand-name(?![a-z-])|^\.update-ver(?![a-z-])/, font: ['--fs-base'], height: [] },
+  { id: 'text-secondary', label: '次级文字', match: /^\.muted(?![a-z-])|^\.dim(?![a-z-])|^\.sec-d(?![a-z-])|^\.t-sub(?![a-z-])|^\.det-url(?![a-z-])|^\.kv(?![a-z-])|^\.conn-row(?![a-z-])|^\.sniff-url(?![a-z-])/, font: ['--fs-body', '--fs-caption'], height: [] },
+  { id: 'text-meta', label: '元信息/徽标', match: /^\.tag(?![a-z-])|^\.q-badge(?![a-z-])|^\.update-badge(?![a-z-])|^\.dup(?![a-z-])|^\.stat\s+\.k$|^\.stat\s+\.d$|^\.list-head$|^\.statusbar$|^\.poster\s+\.dur$/, font: ['--fs-caption'], height: [] }
+];
+
 // 控件高度只看控件元素本身：取选择器最后一个复合选择器，且排除伪元素（那是内部零件，不是控件）。
+function lastCompound(sel) {
+  if (/::?(before|after)/.test(sel)) return '';
+  return sel.split(/\s*[>+~]\s*|\s+/).filter(Boolean).pop() || '';
+}
+
 function isControlSelector(sel) {
-  if (/::?(before|after)/.test(sel)) return false;
-  const last = sel.split(/\s*[>+~]\s*|\s+/).filter(Boolean).pop() || '';
+  const last = lastCompound(sel);
   return CONTROL_SELECTOR.test(last);
+}
+
+// 角色命中：以最后一个复合选择器为准。只有当它是不带类名的元素选择器（`a`、`h2`、`button`）时，
+// 才回退到整条选择器匹配——否则 `.sb .n` 这种后代会被误判成导航项本体。
+function roleOf(sel) {
+  const last = lastCompound(sel);
+  if (!last) return null;
+  const isBareElement = /^[a-z][a-z0-9]*$/i.test(last);
+  for (const r of ROLES) {
+    if (r.match.test(last) || (isBareElement && r.match.test(sel))) return r;
+  }
+  return null;
+}
+
+// 抽出 var(--x) 里的 token 名；不是单一变量（calc/混合/0）时返回 null。
+function tokenOf(value) {
+  const m = /^var\((--[a-z0-9-]+)\)$/.exec(value.trim());
+  return m ? m[1] : null;
 }
 
 function walk(dir, out = []) {
@@ -113,6 +152,7 @@ for (const file of files.filter((f) => f.endsWith('.css'))) {
     const selector = m[1].replace(/\/\*[\s\S]*?\*\//g, ' ').trim().replace(/\s+/g, ' ');
     const body = m[2];
     const bodyStart = m.index + m[1].length + 1;
+    const role = roleOf(selector);
     for (const part of body.split(';')) {
       const decl = part.trim();
       if (!decl || !decl.includes(':')) continue;
@@ -123,6 +163,19 @@ for (const file of files.filter((f) => f.endsWith('.css'))) {
       const offset = bodyStart + body.indexOf(part);
       const line = lineOf(offset);
       const usesVar = value.includes('var(');
+      const tok = tokenOf(value);
+
+      // —— 角色约束：先判“选错档”，再判字面值 ——
+      if (role && tok && role.font.length && prop === 'font-size' && !role.font.includes(tok)) {
+        add('role-font', 'error', file, line, selector, decl,
+          `「${role.label}」的字号只允许 ${role.font.join(' / ')}，${tok} 是别的角色的档位`);
+        continue;
+      }
+      if (role && tok && role.height.length && /^(height|min-height)$/.test(prop) && !role.height.includes(tok)) {
+        add('role-height', 'error', file, line, selector, decl,
+          `「${role.label}」的高度只允许 ${role.height.join(' / ')}；换档会让同角色容器尺寸不一致`);
+        continue;
+      }
 
       if (LITERAL_COLOR.test(value) && !/^url\(/.test(value)) {
         add('color', 'error', file, line, selector, decl, '颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)');
