@@ -89,7 +89,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg>
         <span>视频下载</span>
       </div>
-      <div class="sb" data-nav="settings" id="navSettings" style="margin-top:var(--space-6)">
+      <div class="sb" data-nav="settings" id="navSettings" style="margin-top:var(--space-8)">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 14a1.6 1.6 0 0 0 .32 1.77l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.6 1.6 0 0 0 15 18.6a1.6 1.6 0 0 0-1 1.47V21a2 2 0 1 1-4 0v-.11A1.6 1.6 0 0 0 9 19.3a1.6 1.6 0 0 0-1.77.32l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.6 1.6 0 0 0 4.7 15a1.6 1.6 0 0 0-1.47-1H3a2 2 0 1 1 0-4h.11A1.6 1.6 0 0 0 4.7 9a1.6 1.6 0 0 0-.32-1.77l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.6 1.6 0 0 0 9 4.7h.09A1.6 1.6 0 0 0 10 3.23V3a2 2 0 1 1 4 0v.11a1.6 1.6 0 0 0 1 1.47 1.6 1.6 0 0 0 1.77-.32l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.6 1.6 0 0 0 19.3 9v.09a1.6 1.6 0 0 0 1.47 1H21a2 2 0 1 1 0 4h-.11a1.6 1.6 0 0 0-1.49 1Z"/></svg>
         <span>设置</span>
       </div>
@@ -185,8 +185,8 @@
           <button class="btn sm ghost" id="btnPauseAll">全部暂停</button>
           <div class="sort-ctl">
             <span class="lbl">排序</span>
-            <label class="field" style="height:var(--ctl-md);padding:0 var(--space-8)">
-              <select id="sortKey" class="mini-select" style="height:var(--ctl-sm);border:0;background:transparent;padding:0">
+            <label class="field" style="height:var(--ctl-sm);padding:0 var(--space-8)">
+              <select id="sortKey" class="mini-select" style="height:var(--ctl-xs);border:0;background:transparent;padding:0">
                 <option value="added">添加时间</option>
                 <option value="size">文件大小</option>
                 <option value="speed">下载速度</option>
@@ -212,7 +212,7 @@
         <div id="taskList"></div>
         <div class="empty" id="emptyState" hidden>
           <div class="big"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 4v10m0 0 4-4m-4 4-4-4" stroke="currentColor" stroke-width="1.6"/><path d="M5 20h14" stroke="currentColor" stroke-width="1.6"/></svg></div>
-          <div style="font-size:var(--fs-body);color:var(--fg-2)">这里还没有任务</div>
+          <div style="font-size:var(--fs-base);color:var(--fg-2)">这里还没有任务</div>
           <div class="dim" id="emptyHint">点击右上角「新建下载」添加链接，或到「资源嗅探」中挑选候选资源。</div>
         </div>
 
@@ -247,7 +247,7 @@
                   <div class="det-title">
                     <span id="detName">任务</span>
                     <span class="st dl" id="detStatus"><span class="d"></span>下载中</span>
-                    <span id="detTags" style="display:flex;gap:var(--space-6)"></span>
+                    <span id="detTags" style="display:flex;gap:var(--space-8)"></span>
                   </div>
                   <div class="det-url" id="detUrl">—</div>
                 </div>
@@ -270,13 +270,13 @@
                 <div class="bar tall">
                   <i id="heroFill" style="width:0%"></i>
                 </div>
-                <div class="row" style="justify-content:space-between;margin-top:var(--space-8);font-size:var(--fs-meta);color:var(--fg-3)">
+                <div class="row" style="justify-content:space-between;margin-top:var(--space-8);font-size:var(--fs-caption);color:var(--fg-3)">
                   <span id="heroPct">已下载 0%</span>
                   <span id="heroMax">上限 —</span>
                 </div>
               </div>
 
-              <div class="card" style="margin-bottom:var(--space-14)">
+              <div class="card" style="margin-bottom:var(--space-16)">
                 <div class="card-h">
                   <div class="h2">分段进度</div>
                   <span class="dim" id="segMeta">—</span>
@@ -292,7 +292,7 @@
                 </div>
               </div>
 
-              <div class="two-col" style="margin-bottom:var(--space-14)">
+              <div class="two-col" style="margin-bottom:var(--space-16)">
                 <div class="card">
                   <div class="card-h"><div class="h2">连接明细</div><span class="dim" id="connMeta">—</span></div>
                   <div class="card-b" id="connBody" style="padding-top:var(--space-8);padding-bottom:var(--space-8)">
@@ -301,7 +301,7 @@
                 </div>
                 <div class="card">
                   <div class="card-h"><div class="h2">引擎与写盘</div><span class="dim">只读</span></div>
-                  <div class="card-b" style="padding-top:var(--space-6);padding-bottom:var(--space-6)">
+                  <div class="card-b" style="padding-top:var(--space-8);padding-bottom:var(--space-8)">
                     <div class="kv"><span class="k">写入方式</span><span class="v" id="kvWrite">随机写 · 分段偏移</span></div>
                     <div class="kv"><span class="k">写缓冲</span><span class="v" id="kvBuffer">4 KiB</span></div>
                     <div class="kv"><span class="k">校验</span><span class="v" id="kvSync">完成后按需校验</span></div>
@@ -314,7 +314,7 @@
 
               <div class="card">
                 <div class="card-h"><div class="h2">事件日志</div><span class="dim">本会话</span></div>
-                <div class="card-b" style="padding-top:var(--space-10)">
+                <div class="card-b" style="padding-top:var(--space-12)">
                   <div class="log" id="detLog"></div>
                 </div>
               </div>
@@ -364,7 +364,7 @@
             <h2 id="vidTitle">—</h2>
             <div class="muted" id="vidMeta">—</div>
             <div class="vid-chips" id="vidChips"></div>
-            <div class="row" style="margin-top:var(--space-14);gap:var(--space-8);flex-wrap:wrap">
+            <div class="row" style="margin-top:var(--space-16);gap:var(--space-8);flex-wrap:wrap">
               <button class="btn sm" id="btnCopyLink">复制直链</button>
               <button class="btn sm" id="btnAudioOnly">只看音频</button>
               <button class="btn sm ghost" id="btnVideoRedo">重新解析</button>
@@ -400,7 +400,7 @@
                 </thead>
                 <tbody id="fmtBody"></tbody>
               </table>
-              <div class="bulk-bar" style="position:static;margin:var(--space-14) 0 0;padding:var(--space-10) 0 0;background:transparent;backdrop-filter:none">
+              <div class="bulk-bar" style="position:static;margin:var(--space-16) 0 0;padding:var(--space-12) 0 0;background:transparent;backdrop-filter:none">
                 <div class="dim" id="fmtHint">选择一行格式后点击右侧「加入下载」。</div>
               </div>
             </div>
@@ -412,7 +412,7 @@
               <div class="out-item"><span class="k">视频</span><span class="v" id="outVideo">—</span><span class="x" id="outVSize">—</span></div>
               <div class="out-plus">+</div>
               <div class="out-item"><span class="k">音频</span><span class="v" id="outAudio">—</span><span class="x" id="outASize">—</span></div>
-              <div class="kv" style="margin-top:var(--space-10)"><span class="k">估算总体积</span><span class="v" id="outTotal">—</span></div>
+              <div class="kv" style="margin-top:var(--space-12)"><span class="k">估算总体积</span><span class="v" id="outTotal">—</span></div>
               <div class="opt-row">
                 <span>容器</span>
                 <div class="r">
@@ -433,13 +433,13 @@
                 <div class="r"><button class="sw" id="outVerify" disabled title="下载引擎不提供文件摘要，本版本不做完成后的摘要校验"></button><span class="tag">暂不支持</span></div>
               </div>
               <div class="compat" id="vidCompat"></div>
-              <div class="warn-box" style="margin-top:var(--space-10);font-size:var(--fs-meta)">
+              <div class="warn-box" style="margin-top:var(--space-12);font-size:var(--fs-caption)">
                 受 DRM 保护的格式会被逐行禁用；纯视频流下载时自动合并最佳音轨（ffmpeg 随包，无需另外安装）。容器选项只作用于纯视频流合并；直链与纯音频跟随源格式，暂不支持转封装。MP4 与所选编码不兼容时，解析器可能改为 MKV 或报错。站点不标注编码的直链文件按整文件下载，体积即所选档位。
               </div>
               <button class="btn primary" id="btnVideoDownload" style="width:100%;margin-top:var(--space-12)">加入下载</button>
               <div class="video-job" id="videoJob" hidden>
                 <div class="line"><span id="vjStage">—</span><span id="vjPct">0%</span></div>
-                <div class="bar track" style="margin-top:var(--space-6)"><i id="vjFill" style="width:0%"></i></div>
+                <div class="bar track" style="margin-top:var(--space-8)"><i id="vjFill" style="width:0%"></i></div>
               </div>
             </div>
           </div>
@@ -468,14 +468,14 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h4l2 4 3-8 2 4h3" stroke="currentColor" stroke-width="1.6"/></svg>
           </span>
           <div style="min-width:0">
-            <div style="font-size:var(--fs-control);font-weight:600">当前标签页</div>
+            <div style="font-size:var(--fs-body);font-weight:600">当前标签页</div>
             <div class="sniff-url" id="sniffUrl">尚未捕获</div>
             <div class="dim" id="sniffPageMeta">—</div>
           </div>
-          <div style="margin-left:auto;display:flex;align-items:center;gap:var(--space-10);flex-wrap:wrap;justify-content:flex-end">
+          <div style="margin-left:auto;display:flex;align-items:center;gap:var(--space-12);flex-wrap:wrap;justify-content:flex-end">
             <span class="tag" id="sniffExtState">扩展未连接</span>
             <span class="dim">Native Messaging · 端口 <span id="sniffPort">—</span></span>
-            <label class="row" style="gap:var(--space-6);font-size:var(--fs-sm);color:var(--fg-2)">
+            <label class="row" style="gap:var(--space-8);font-size:var(--fs-body);color:var(--fg-2)">
               档位
               <select class="mini-select" id="sniffTier" class="mini-select w120">
                 <option value="A">A · 激进</option>

@@ -178,7 +178,7 @@
     if (!text) return;
     const msg = el('div', 'dim err-color', text);
     msg.dataset.areaErr = '1';
-    msg.style.padding = 'var(--space-6) var(--space-2)';
+    msg.style.padding = 'var(--space-8) var(--space-4)';
     msg.style.flexBasis = '100%';
     container.prepend(msg);
   }
@@ -404,7 +404,7 @@
 
     const main = el('div', 't-main');
     const name = el('div', 't-name');
-    name.append(document.createTextNode(t.fileName || nameFromUrl(t.url)));
+    name.append(el('span', 'nm', t.fileName || nameFromUrl(t.url)));
     taskTags(t).forEach(([label, cls]) => name.append(el('span', 'tag' + (cls ? ' ' + cls : ''), label)));
     const sub = el('div', 't-sub');
     sub.append(el('span', '', hostOf(t.url)), el('span', 'sep'));
@@ -451,8 +451,8 @@
     const more = el('button', 'ico');
     more.innerHTML = ACT_ICON.more;
     more.title = '查看详情';
-    more.style.width = 'var(--ctl-md)';
-    more.style.height = 'var(--ctl-md)';
+    more.style.width = 'var(--ctl-sm)';
+    more.style.height = 'var(--ctl-sm)';
     more.dataset.act = 'detail';
 
     row.append(cbWrap, thumb, main, size, speed, stCell, acts, more);
