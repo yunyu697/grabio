@@ -126,7 +126,35 @@ v2.1 把它们按角色收口，同角色只允许一组写死的固定档位（
   默认 `.tag` 前景由 `--fg-3` 改为 `--fg-2`（11px 压在 panel-3 上原仅 4.09:1）。
 - 调色后的明色四套已用真实构建复拍：[visual-v3/](visual-v3/)（1180×760 × 紫罗兰/海蓝/森绿/暖砂）。
 
-## 8. 复现
+## 8. 调色前后对比与全尺寸复拍（v2.1）
+
+调色动了 `--fg-3`（四套明色）、`--accent`（明/森绿、明/暖砂）、`--err`、`--info`、两个缩略图前景和 `.tag` 取色，
+这些用户能直接看到，所以补两组证据。before 用 `93ea663` 的 token 重新构建、after 用当前 token，
+同一份播种数据、同一窗口尺寸、同一截图脚本。
+
+并排对比图（左 before / 右 after，1180×760 明色）：
+
+| 配色 | 对比图 |
+| --- | --- |
+| 紫罗兰 | [compare/light-violet-before-after.png](compare/light-violet-before-after.png) |
+| 海蓝 | [compare/light-azure-before-after.png](compare/light-azure-before-after.png) |
+| 森绿 | [compare/light-emerald-before-after.png](compare/light-emerald-before-after.png) |
+| 暖砂 | [compare/light-amber-before-after.png](compare/light-amber-before-after.png) |
+
+原始单张在 [compare-before/](compare-before/)（before）与 [visual-v4/](visual-v4/)（after，同名文件）。
+
+结论：
+
+- **品牌强调色**：紫罗兰、海蓝未动，观感一致；森绿、暖砂只小幅调深（`#0F7A52→#0C6E4A`、`#A8540A→#9C4C09`），
+  主按钮与选中导航仍是明确的绿/橙，没有发黑或变脏，不需要回退。
+- **状态色**：明色 `--err` 由 #BE123C 调到 #B51038、`--info` 由 #0E7490 调到 #0C6882，色相未变，
+  「需处理」「嗅探标签」不发紫、不发青。
+- **11px 小字**：四套明色 `--fg-3` 调深后是"更清楚"而不是"更灰"——域名、段数、大小这些元信息在缩放 50% 的对比图里也能读。
+- **默认标签**：`.tag` 前景由 `--fg-3` 改为 `--fg-2`，标签文字略提亮，未出现"抢正文"的观感。
+- 全尺寸复拍 [visual-v4/](visual-v4/) 共 16 张：1440/960/760 × 明暗 6 张、四套配色明暗 8 张、设置页 2 张。
+  未发现新的对比度或可读性问题；760 宽的长文件名仍正常省略、尾部标签完整。
+
+## 9. 复现
 
 ```powershell
 node tools/Check-FwUiTokens.mjs --strict   # 期望：违规 0、例外 0、过期例外 0、info 0；exit 0
