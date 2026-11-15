@@ -87,7 +87,7 @@ impl VideoHost {
 
 /// 解析器路径：优先环境变量，其次与主程序同目录（安装后的 sidecar 位置）。
 pub fn ytdlp_path() -> Option<PathBuf> {
-    if let Ok(p) = std::env::var("FETCHWEIR_YTDLP") {
+    if let Ok(p) = std::env::var("GRABIO_YTDLP") {
         let pb = PathBuf::from(p);
         if pb.exists() {
             return Some(pb);
@@ -167,7 +167,7 @@ fn complete_file(f: &FormatDto) -> bool {
 /// ffmpeg 位置：优先环境变量，其次主程序目录（安装后 sidecar 位置），
 /// 再找开发态 binaries，最后查 PATH。
 pub fn ffmpeg_path() -> Option<PathBuf> {
-    if let Ok(p) = std::env::var("FETCHWEIR_FFMPEG") {
+    if let Ok(p) = std::env::var("GRABIO_FFMPEG") {
         let pb = PathBuf::from(p);
         if pb.exists() {
             return Some(pb);
@@ -371,7 +371,7 @@ pub fn download(
     if fmt.needs_mux {
         // 纯视频流：交给解析器取该视频 + 最佳音轨，由 ffmpeg 合并。
         let ff = ffmpeg_path().ok_or_else(|| {
-            "该格式只含视频流，需要 ffmpeg 合并音轨；未找到 ffmpeg（应随安装包提供，或用 FETCHWEIR_FFMPEG 指定）"
+            "该格式只含视频流，需要 ffmpeg 合并音轨；未找到 ffmpeg（应随安装包提供，或用 GRABIO_FFMPEG 指定）"
                 .to_string()
         })?;
         let spec = format!("{format_id}+bestaudio/best");
@@ -436,7 +436,7 @@ fn delegate(
         .arg("--encoding")
         .arg("utf-8")
         .arg("--print")
-        .arg("after_move:FETCHWEIR:%(filepath)s")
+        .arg("after_move:GRABIO:%(filepath)s")
         .arg("-P")
         .arg(&dir)
         .arg("-o")
@@ -487,7 +487,7 @@ fn delegate(
                     if n.unwrap_or(0) == 0 { break; }
                     let text = String::from_utf8_lossy(&out_line);
                     let t = text.trim();
-                    if let Some(printed) = t.strip_prefix("FETCHWEIR:") {
+                    if let Some(printed) = t.strip_prefix("GRABIO:") {
                         path = Some(output_path(printed, &dir));
                     } else if let Some(p) = parse_progress(t) {
                         last = json!({

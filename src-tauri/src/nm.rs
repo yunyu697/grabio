@@ -16,10 +16,10 @@ use tauri::{AppHandle, Emitter, Manager};
 use crate::settings;
 use crate::sniff::{SniffItem, SniffStore};
 
-pub const HOST_NAME: &str = "dev.fetchweir.nmh";
+pub const HOST_NAME: &str = "dev.grabio.nmh";
 /// 扩展公钥固定在 manifest 的 key 字段，扩展 ID 因此可预测，宿主清单才能静态授权。
 pub const EXTENSION_ID: &str = "fjngndhalbkfkfcfhleflcgkicknkele";
-pub const FIREFOX_EXTENSION_ID: &str = "fetchweir@yunyu697";
+pub const FIREFOX_EXTENSION_ID: &str = "grabio@yunyu697";
 
 #[derive(Serialize, Deserialize)]
 struct Endpoint {
@@ -422,14 +422,14 @@ pub fn register_hosts() -> Vec<String> {
 
     let chromium = json!({
         "name": HOST_NAME,
-        "description": "Fetchweir 浏览器接管宿主",
+        "description": "Grabio 浏览器接管宿主",
         "path": exe.to_string_lossy(),
         "type": "stdio",
         "allowed_origins": [format!("chrome-extension://{EXTENSION_ID}/")],
     });
     let firefox = json!({
         "name": HOST_NAME,
-        "description": "Fetchweir 浏览器接管宿主",
+        "description": "Grabio 浏览器接管宿主",
         "path": exe.to_string_lossy(),
         "type": "stdio",
         "allowed_extensions": [FIREFOX_EXTENSION_ID],

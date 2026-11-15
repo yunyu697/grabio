@@ -1,6 +1,6 @@
 // 升级后任务与设置仍在：启动已安装版本，确认 list_tasks 里能读到升级前的任务记录。
 // 用法：node tools/Test-FwUpgradeData.mjs <installed-exe> [outDir]
-// 前置：%APPDATA%\Fetchweir\tasks.json 里已有一条 completed 记录（安装前写好的）。
+// 前置：%APPDATA%\Grabio\tasks.json 里已有一条 completed 记录（安装前写好的）。
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
@@ -14,7 +14,7 @@ if (!EXE) {
   process.exit(2);
 }
 fs.mkdirSync(OUT, { recursive: true });
-const DATA = path.join(process.env.APPDATA || os.homedir(), 'Fetchweir');
+const DATA = path.join(process.env.APPDATA || os.homedir(), 'Grabio');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const results = [];

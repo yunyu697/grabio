@@ -13,8 +13,8 @@ const EXE = process.argv[2];
 const EDGE = process.env.FW_EDGE_PATH || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EXT = path.join(ROOT, 'extension');
-// 数据目录：设置存漫游目录（%APPDATA%\Fetchweir），与「仅当前用户」安装目录（%LOCALAPPDATA%）分开。
-const DATA = path.join(process.env.APPDATA || process.env.LOCALAPPDATA || os.homedir(), 'Fetchweir');
+// 数据目录：设置存漫游目录（%APPDATA%\Grabio），与「仅当前用户」安装目录（%LOCALAPPDATA%）分开。
+const DATA = path.join(process.env.APPDATA || process.env.LOCALAPPDATA || os.homedir(), 'Grabio');
 const SHOTS = path.join(ROOT, 'docs', 'ui-shots');
 const EXT_ID = 'fjngndhalbkfkfcfhleflcgkicknkele';
 const HITS = [];
@@ -27,10 +27,10 @@ const progress = (msg) => {
   try { fs.appendFileSync(path.join(process.env.TEMP || '.', 'fw-browser-progress.log'), `${new Date().toISOString()} ${msg}\n`); } catch { /* ignore */ }
 };
 
-const PAGE = `<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>Fetchweir 探测验证页</title>
+const PAGE = `<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>Grabio 探测验证页</title>
 <style>body{background:#0f1117;color:#e8ecf5;font:15px system-ui;margin:0;padding:32px}
 .box{max-width:720px;margin:0 auto}h1{font-size:20px}video{width:100%;border-radius:12px;background:#000}</style></head>
-<body><div class="box"><h1>Fetchweir 探测验证页</h1>
+<body><div class="box"><h1>Grabio 探测验证页</h1>
 <video id="v" src="/movie.mp4" controls preload="auto" autoplay muted></video>
 <p id="s">正在加载媒体…</p></div>
 <script>
@@ -244,7 +244,7 @@ async function runTier(tier, runIdx) {
     const natural = (await page.send('Runtime.evaluate', {
       returnByValue: true,
       expression: `(() => {
-        const h = document.getElementById('fetchweir-bar-host');
+        const h = document.getElementById('grabio-bar-host');
         return { host: !!h, display: h ? getComputedStyle(h).display : null };
       })()`,
     })).result.value;
@@ -271,7 +271,7 @@ async function runTier(tier, runIdx) {
       const afterManual = await page2.send('Runtime.evaluate', {
         returnByValue: true,
         expression: `(() => {
-          const h = document.getElementById('fetchweir-bar-host');
+          const h = document.getElementById('grabio-bar-host');
           return h ? { display: getComputedStyle(h).display } : null;
         })()`,
       });
@@ -290,7 +290,7 @@ async function runTier(tier, runIdx) {
     const hls = items.filter((x) => x.url.includes('stream.m3u8'));
     const status = await serviceWorkerEval(port, `(async () => {
       try {
-        const p = chrome.runtime.connectNative('dev.fetchweir.nmh');
+        const p = chrome.runtime.connectNative('dev.grabio.nmh');
         const item = {
           url: 'http://127.0.0.1/native-probe.mp4', pageUrl: 'http://127.0.0.1/',
           pageTitle: 'native probe', browser: 'Edge', kind: 'video', mime: 'video/mp4',
@@ -313,11 +313,11 @@ async function runTier(tier, runIdx) {
     const nativeItem = readSniff().filter((x) => x.url.includes('native-probe'));
     let hostLines = [];
     try {
-      const out = execFileSync('powershell', ['-NoProfile', '-Command', "Get-CimInstance Win32_Process -Filter \"name='fetchweir.exe'\" | Select-Object -ExpandProperty CommandLine"], { encoding: 'utf8', timeout: 20000 });
+      const out = execFileSync('powershell', ['-NoProfile', '-Command', "Get-CimInstance Win32_Process -Filter \"name='grabio.exe'\" | Select-Object -ExpandProperty CommandLine"], { encoding: 'utf8', timeout: 20000 });
       hostLines = out.split(/\r?\n/).filter(Boolean);
     } catch (e) { hostLines = ['查询失败 ' + e.message]; }
     progress(`tier ${tier}: native probe received=${nativeItem.length} status=${JSON.stringify(statusValue)}`);
-    progress(`tier ${tier}: fetchweir 进程 ${hostLines.join(' || ') || '无'}`);
+    progress(`tier ${tier}: grabio 进程 ${hostLines.join(' || ') || '无'}`);
     const detail = JSON.stringify({ natural, badge: badgeText, media: media.length, hls: hls.length, diag: diagValue, manual: manualBar, status: statusValue, nativeProbe: nativeItem.length, hits: HITS });
 
     if (media.length >= 1 && hls.length >= 1) ok(`档位 ${tier}：网络层嗅探`, detail);

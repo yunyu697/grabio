@@ -1,4 +1,4 @@
-/* Fetchweir 前端逻辑：与 src/index.html 的 DOM 结构一一对应。
+/* Grabio 前端逻辑：与 src/index.html 的 DOM 结构一一对应。
  * demo 模式（URL 带 ?demo，或非 Tauri 环境）使用内置数据，不调用任何后端命令。 */
 (() => {
   'use strict';
@@ -195,9 +195,9 @@
     globalLimitBps: 0,
     theme: 'dark',
     colorTheme: 'violet',
-    updateRepo: 'yunyu697/fetchweir',
+    updateRepo: 'yunyu697/grabio',
     updateMirror: 'github',
-    homepage: 'https://github.com/yunyu697/fetchweir',
+    homepage: 'https://github.com/yunyu697/grabio',
     sniffTier: 'B',
     sniffTtlHours: 24,
     maxConnections: 16,
@@ -258,7 +258,7 @@
     return {
       title: '2026 Autumn Recap · 4K HDR',
       duration: 754,
-      uploader: 'Fetchweir Labs',
+      uploader: 'Grabio Labs',
       thumbnail: '',
       webpageUrl: 'https://video.example.com/watch/2026-autumn',
       message: null,
@@ -282,7 +282,7 @@
     latestVersion: '1.0.1',
     notes: '· 修复 HLS 分片重试时的连接泄漏\n· 嗅探页支持按域名过滤\n· 视频解析结果增加编码与体积提示\n· 更新镜像切换后立即生效',
     publishedAt: '2026-11-05T09:20:00Z',
-    assetName: 'Fetchweir_1.0.1_x64-setup.exe',
+    assetName: 'Grabio_1.0.1_x64-setup.exe',
     assetSize: 18.4 * MB,
     mirrors: [
       { id: 'github', label: 'GitHub 直连' },
@@ -299,7 +299,7 @@
     downloadDir: 'C:\\Users\\Tyler\\Downloads'
   };
 
-  const DEMO_NM = { hostName: 'com.fetchweir.sniff', extensionId: 'fetchweir-extension', endpointPort: 49873, registered: ['chrome', 'edge'], tier: 'B' };
+  const DEMO_NM = { hostName: 'com.grabio.sniff', extensionId: 'grabio-extension', endpointPort: 49873, registered: ['chrome', 'edge'], tier: 'B' };
 
   /* ---------------- 外观 ---------------- */
   const COLOR_THEMES = ['violet', 'azure', 'emerald', 'amber'];
@@ -1134,7 +1134,7 @@
     };
     if (!IS_TAURI) {
       paint(
-        { scopeLabel: '当前用户（用户目录）', installDir: '%LOCALAPPDATA%\\Fetchweir', maintenance: '演示数据：切换安装范围需要卸载后重装' },
+        { scopeLabel: '当前用户（用户目录）', installDir: '%LOCALAPPDATA%\\Grabio', maintenance: '演示数据：切换安装范围需要卸载后重装' },
         { platform: 'windows', elevationLabel: '普通权限', runAsAdmin: !!state.settings.runAsAdmin, elevated: false },
       );
       return;
@@ -2490,11 +2490,11 @@
     if (extCopy) {
       extCopy.addEventListener('click', async () => {
         const steps = [
-          'Fetchweir 浏览器扩展安装步骤',
+          'Grabio 浏览器扩展安装步骤',
           '1. 在应用设置 →「嗅探与浏览器」点「打开扩展文件夹」，找到其中的 extension 目录。',
           '2. Chrome 打开 chrome://extensions（Edge 为 edge://extensions），右上角开启「开发者模式」。',
           '3. 点「加载已解压的扩展程序」，选择该 extension 文件夹。',
-          '4. 打开任意网页，右下角出现 Fetchweir 浮动条即安装成功；点击浮动条可唤起应用。',
+          '4. 打开任意网页，右下角出现 Grabio 浮动条即安装成功；点击浮动条可唤起应用。',
           '5. 第一版只支持「加载已解压」。不要双击 .crx：Chrome / Edge 正式版会以 CRX_REQUIRED_PROOF_MISSING 拦截站外安装包；商店上架与 Firefox AMO 签名本版未配置。'
         ].join('\n');
         try {
@@ -2726,7 +2726,7 @@
       } catch (err) { toast('导出配置失败：' + ((err && err.message) || err), 'err'); }
     });
     on('btnOpenData', 'click', async () => {
-      if (isDemo) { toast('演示模式：数据目录 ' + ((state.info && state.info.dataDir) || 'C:\\Users\\Tyler\\AppData\\Roaming\\Fetchweir')); return; }
+      if (isDemo) { toast('演示模式：数据目录 ' + ((state.info && state.info.dataDir) || 'C:\\Users\\Tyler\\AppData\\Roaming\\Grabio')); return; }
       try { await invoke('open_data_dir'); } catch (err) { toast('打开数据目录失败：' + ((err && err.message) || err), 'err'); }
     });
     on('btnResetSettings', 'click', async () => {
@@ -2976,7 +2976,7 @@
       state.sniff = demoSniff();
       state.sniffNm = DEMO_NM;
       state.update = Object.assign({}, DEMO_UPDATE);
-      state.info = { version: '1.0.0', dataDir: 'C:\\Users\\Tyler\\AppData\\Roaming\\Fetchweir' };
+      state.info = { version: '1.0.0', dataDir: 'C:\\Users\\Tyler\\AppData\\Roaming\\Grabio' };
       applyInfo(state.info);
       applyVisuals(state.settings);
       renderSettings();

@@ -16,7 +16,7 @@ use crate::settings;
 use crate::VERSION;
 
 /// 默认只读的公开发布仓库：源码仓库已公开，安装包与清单就挂在同一个仓库的 Release 上。
-const DEFAULT_REPO: &str = "yunyu697/fetchweir";
+const DEFAULT_REPO: &str = "yunyu697/grabio";
 const GITHUB_API: &str = "https://api.github.com";
 const CANCELLED: &str = "__cancelled__";
 /// 发布清单固定文件名，与同名 `.sig`（base64 Ed25519 签名）一起放在 Release 里。
@@ -231,10 +231,10 @@ enum ManifestErr {
 
 /// 清单根地址。默认走 GitHub latest release 资产目录；仓库尚未发布 Release 时这里会 404，
 /// 上层据此提示「未找到可用的更新源」。
-/// `FETCHWEIR_UPDATE_BASE` 是本地联调/自建源钩子：指向静态服务时清单仍必须通过签名校验。
+/// `GRABIO_UPDATE_BASE` 是本地联调/自建源钩子：指向静态服务时清单仍必须通过签名校验。
 /// 显式指定的更新源（本地联调或自建源）；未设置时返回 None。
 fn custom_manifest_base() -> Option<String> {
-    let v = std::env::var("FETCHWEIR_UPDATE_BASE").ok()?;
+    let v = std::env::var("GRABIO_UPDATE_BASE").ok()?;
     let v = v.trim().trim_end_matches('/');
     if v.is_empty() {
         None
@@ -590,7 +590,7 @@ impl Updater {
         let client = match reqwest::Client::builder()
             .connect_timeout(Duration::from_secs(15))
             .timeout(Duration::from_secs(30))
-            .user_agent(format!("Fetchweir/{VERSION}"))
+            .user_agent(format!("Grabio/{VERSION}"))
             .build()
         {
             Ok(c) => c,
@@ -855,7 +855,7 @@ impl Updater {
         let client = match reqwest::Client::builder()
             .connect_timeout(Duration::from_secs(20))
             .timeout(Duration::from_secs(600))
-            .user_agent(format!("Fetchweir/{VERSION}"))
+            .user_agent(format!("Grabio/{VERSION}"))
             .build()
         {
             Ok(c) => c,
@@ -1172,7 +1172,7 @@ fn http_safe_name(name: &str) -> String {
         .collect();
     let trimmed = cleaned.trim().trim_matches('.');
     if trimmed.is_empty() {
-        "fetchweir-update.bin".to_string()
+        "grabio-update.bin".to_string()
     } else {
         trimmed.to_string()
     }
@@ -1273,9 +1273,9 @@ mod tests {
             version: "1.0.0".into(),
             notes: String::new(),
             published_at: String::new(),
-            asset_name: "Fetchweir_1.0.0_x64-setup.exe".into(),
+            asset_name: "Grabio_1.0.0_x64-setup.exe".into(),
             asset_size: 10,
-            browser_url: "https://github.com/yunyu697/fetchweir/releases/download/v1.0.0/a.exe".into(),
+            browser_url: "https://github.com/yunyu697/grabio/releases/download/v1.0.0/a.exe".into(),
             sha256: Some("00".into()),
             verified: true,
         };

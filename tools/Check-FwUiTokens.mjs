@@ -376,7 +376,7 @@ const summary = {
 if (jsonOut) {
   process.stdout.write(JSON.stringify({ summary, errors, infos, excepted: violations.filter((v) => v.excepted), staleExceptions: stale }, null, 2) + '\n');
 } else {
-  console.log('Fetchweir 界面 token 检查');
+  console.log('Grabio 界面 token 检查');
   console.log('扫描：' + files.map(rel).join('  '));
   console.log('token 定义区：src/styles.css 顶部（:root + 明暗 × 四套颜色主题 + 密度）');
   console.log('');

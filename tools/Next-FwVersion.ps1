@@ -1,7 +1,7 @@
 #Requires -Version 7.0
 <#
 .SYNOPSIS
-  Fetchweir 版本号工具：预览/写回唯一来源 version.json。
+  Grabio 版本号工具：预览/写回唯一来源 version.json。
 .DESCRIPTION
   规则（与 docs/版本号规则.md 一致）：
     · major 不设上限；minor / patch 取值 0–10，超过 10 向前进位并归零。

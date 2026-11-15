@@ -1,8 +1,8 @@
 name: release
 
 # tag 触发时构建并发布两个安装范围包：
-#   · Fetchweir_X.Y.Z_x64-setup.exe          当前用户安装，内嵌 asInvoker，不弹 UAC
-#   · Fetchweir_X.Y.Z_x64-setup-allusers.exe 所有用户安装，内嵌 requireAdministrator
+#   · Grabio_X.Y.Z_x64-setup.exe          当前用户安装，内嵌 asInvoker，不弹 UAC
+#   · Grabio_X.Y.Z_x64-setup-allusers.exe 所有用户安装，内嵌 requireAdministrator
 # 两个包一起上传到 Release；有签名私钥时再上传 latest.json / latest.json.sig。
 #
 # 缺 FW_SIGNING_KEY 时不会静默跳过：流水线打 ::warning、写 step summary，
@@ -146,9 +146,9 @@ jobs:
           if ($LASTEXITCODE -ne 0) {
             $fwNotes = Join-Path 'docs' "release-notes-v$fwVer.md"
             if (Test-Path $fwNotes) {
-              gh release create $fwTag --title "Fetchweir $fwTag" --notes-file $fwNotes
+              gh release create $fwTag --title "Grabio $fwTag" --notes-file $fwNotes
             } else {
-              gh release create $fwTag --title "Fetchweir $fwTag" --notes "Fetchweir $fwTag 构建产物。安装范围与已知限制见 docs/发布检查清单.md。"
+              gh release create $fwTag --title "Grabio $fwTag" --notes "Grabio $fwTag 构建产物。安装范围与已知限制见 docs/发布检查清单.md。"
             }
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           }

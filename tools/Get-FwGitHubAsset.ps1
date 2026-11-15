@@ -35,7 +35,7 @@ function Get-FwGitHubReleaseAsset {
 
     $FwToken = if ($env:GH_TOKEN) { $env:GH_TOKEN } elseif ($env:GITHUB_TOKEN) { $env:GITHUB_TOKEN } else { '' }
     $FwIsLatest = [string]::IsNullOrEmpty($FwTag)
-    $FwHeaders = @{ 'User-Agent' = 'fetchweir' }
+    $FwHeaders = @{ 'User-Agent' = 'grabio' }
     if ($FwToken) { $FwHeaders.Authorization = "Bearer $FwToken" }
     $FwRelUri = if ($FwIsLatest) {
         "https://api.github.com/repos/$FwRepo/releases/latest"

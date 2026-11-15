@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Fetchweir",
+  "productName": "Grabio",
   "version": "../version.json",
-  "identifier": "dev.fetchweir.app",
+  "identifier": "dev.grabio.app",
   "build": {
     "frontendDist": "../src"
   },
@@ -11,7 +11,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "Fetchweir",
+        "title": "Grabio",
         "width": 1180,
         "height": 760,
         "minWidth": 760,
@@ -42,9 +42,9 @@
     "resources": {
       "../extension": "extension"
     },
-    "shortDescription": "Fetchweir 下载管理器",
-    "longDescription": "Fetchweir 是跨平台下载管理器，支持分段并发下载、断点续传与浏览器扩展资源嗅探。",
-    "copyright": "© 2026 Fetchweir",
+    "shortDescription": "Grabio 下载管理器",
+    "longDescription": "Grabio 是跨平台下载管理器，支持分段并发下载、断点续传与浏览器扩展资源嗅探。",
+    "copyright": "© 2026 Grabio",
     "windows": {
       "nsis": {
         "installMode": "currentUser",

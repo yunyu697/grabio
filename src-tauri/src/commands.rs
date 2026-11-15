@@ -60,7 +60,7 @@ fn write_settings_export(settings: &Settings, dir: &Path) -> Result<PathBuf, Str
         .duration_since(std::time::UNIX_EPOCH)
         .map(|d| d.as_secs())
         .unwrap_or(0);
-    let name = format!("fetchweir-settings-{stamp}.json");
+    let name = format!("grabio-settings-{stamp}.json");
     let path = if dir.is_dir() {
         dir.join(&name)
     } else {
@@ -292,7 +292,7 @@ pub fn open_homepage() -> Result<(), String> {
     let url = {
         let s = settings::load();
         if s.homepage.trim().is_empty() {
-            "https://github.com/yunyu697/fetchweir".to_string()
+            "https://github.com/yunyu697/grabio".to_string()
         } else {
             s.homepage.trim().to_string()
         }

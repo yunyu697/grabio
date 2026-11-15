@@ -25,8 +25,8 @@ $FwRepo = Split-Path -Parent $PSScriptRoot
 if (-not $FwDist) { $FwDist = Join-Path $FwRepo 'dist' }
 $FwVer = (Get-Content (Join-Path $FwRepo 'version.json') -Raw | ConvertFrom-Json).version
 
-$FwUser = Join-Path $FwDist "Fetchweir_${FwVer}_x64-setup.exe"
-$FwAll = Join-Path $FwDist "Fetchweir_${FwVer}_x64-setup-allusers.exe"
+$FwUser = Join-Path $FwDist "Grabio_${FwVer}_x64-setup.exe"
+$FwAll = Join-Path $FwDist "Grabio_${FwVer}_x64-setup-allusers.exe"
 
 foreach ($FwPath in @($FwUser, $FwAll)) {
     if (-not (Test-Path -LiteralPath $FwPath)) {

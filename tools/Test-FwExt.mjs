@@ -40,7 +40,7 @@ for (const file of ['background.js', 'content.js']) {
 }
 
 const html = fs.readFileSync(path.join(EXT, '..', 'src-tauri', 'src', 'nm.rs'), 'utf8');
-if (/HOST_NAME: &str = "dev\.fetchweir\.nmh"/.test(html)) ok('宿主名一致', 'dev.fetchweir.nmh');
+if (/HOST_NAME: &str = "dev\.grabio\.nmh"/.test(html)) ok('宿主名一致', 'dev.grabio.nmh');
 else bad('宿主名一致', '未找到 HOST_NAME');
 
 /* PNG IHDR 宽度校验 */

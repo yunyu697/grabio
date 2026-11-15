@@ -9,11 +9,11 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const EXE = process.argv[2] || path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'src-tauri', 'target', 'debug', 'fetchweir.exe');
+const EXE = process.argv[2] || path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'src-tauri', 'target', 'debug', 'grabio.exe');
 const EDGE = process.env.FW_EDGE_PATH || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EXT = path.join(ROOT, 'extension');
-const DATA = path.join(process.env.APPDATA || process.env.LOCALAPPDATA || os.homedir(), 'Fetchweir');
+const DATA = path.join(process.env.APPDATA || process.env.LOCALAPPDATA || os.homedir(), 'Grabio');
 const SHOTS = path.join(ROOT, 'docs', 'ui-shots');
 const EXT_ID = 'fjngndhalbkfkfcfhleflcgkicknkele';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -186,7 +186,7 @@ function attr(node, name) {
 
 async function readBar(page) {
   const doc = await page.send('DOM.getDocument', { depth: -1, pierce: true });
-  const host = walk(doc.root, (n) => attr(n, 'id') === 'fetchweir-bar-host')[0];
+  const host = walk(doc.root, (n) => attr(n, 'id') === 'grabio-bar-host')[0];
   if (!host) return null;
   const panel = walk(host, (n) => (attr(n, 'class') || '').split(/\s+/).includes('panel'))[0];
   if (!panel) return null;
@@ -215,7 +215,7 @@ async function readBar(page) {
   await styleOf(gets[1], 'getDisabled');
   await styleOf(byClass('ico')[0], 'ico');
   const display = await evalIn(page, `(() => {
-    const h = document.getElementById('fetchweir-bar-host');
+    const h = document.getElementById('grabio-bar-host');
     return h ? getComputedStyle(h).display : null;
   })()`);
   return { display, rows: rows.length, style: styles };
@@ -282,7 +282,7 @@ async function clickTheme(app, color, theme) {
   let file = null;
   try { file = JSON.parse(fs.readFileSync(path.join(DATA, 'bar-theme.json'), 'utf8')); } catch { /* ignore */ }
   const pageHost = await evalIn(barPage, `(() => {
-    const h = document.getElementById('fetchweir-bar-host');
+    const h = document.getElementById('grabio-bar-host');
     return h ? { present: true, display: getComputedStyle(h).display } : { present: false };
   })()`).catch((e) => ({ error: e.message }));
   throw new Error(`悬浮条未在 9s 内跟随 ${theme}/${color}；token=${JSON.stringify(token)}；file=${JSON.stringify(file)}；host=${JSON.stringify(pageHost)}；bar=${JSON.stringify(last)}`);
@@ -344,7 +344,7 @@ try {
   let firstVisible = null;
   for (let i = 0; i < 160; i++) {
     const shown = await evalIn(barPage, `(() => {
-      const h = document.getElementById('fetchweir-bar-host');
+      const h = document.getElementById('grabio-bar-host');
       return h ? getComputedStyle(h).display === 'block' : false;
     })()`).catch(() => false);
     if (shown) { firstVisible = await readBar(barPage); break; }
@@ -437,7 +437,7 @@ try {
     await sleep(2000);
   }
   const plainBar = await evalIn(plainPage || barPage, `(() => {
-    const h = document.getElementById('fetchweir-bar-host');
+    const h = document.getElementById('grabio-bar-host');
     return h ? { present: true, display: getComputedStyle(h).display } : { present: false, display: null };
   })()`);
   if (!plainBar.present || plainBar.display === 'none') ok('非视频页不出悬浮条', plainBar);

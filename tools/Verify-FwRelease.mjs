@@ -9,7 +9,7 @@ import path from 'node:path';
 
 const TAG = process.argv[2] || 'v1.0.6';
 const OUT = process.argv[3] || path.join('D:', 'fw-accept', `release-check-${TAG}`);
-const REPO = 'yunyu697/fetchweir';
+const REPO = 'yunyu697/grabio';
 const GH = 'C:\\Program Files\\GitHub CLI\\gh.exe';
 // 与 src-tauri/src/update.rs 的 RELEASE_PUBKEY_B64 一致：客户端唯一信任锚点。
 const PUBKEY_B64 = 'Tk+FpZg8tSODE6zqT1t/PT6iDX+KfSRMNFOewh33yLE=';

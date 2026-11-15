@@ -296,7 +296,7 @@ if (jsonOut) {
     console.log(`| ${row.group}/${row.label} | ${cells.join(' | ')} |`);
   }
 } else {
-  console.log('Fetchweir 界面对比度（WCAG 2.1，按 src/styles.css 当前 token 实算）');
+  console.log('Grabio 界面对比度（WCAG 2.1，按 src/styles.css 当前 token 实算）');
   console.log(`配色组合：${COMBOS.length}（明暗 × 四套配色）  检查项：${new Set(results.map(key)).size}  点数：${results.length}`);
   console.log('');
   for (const g of groups) {

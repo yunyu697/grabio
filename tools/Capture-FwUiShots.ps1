@@ -6,12 +6,12 @@
 #
 # 用法：
 #   powershell -ExecutionPolicy Bypass -File tools/Capture-FwUiShots.ps1 `
-#     -FwExe C:\fw-target\debug\fetchweir.exe -FwOut docs/evidence/ui-tokens/visual-v2
+#     -FwExe C:\fw-target\debug\grabio.exe -FwOut docs/evidence/ui-tokens/visual-v2
 #
-# 依赖：已构建的 exe；%APPDATA%\Fetchweir 下的 settings.json / tasks.json 会被临时替换，
+# 依赖：已构建的 exe；%APPDATA%\Grabio 下的 settings.json / tasks.json 会被临时替换，
 # 脚本结束（含异常）时还原。
 param(
-    [string]$FwExe = 'C:\fw-target\debug\fetchweir.exe',
+    [string]$FwExe = 'C:\fw-target\debug\grabio.exe',
     [string]$FwOut = 'docs/evidence/ui-tokens/visual-v2',
     # 只重拍个别图（例如修完一处再补），按文件名通配符过滤。
     [string]$FwOnly = ''
@@ -71,7 +71,7 @@ public class FwWin {
 
 [void][FwWin]::SetProcessDpiAwarenessContext([IntPtr](-4))  # PER_MONITOR_AWARE_V2
 
-$fwData = Join-Path $env:APPDATA 'Fetchweir'
+$fwData = Join-Path $env:APPDATA 'Grabio'
 $fwOutDir = Join-Path (Get-Location) $FwOut
 New-Item -ItemType Directory -Force -Path $fwOutDir | Out-Null
 
@@ -88,7 +88,7 @@ foreach ($name in 'settings.json', 'tasks.json') {
 function Stop-FwApp {
     # 必须等进程真的消失：应用装了 single-instance 插件，上一个实例还活着时新实例会直接退出。
     for ($i = 0; $i -lt 24; $i++) {
-        $ps = @(Get-Process -Name fetchweir -ErrorAction SilentlyContinue)
+        $ps = @(Get-Process -Name grabio -ErrorAction SilentlyContinue)
         if ($ps.Count -eq 0) { break }
         foreach ($p in $ps) { try { $p.Kill() } catch { } }
         Start-Sleep -Milliseconds 200
@@ -112,7 +112,7 @@ function New-FwTasks {
         (& $mk 1 'https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.04.1/ubuntu-24.04.1-desktop-amd64.iso' 'ubuntu-24.04.1-desktop-amd64.iso' 6550982656 4320133120 'paused' $null),
         (& $mk 2 'https://download.adobe.example.com/products/photoshop/2024/Adobe_Photoshop_2024_v25.12.1_macOS_中文版.dmg' 'Adobe_Photoshop_2024_v25.12.1_macOS_中文版.dmg' 2576980377 1020054732 'paused' $null),
         (& $mk 3 'https://files.example.com/VideoProc-Converter-AI-Setup-x64.exe' 'VideoProc-Converter-AI-Setup-x64.exe' 228589568 228589568 'completed' $null),
-        (& $mk 4 'https://cdn.example.com/assets/2026/11/fetchweir-bundle-2026.11.15.tar.zst' 'fetchweir-bundle-2026.11.15.tar.zst' 0 0 'failed' 'HTTP 403 Forbidden：直链已过期，请重新获取下载地址'),
+        (& $mk 4 'https://cdn.example.com/assets/2026/11/grabio-bundle-2026.11.15.tar.zst' 'grabio-bundle-2026.11.15.tar.zst' 0 0 'failed' 'HTTP 403 Forbidden：直链已过期，请重新获取下载地址'),
         (& $mk 5 'https://mirrors.aliyun.com/openjdk/21.0.5/OpenJDK21U-jdk_x64_windows_hotspot_21.0.5_11.zip' 'OpenJDK21U-jdk_x64_windows_hotspot_21.0.5_11.zip' 197132288 0 'paused' $null),
         (& $mk 6 'https://www.gyan.dev/ffmpeg/builds/ffmpeg-7.1-full_build.7z' 'ffmpeg-7.1-full_build.7z' 146800640 146800640 'completed' $null),
         (& $mk 7 'https://example.com/models/Stable-Diffusion-XL-base-1.0.safetensors' 'Stable-Diffusion-XL-base-1.0.safetensors' 6933053440 1258291200 'paused' $null),

@@ -1,4 +1,4 @@
-; Fetchweir 安装/卸载钩子。
+; Grabio 安装/卸载钩子。
 ;
 ; 为什么需要它：
 ;  · 1.0.5 起的 NSIS 卸载器只删除自己分发过的文件。1.0.4 及更早版本随包带的
@@ -12,14 +12,14 @@
 !macro NSIS_HOOK_POSTUNINSTALL
   ; 更新流程（/UPDATE）不清注册：安装器随后会拉起新版本，应用启动时会重新注册。
   ${If} $UpdateMode <> 1
-    DeleteRegKey HKCU "Software\Google\Chrome\NativeMessagingHosts\dev.fetchweir.nmh"
-    DeleteRegKey HKCU "Software\Chromium\NativeMessagingHosts\dev.fetchweir.nmh"
-    DeleteRegKey HKCU "Software\Microsoft\Edge\NativeMessagingHosts\dev.fetchweir.nmh"
-    DeleteRegKey HKCU "Software\BraveSoftware\Brave-Browser\NativeMessagingHosts\dev.fetchweir.nmh"
-    DeleteRegKey HKCU "Software\Vivaldi\NativeMessagingHosts\dev.fetchweir.nmh"
-    DeleteRegKey HKCU "Software\Mozilla\NativeMessagingHosts\dev.fetchweir.nmh"
-    Delete "$APPDATA\Fetchweir\nm\dev.fetchweir.nmh.json"
-    Delete "$APPDATA\Fetchweir\nm\dev.fetchweir.nmh.firefox.json"
+    DeleteRegKey HKCU "Software\Google\Chrome\NativeMessagingHosts\dev.grabio.nmh"
+    DeleteRegKey HKCU "Software\Chromium\NativeMessagingHosts\dev.grabio.nmh"
+    DeleteRegKey HKCU "Software\Microsoft\Edge\NativeMessagingHosts\dev.grabio.nmh"
+    DeleteRegKey HKCU "Software\BraveSoftware\Brave-Browser\NativeMessagingHosts\dev.grabio.nmh"
+    DeleteRegKey HKCU "Software\Vivaldi\NativeMessagingHosts\dev.grabio.nmh"
+    DeleteRegKey HKCU "Software\Mozilla\NativeMessagingHosts\dev.grabio.nmh"
+    Delete "$APPDATA\Grabio\nm\dev.grabio.nmh.json"
+    Delete "$APPDATA\Grabio\nm\dev.grabio.nmh.firefox.json"
   ${EndIf}
   ; 兜底：老版本残留的已知文件若仍在，删掉后尝试移除空目录（目录非空时 RMDir 会失败，不会误删）。
   Delete "$INSTDIR\WebView2Loader.dll"

@@ -1,4 +1,4 @@
-/* Fetchweir 内容脚本：浮动下载条（closed Shadow DOM）+ 页面媒体元素补充信号
+/* Grabio 内容脚本：浮动下载条（closed Shadow DOM）+ 页面媒体元素补充信号
    三档：A 自动出条（任意帧上报、顶层渲染）/ B 仅顶层按网络信号出条 / C 不出条只用徽标 */
 (() => {
   'use strict';
@@ -7,10 +7,10 @@
     reportDomMedia();
     return;
   }
-  if (window.__fetchweirBar) return;
-  window.__fetchweirBar = true;
+  if (window.__grabioBar) return;
+  window.__grabioBar = true;
 
-  const HOST_ID = 'fetchweir-bar-host';
+  const HOST_ID = 'grabio-bar-host';
   let tier = 'B';
   let items = [];
   let dismissed = false;
@@ -167,7 +167,7 @@ button:focus-visible { outline: 2px solid var(--fw-accent, #A9B4C4); outline-off
     const mk = el('div', 'mark');
     mk.appendChild(svgIcon());
     const t = el('div', 'title');
-    t.appendChild(el('b', null, `Fetchweir · ${media.length} 个可下载资源`));
+    t.appendChild(el('b', null, `Grabio · ${media.length} 个可下载资源`));
     t.appendChild(el('span', null, location.hostname || '本页'));
     const close = el('button', 'close', '×');
     close.title = '本页不再显示';
@@ -208,7 +208,7 @@ button:focus-visible { outline: 2px solid var(--fw-accent, #A9B4C4); outline-off
 
     const foot = el('div', 'foot');
     foot.appendChild(el('div', 'hint', '工具栏徽标始终显示本页数量'));
-    const open = el('button', null, '在 Fetchweir 中打开');
+    const open = el('button', null, '在 Grabio 中打开');
     open.addEventListener('click', () => chrome.runtime.sendMessage({ type: 'fw:activate' }));
     foot.appendChild(open);
     panel.append(head, list, foot);

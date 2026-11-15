@@ -10,8 +10,8 @@ use std::sync::Arc;
 use std::thread;
 use std::time::{Duration, Instant};
 
-use fetchweir_lib::engine::{Engine, ProgressItem, TaskDto, TaskEvents, TaskState};
-use fetchweir_lib::settings::Settings;
+use grabio_lib::engine::{Engine, ProgressItem, TaskDto, TaskEvents, TaskState};
+use grabio_lib::settings::Settings;
 
 pub struct SilentEvents;
 
@@ -138,7 +138,7 @@ fn temp_dir(tag: &str) -> PathBuf {
         .map(|d| d.as_nanos())
         .unwrap_or(0);
     let dir = std::env::temp_dir().join(format!(
-        "fetchweir-test-{tag}-{}-{stamp}",
+        "grabio-test-{tag}-{}-{stamp}",
         std::process::id()
     ));
     std::fs::create_dir_all(&dir).expect("创建测试目录");

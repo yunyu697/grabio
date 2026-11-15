@@ -1,7 +1,7 @@
 // 任务持久化验收：下载到一半强杀 → 重启恢复 → 续传完成 → 校验 SHA256。
 // 同时采样 tasks.json 的 mtime，确认进度落盘是 1Hz 节流而不是每块都写。
 // 应用以 FW_SMOKE=1 离屏运行，只经 WebView2 调试端口操作。
-// 用法：node tools/Test-FwResume.mjs <fetchweir.exe> [outDir]
+// 用法：node tools/Test-FwResume.mjs <grabio.exe> [outDir]
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
@@ -14,10 +14,10 @@ const EXE = process.argv[2];
 const OUT = process.argv[3] || path.join('D:', 'fw-accept', 'block-p');
 const SHOTS = path.join(OUT, 'shots');
 const DOWNLOADS = path.join(OUT, 'downloads');
-const DATA = path.join(process.env.APPDATA || os.homedir(), 'Fetchweir');
+const DATA = path.join(process.env.APPDATA || os.homedir(), 'Grabio');
 const TASKS_FILE = path.join(DATA, 'tasks.json');
 if (!EXE) {
-  console.error('用法: node tools/Test-FwResume.mjs <fetchweir.exe> [outDir]');
+  console.error('用法: node tools/Test-FwResume.mjs <grabio.exe> [outDir]');
   process.exit(2);
 }
 fs.mkdirSync(SHOTS, { recursive: true });

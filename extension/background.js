@@ -1,8 +1,8 @@
-/* Fetchweir 扩展后台：观察型 webRequest 嗅探 + Native Messaging 桥接 + 徽标兜底 */
+/* Grabio 扩展后台：观察型 webRequest 嗅探 + Native Messaging 桥接 + 徽标兜底 */
 // MV3 下 webRequest 只能观察，不能阻断；这正是嗅探需要的部分。
 // 采集到的候选按 canonical URL 去重，节流后打包送 Native Messaging 宿主。
 
-const NM_HOST = 'dev.fetchweir.nmh';
+const NM_HOST = 'dev.grabio.nmh';
 const MAX_PER_TAB = 200;
 const SEND_DELAY = 500;
 const TRACK_PARAMS = new Set(['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid', 'ref', 'spm', '_t', 'from']);
@@ -256,7 +256,7 @@ chrome.webRequest.onHeadersReceived.addListener(
     };
 
     if (isAttachment && d.type === 'main_frame') {
-      // 静默接管：浏览器自身要下载的文件，交给 Fetchweir。
+      // 静默接管：浏览器自身要下载的文件，交给 Grabio。
       post({ type: 'capture', item: { ...item, silent: true } });
       return;
     }
@@ -370,10 +370,10 @@ chrome.action.onClicked.addListener(() => {
 /* 右键菜单：链接/视频/图片/页面 */
 function buildMenus() {
   chrome.contextMenus.removeAll(() => {
-    chrome.contextMenus.create({ id: 'fw-link', title: '用 Fetchweir 下载此链接', contexts: ['link'] });
-    chrome.contextMenus.create({ id: 'fw-media', title: '用 Fetchweir 下载此媒体', contexts: ['video', 'audio'] });
-    chrome.contextMenus.create({ id: 'fw-image', title: '用 Fetchweir 下载此图片', contexts: ['image'] });
-    chrome.contextMenus.create({ id: 'fw-page', title: '在 Fetchweir 中查看本页资源', contexts: ['page'] });
+    chrome.contextMenus.create({ id: 'fw-link', title: '用 Grabio 下载此链接', contexts: ['link'] });
+    chrome.contextMenus.create({ id: 'fw-media', title: '用 Grabio 下载此媒体', contexts: ['video', 'audio'] });
+    chrome.contextMenus.create({ id: 'fw-image', title: '用 Grabio 下载此图片', contexts: ['image'] });
+    chrome.contextMenus.create({ id: 'fw-page', title: '在 Grabio 中查看本页资源', contexts: ['page'] });
   });
 }
 chrome.runtime.onInstalled.addListener(() => { buildMenus(); ensurePort(); });

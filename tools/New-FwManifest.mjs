@@ -1,5 +1,5 @@
 // 生成本次发布用的 latest.json 清单（尚未签名；签名用 tools/Sign-FwManifest.mjs）。
-// 用法：node tools/New-FwManifest.mjs [--version 1.0.4] [--repo yunyu697/fetchweir]
+// 用法：node tools/New-FwManifest.mjs [--version 1.0.4] [--repo yunyu697/grabio]
 //        [--dist dist] [--out dist/latest.json] [--notes "一句话更新说明"]
 //
 // 只收录 dist/ 里真实存在的安装包，不虚构平台：
@@ -19,16 +19,16 @@ const arg = (name, fallback) => {
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const version = arg('version', JSON.parse(readFileSync(join(repoRoot, 'version.json'), 'utf8')).version);
-const repo = arg('repo', 'yunyu697/fetchweir');
+const repo = arg('repo', 'yunyu697/grabio');
 const distDir = resolve(arg('dist', join(repoRoot, 'dist')));
 const outPath = resolve(arg('out', join(distDir, 'latest.json')));
 // 默认不写死具体变更：写死的摘要会在下一个版本变成误导性的“本版说明”。
-const notes = arg('notes', `Fetchweir ${version}：详见 Release 说明。`);
+const notes = arg('notes', `Grabio ${version}：详见 Release 说明。`);
 
 // Windows 两种安装范围的产物；更新器会按当前安装范围选后缀匹配的包。
 const windowsAssets = [
-  `Fetchweir_${version}_x64-setup.exe`,
-  `Fetchweir_${version}_x64-setup-allusers.exe`,
+  `Grabio_${version}_x64-setup.exe`,
+  `Grabio_${version}_x64-setup-allusers.exe`,
 ];
 
 const assets = [];

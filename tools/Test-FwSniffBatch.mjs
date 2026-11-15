@@ -2,7 +2,7 @@
 //
 // 覆盖：一次多选入队、并发上限（全局连接预算）、失败重试（503 两次后成功）、
 // 部分失败（404）时的状态表达。应用以 FW_SMOKE=1 隐藏启动，只通过 WebView2 远程调试操作。
-// 用法：node tools/Test-FwSniffBatch.mjs <fetchweir.exe>
+// 用法：node tools/Test-FwSniffBatch.mjs <grabio.exe>
 import { spawn } from 'node:child_process';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 
 const EXE = process.argv[2];
 if (!EXE) {
-  console.error('用法: node tools/Test-FwSniffBatch.mjs <fetchweir.exe>');
+  console.error('用法: node tools/Test-FwSniffBatch.mjs <grabio.exe>');
   process.exit(2);
 }
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');

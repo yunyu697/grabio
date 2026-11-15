@@ -1,4 +1,4 @@
-// Fetchweir 主进程：装配引擎、命令与窗口。
+// Grabio 主进程：装配引擎、命令与窗口。
 mod commands;
 pub mod cookies;
 pub mod engine;
@@ -12,7 +12,7 @@ pub mod video;
 use tauri::Manager;
 
 /// 版本号唯一来源：version.json（build.rs 注入），这里只读不写。
-pub const VERSION: &str = env!("FETCHWEIR_VERSION");
+pub const VERSION: &str = env!("GRABIO_VERSION");
 
 /* ---------- 托盘 ---------- */
 
@@ -30,13 +30,13 @@ fn setup_tray(app: &mut tauri::App) -> tauri::Result<()> {
 
     let show = MenuItem::with_id(app, "show", "显示主窗口", true, None::<&str>)?;
     let check = MenuItem::with_id(app, "check", "检查更新", true, None::<&str>)?;
-    let quit = MenuItem::with_id(app, "quit", "退出 Fetchweir", true, None::<&str>)?;
+    let quit = MenuItem::with_id(app, "quit", "退出 Grabio", true, None::<&str>)?;
     let menu = Menu::with_items(app, &[&show, &check, &quit])?;
 
     let mut builder = TrayIconBuilder::with_id("main")
         .menu(&menu)
         .show_menu_on_left_click(false)
-        .tooltip("Fetchweir 下载管理器");
+        .tooltip("Grabio 下载管理器");
     if let Some(icon) = app.default_window_icon() {
         builder = builder.icon(icon.clone());
     }
@@ -343,7 +343,7 @@ pub fn run() {
             commands::video_tools,
         ])
         .build(tauri::generate_context!())
-        .expect("Fetchweir 启动失败")
+        .expect("Grabio 启动失败")
         .run(|app, event| {
             // 正常退出前补一次落盘，保证最后一次进度（不超过 1 秒窗口）不丢。
             if matches!(event, tauri::RunEvent::Exit) {

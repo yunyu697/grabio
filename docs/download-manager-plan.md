@@ -21,7 +21,7 @@
 9. **浮动条**：能做"只在有视频时出现"，但要分 A/B/C 三档（详见 §5.6）；**真正无解的是 DRM 与私有传输**，工具栏徽标必须做永远准确的兜底。
 10. **分发**：不上架商店也装得上——Chromium 走 Edge 加载项商店 + 开发者模式兜底，Firefox 走 AMO unlisted 签名 + 自托管 XPI；**Safari 不进第一版发布范围，仅作开发者本机自测**（详见 §10.4）。
 
-11. **命名**：原名 **Hydra** 与已存在的跨平台下载管理器 **ja7ad/hydra**（Rust · Windows/macOS/Linux + 浏览器扩展 + CLI）重名，需更名；核查后建议 **Fetchweir**（详见 §11）。界面稿已同步替换。
+11. **命名**：原名 **Hydra** 与已存在的跨平台下载管理器 **ja7ad/hydra**（Rust · Windows/macOS/Linux + 浏览器扩展 + CLI）重名，需更名；核查后建议 **Grabio**（详见 §11）。界面稿已同步替换。
 
 12. **更新器**：常驻"检查更新 / 打开主页"，发现新版本再出现"更新 / 仅下载"，两种方式都支持加速镜像并可手动切换；Pathleap 的更新模块尚标注 M3 未实现，无可复用代码，规格见 §12，已实现状态与实测数据见 §12.6。
 
@@ -519,12 +519,12 @@ queued → resolving(视频/清单) → connecting → downloading → postproce
 | **Waveloot** | 0 个同名仓库，用户/组织名可用 | 未见占用 | 未见占用 | 未见占用 | RDAP 显示未注册，**但站点实测可访问（反例）** | .io / .app 未见 | **已有同名 Android 应用**：WaveLoot（`com.jb.wavelootapp`，Google Play 在架） | **不宜**（产品重名） |
 | **Tidemill** | 有：`godgunman/tidemill` 等 3 个；用户/组织名可用 | **已被占** | 未见占用 | 未见占用 | RDAP 显示已注册 | .io / .app 未见 | 未见同名软件 | **不宜** |
 | **Siphonix** | 有：`Lixiod-Labs/Siphonix` 等 3 个；用户/组织名**已被占** | 未见占用 | 未见占用 | 未见占用 | RDAP 显示已注册 | .io / .app 未见 | 未见同名软件 | **不宜** |
-| **Fetchweir** | **0 个同名仓库**，用户/组织名可用 | **可用** | **可用** | **可用** | RDAP 显示未注册（**需注册商复核**） | .io / .app 未见占用（同样需复核） | 公开搜索无同名产品；仅有一个发音相近的 WordPress 插件 `FetchWire`（不同名、不同类） | **推荐** |
+| **Grabio** | **0 个同名仓库**，用户/组织名可用 | **可用** | **可用** | **可用** | RDAP 显示未注册（**需注册商复核**） | .io / .app 未见占用（同样需复核） | 公开搜索无同名产品；仅有一个发音相近的 WordPress 插件 `FetchWire`（不同名、不同类） | **推荐** |
 | **Vaultstream** | 有 44 个相近仓库（含 `ienone/VaultStream` 等 3 个同名）；用户/组织名已被占 | **已被占** | **已被占** | 未见占用 | RDAP 显示已注册 | .io 未见 / .app 已注册 | 未见同名软件 | **不宜** |
 
 > 说明：表中"未见占用"= 查询返回 404/无结果；"已被占"= 查询返回 200 且有对应实体。域名与商标仍需正式复核。
 
-### 11.4 推荐：Fetchweir
+### 11.4 推荐：Grabio
 
 **理由**
 1. **技术侧干净**：GitHub 0 个同名仓库，用户/组织名可取；npm / PyPI / crates.io 三个包名均未被占用；`.com / .io / .app` 未见注册记录（待注册商复核）。这意味着从仓库、包管理到域名，不需要跟任何人抢名字。
@@ -534,12 +534,12 @@ queued → resolving(视频/清单) → connecting → downloading → postproce
 
 ### 11.5 改名落地清单（已同步 / 待同步）
 
-- **已同步（界面稿）**：`<title>`、标题栏品牌名 → `Fetchweir`；本地存储键 `hydra-theme` / `hydra-accent` → `fetchweir-theme` / `fetchweir-accent`。全文已无 `hydra` 残留。
+- **已同步（界面稿）**：`<title>`、标题栏品牌名 → `Grabio`；本地存储键 `hydra-theme` / `hydra-accent` → `grabio-theme` / `grabio-accent`。全文已无 `hydra` 残留。
 - **待建工程时同步（方案层约定）**：
-  - 安装包：`Fetchweir-<version>-x64.exe` / `Fetchweir-<version>-arm64.dmg` / `Fetchweir-<version>-x86_64.AppImage`；
-  - macOS Bundle ID：`dev.fetchweir.app`；Windows 可执行名 `Fetchweir.exe`；
-  - 扩展包名：`fetchweir-extension`，Native Messaging 宿主名 `dev.fetchweir.nmh`；
-  - 官网/帮助文档/关于页统一显示 "Fetchweir"，副标题保持"下载管理器"。
+  - 安装包：`Grabio-<version>-x64.exe` / `Grabio-<version>-arm64.dmg` / `Grabio-<version>-x86_64.AppImage`；
+  - macOS Bundle ID：`dev.grabio.app`；Windows 可执行名 `Grabio.exe`；
+  - 扩展包名：`grabio-extension`，Native Messaging 宿主名 `dev.grabio.nmh`；
+  - 官网/帮助文档/关于页统一显示 "Grabio"，副标题保持"下载管理器"。
 
 ### 11.6 表述口径（不出现具体商业产品名）
 
@@ -588,7 +588,7 @@ downloading ──失败──► download-failed（可重试，保留镜像切�
 ```
 
 - 预发布版本（`-alphaN`）之间按 semver 预发布顺序比较，`alpha10 > alpha9`，`1.0.0 > 1.0.0-alphaN`。
-- 检查更新只读自有仓库 Releases（`api.github.com/repos/yunyu697/fetchweir/releases`），**不执行从任意 URL 拉来的安装包**。
+- 检查更新只读自有仓库 Releases（`api.github.com/repos/yunyu697/grabio/releases`），**不执行从任意 URL 拉来的安装包**。
 - 资源匹配按平台后缀：Windows `*-setup.exe`（NSIS）、macOS `*.dmg`、Linux `*.AppImage` / `*.deb`。
 
 ### 12.4 镜像策略
@@ -610,7 +610,7 @@ downloading ──失败──► download-failed（可重试，保留镜像切�
 已落地：`src-tauri/src/update.rs` + 设置页「更新」卡片。行为与 §12.2–12.5 对齐，差异点单列。
 
 - **检查**：只读 `api.github.com/repos/{updateRepo}/releases`，草稿跳过；按平台后缀挑包（Windows 按当前安装范围选 `*-setup.exe` 或 `*-setup-allusers.exe`、macOS `*.dmg`、Linux `*.AppImage` 优先、`*.deb` 兜底）。预发布按 semver 预发布序比较：`alpha10 > alpha9`，`1.0.0 > 1.0.0-alphaN`。
-- **私有仓库**：仓库当前为 private，需在设置里填「访问令牌」，或设置环境变量 `FETCHWEIR_GITHUB_TOKEN`。未配置令牌时返回明确原因，不静默失败。
+- **私有仓库**：仓库当前为 private，需在设置里填「访问令牌」，或设置环境变量 `GRABIO_GITHUB_TOKEN`。未配置令牌时返回明确原因，不静默失败。
 - **镜像**：内置 GitHub 直连 / ghfast.top / gh-proxy.com 三个**前缀转发**镜像，下拉切换即时保存；公开仓库下载按「所选镜像 → 其余镜像」顺序自动回退，全部失败才报错。私有仓库的资源只能走带令牌的 API 端点，镜像不参与（代理无法携带鉴权）。
 - **下载**：`.part` 断点续传（取消后保留已下载字节）；`Content-Length` 与落盘字节数一致才判定成功。「仅下载」落到系统默认下载目录，「更新」落到数据目录 `updates/`。
 - **安装**：Windows 走 NSIS `/S` 静默安装，由独立 PowerShell 等待安装完成后再拉起新版本；macOS 打开 dmg 后退出；Linux 给 AppImage 赋可执行位后启动，deb 打开所在目录交给系统安装。
@@ -637,10 +637,10 @@ downloading ──失败──► download-failed（可重试，保留镜像切�
 
 | | 仅当前用户（默认） | 所有用户 |
 | --- | --- | --- |
-| 安装目录 | `%LOCALAPPDATA%\Fetchweir` | `%ProgramFiles%\Fetchweir` |
+| 安装目录 | `%LOCALAPPDATA%\Grabio` | `%ProgramFiles%\Grabio` |
 | 快捷方式 | 当前用户开始菜单 + 桌面 | 公共开始菜单 + 公共桌面 |
-| 卸载项 | `HKCU\...\Uninstall\Fetchweir` | `HKLM\...\Uninstall\Fetchweir` |
-| 数据 | `%APPDATA%\Fetchweir` | 每个用户各自的 `%APPDATA%\Fetchweir` |
+| 卸载项 | `HKCU\...\Uninstall\Grabio` | `HKLM\...\Uninstall\Grabio` |
+| 数据 | `%APPDATA%\Grabio` | 每个用户各自的 `%APPDATA%\Grabio` |
 | UAC | 不需要 | 安装与卸载都需要 |
 
 数据目录与安装目录分离是硬约束：用户级安装目录会在卸载时被删除，设置与记录必须放漫游目录。
@@ -649,7 +649,7 @@ downloading ──失败──► download-failed（可重试，保留镜像切�
 ### 13.2 「始终以管理员身份运行」是显式选项，不是默认
 
 - 提权判断只看进程令牌（`TokenElevation`），不看窗口标题；实测 High 完整性级别 `S-1-16-12288`，普通为 `S-1-16-8192`。
-- 开启后若同时开启自启动，`HKCU\...\Run` 会被替换为计划任务 `FetchweirElevated`（`ONLOGON` + `HighestAvailable`），
+- 开启后若同时开启自启动，`HKCU\...\Run` 会被替换为计划任务 `GrabioElevated`（`ONLOGON` + `HighestAvailable`），
   因为 Run 项只能拉起普通权限进程。关闭选项后任务删除、Run 项按自启动设置恢复。
 - 提权的代价是 UIPI：资源管理器拖入会被拦截。界面显示提示，建议粘贴链接或走扩展；
   Native Messaging 走本地回环，不受窗口完整性级别影响（提权下实测正常）。

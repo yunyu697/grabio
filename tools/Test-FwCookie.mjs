@@ -9,10 +9,10 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const EXE = process.argv[2] || path.join('D:', 'fw-build', 'fetchweir', 'debug', 'fetchweir.exe');
+const EXE = process.argv[2] || path.join('D:', 'fw-build', 'grabio', 'debug', 'grabio.exe');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SHOTS = path.join(ROOT, 'docs', 'ui-shots');
-const SETTINGS = path.join(process.env.APPDATA || os.homedir(), 'Fetchweir', 'settings.json');
+const SETTINGS = path.join(process.env.APPDATA || os.homedir(), 'Grabio', 'settings.json');
 const VIDEO = 'https://www.youtube.com/watch?v=-yqNI2GfXMQ';
 const MISSING_COOKIES = path.join(process.env.TEMP || '.', 'fw-cookies-not-exist.txt');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

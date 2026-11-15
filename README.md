@@ -1,4 +1,4 @@
-# Fetchweir
+# Grabio
 
 跨平台下载管理器（Rust + Tauri 2）。分段并发下载、断点续传、浏览器扩展资源嗅探、视频格式解析与音轨合并（yt-dlp + ffmpeg sidecar）。
 目前**只发布 Windows x64**；macOS / Linux 仅通过 CI 的编译与单测，产物未构建、运行时未验证。
@@ -59,7 +59,7 @@ pwsh -NoProfile -File tools/Build-Fw.ps1 -FwTask release  # 一条命令：两�
 ```
 
 `-FwTask release` 会先构建 currentUser 包、再构建 perMachine 包，把
-`Fetchweir_<version>_x64-setup.exe` 与 `Fetchweir_<version>_x64-setup-allusers.exe`
+`Grabio_<version>_x64-setup.exe` 与 `Grabio_<version>_x64-setup-allusers.exe`
 复制到仓库根目录 `dist/`，并在终端输出版本号、字节数与 SHA256。版本号取自
 `version.json`，不需要额外参数。
 
@@ -67,7 +67,7 @@ pwsh -NoProfile -File tools/Build-Fw.ps1 -FwTask release  # 一条命令：两�
 
 ```powershell
 node tools/Verify-FwUI.mjs "file:///.../src/index.html?demo" docs/ui-shots/app-main.png 1280 800
-node tools/Test-FwBrowser.mjs D:\fw-build\fetchweir\debug\fetchweir.exe   # 真实 Chromium 三档嗅探 + 浮动条
+node tools/Test-FwBrowser.mjs D:\fw-build\grabio\debug\grabio.exe   # 真实 Chromium 三档嗅探 + 浮动条
 node tools/Inspect-FwExeIcon.mjs         # exe 图标资源清单
 ```
 
@@ -75,7 +75,7 @@ node tools/Inspect-FwExeIcon.mjs         # exe 图标资源清单
 
 ## 安装范围与数据目录
 
-Windows 默认「仅当前用户」安装：程序在 `%LOCALAPPDATA%\Fetchweir`，数据在 `%APPDATA%\Fetchweir`，
+Windows 默认「仅当前用户」安装：程序在 `%LOCALAPPDATA%\Grabio`，数据在 `%APPDATA%\Grabio`，
 卸载不会删除设置与记录。「所有用户」安装包需要 UAC。macOS / Linux / Flatpak 的差异、
 提权开关与 UIPI 限制见 [docs/安装范围与权限.md](docs/安装范围与权限.md)。
 
@@ -88,12 +88,12 @@ Windows 默认「仅当前用户」安装：程序在 `%LOCALAPPDATA%\Fetchweir`
 
 Firefox（140+）：`pwsh tools/Build-FwExtensionFirefox.ps1` 生成 `dist/extension-firefox/`，
 打开 `about:debugging#/runtime/this-firefox` → 临时载入附加组件 → 选该目录的 `manifest.json`。
-gecko id 固定为 `fetchweir@yunyu697`，与 Native Messaging 的 `allowed_extensions` 配对；
+gecko id 固定为 `grabio@yunyu697`，与 Native Messaging 的 `allowed_extensions` 配对；
 清单已通过 `web-ext lint`（0 error / 0 warning），运行时往返尚未联调。
 
 ## 已知限制
 
-- **安装包未做代码签名**：项目暂无代码签名证书，`Fetchweir_*_x64-setup.exe` 以未签名形式发布。
+- **安装包未做代码签名**：项目暂无代码签名证书，`Grabio_*_x64-setup.exe` 以未签名形式发布。
   新用户首次运行会触发 Windows SmartScreen 拦截，需点「更多信息」→「仍要运行」才能继续；
   请只从本仓库 Releases 页下载，不要从第三方站点获取。
 - **浏览器扩展需要手动加载**：发布包内没有"已安装"的扩展，也没有一键安装入口；

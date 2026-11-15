@@ -2,10 +2,10 @@
 // 点击「检查更新」→ 发现新版本 → 下载 → 校验 → 界面状态流转，逐阶段截图。
 //
 // 只通过 WebView2 的远程调试端口操作页面（不注入真实键鼠、不抢前台），
-// 应用以 FW_SMOKE=1 隐藏窗口启动。更新源由 FETCHWEIR_UPDATE_BASE 指向，
+// 应用以 FW_SMOKE=1 隐藏窗口启动。更新源由 GRABIO_UPDATE_BASE 指向，
 // 默认由调用方传入一个真实 Release 的资产目录。
 //
-// 用法：node tools/Test-FwUpdateGui.mjs <fetchweir.exe> <updateBaseUrl>
+// 用法：node tools/Test-FwUpdateGui.mjs <grabio.exe> <updateBaseUrl>
 import { createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -19,7 +19,7 @@ const BASE = (process.argv[3] || '').replace(/\/+$/, '');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SHOTS = path.join(ROOT, 'docs', 'ui-shots');
 if (!EXE || !BASE) {
-  console.error('用法: node tools/Test-FwUpdateGui.mjs <fetchweir.exe> <updateBaseUrl>');
+  console.error('用法: node tools/Test-FwUpdateGui.mjs <grabio.exe> <updateBaseUrl>');
   process.exit(2);
 }
 fs.mkdirSync(SHOTS, { recursive: true });
@@ -87,7 +87,7 @@ const port = await freePort();
 const env = {
   ...process.env,
   WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS: `--remote-debugging-port=${port}`,
-  FETCHWEIR_UPDATE_BASE: BASE,
+  GRABIO_UPDATE_BASE: BASE,
   FW_NO_ELEVATE: '1',
   FW_SMOKE: '1',
 };
@@ -280,7 +280,7 @@ try {
   try { spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true }); } catch { /* ignore */ }
   await sleep(800);
   // 清理本轮下载到系统下载目录的测试包，避免在用户机器上留 25MB 垃圾。
-  if (downloadedPath && fs.existsSync(downloadedPath) && /Fetchweir_.*setup.*\.exe$/i.test(downloadedPath)) {
+  if (downloadedPath && fs.existsSync(downloadedPath) && /Grabio_.*setup.*\.exe$/i.test(downloadedPath)) {
     try { fs.unlinkSync(downloadedPath); } catch { /* ignore */ }
   }
 }

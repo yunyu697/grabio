@@ -4,13 +4,13 @@ use std::path::PathBuf;
 use serde::{Deserialize, Serialize};
 
 pub fn data_dir() -> PathBuf {
-    // 必须与安装目录分开：Windows「仅当前用户」安装落在 %LOCALAPPDATA%\Fetchweir，
+    // 必须与安装目录分开：Windows「仅当前用户」安装落在 %LOCALAPPDATA%\Grabio，
     // 如果数据也放这里，卸载时会被一并删掉。改用漫游目录，卸载/重装后设置与记录仍在。
     dirs::data_dir()
         .or_else(dirs::data_local_dir)
         .or_else(dirs::home_dir)
         .unwrap_or_else(|| PathBuf::from("."))
-        .join("Fetchweir")
+        .join("Grabio")
 }
 
 pub fn ensure_data_dir() -> PathBuf {
@@ -97,9 +97,9 @@ impl Default for Settings {
             global_limit_bps: 0,
             theme: "dark".to_string(),
             color_theme: "violet".to_string(),
-            update_repo: "yunyu697/fetchweir".to_string(),
+            update_repo: "yunyu697/grabio".to_string(),
             update_mirror: "github".to_string(),
-            homepage: "https://github.com/yunyu697/fetchweir".to_string(),
+            homepage: "https://github.com/yunyu697/grabio".to_string(),
             sniff_tier: "B".to_string(),
             sniff_ttl_hours: 24,
             max_connections: 16,

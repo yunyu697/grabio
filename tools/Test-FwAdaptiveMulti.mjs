@@ -2,7 +2,7 @@
 // 观察全局并发预算从 4×4=16 逐级降到 2×4=8、再降到 1×4=4 的过程。
 //
 // 应用以 FW_SMOKE=1 隐藏启动，只通过 WebView2 远程调试调用命令，不占前台。
-// 用法：node tools/Test-FwAdaptiveMulti.mjs <fetchweir.exe>
+// 用法：node tools/Test-FwAdaptiveMulti.mjs <grabio.exe>
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import http from 'node:http';
@@ -12,7 +12,7 @@ import path from 'node:path';
 
 const EXE = process.argv[2];
 if (!EXE) {
-  console.error('用法: node tools/Test-FwAdaptiveMulti.mjs <fetchweir.exe>');
+  console.error('用法: node tools/Test-FwAdaptiveMulti.mjs <grabio.exe>');
   process.exit(2);
 }
 const TASKS = 4;

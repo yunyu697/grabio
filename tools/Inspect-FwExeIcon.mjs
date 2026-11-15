@@ -8,7 +8,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const EXE = process.argv[2] || path.join('D:', 'fw-build', 'fetchweir', 'debug', 'fetchweir.exe');
+const EXE = process.argv[2] || path.join('D:', 'fw-build', 'grabio', 'debug', 'grabio.exe');
 const OUT = path.join(ROOT, 'docs', 'ui-shots');
 
 const RT_ICON = 3;

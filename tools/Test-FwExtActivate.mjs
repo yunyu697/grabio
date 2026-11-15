@@ -1,5 +1,5 @@
-// 端到端验收：真实 Chromium 加载扩展 → 浮动条出现 → 点击「在 Fetchweir 中打开」→ 桌面端窗口被唤起。
-// 用法：node tools/Test-FwExtActivate.mjs <Fetchweir.exe>
+// 端到端验收：真实 Chromium 加载扩展 → 浮动条出现 → 点击「在 Grabio 中打开」→ 桌面端窗口被唤起。
+// 用法：node tools/Test-FwExtActivate.mjs <Grabio.exe>
 import { execFileSync, spawn } from 'node:child_process';
 import fs from 'node:fs';
 import http from 'node:http';
@@ -12,7 +12,7 @@ const EXE = process.argv[2];
 const EDGE = process.env.FW_EDGE_PATH || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EXT = path.join(ROOT, 'extension');
-const DATA = path.join(process.env.APPDATA || os.homedir(), 'Fetchweir');
+const DATA = path.join(process.env.APPDATA || os.homedir(), 'Grabio');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const results = [];
 const ok = (n, d) => results.push({ name: n, pass: true, detail: d });
@@ -133,7 +133,7 @@ async function clickBarOpen(page) {
     if (n.contentDocument) walk(n.contentDocument);
   };
   walk(doc.root);
-  const want = targets.find((b) => (b.children || []).some((c) => (c.nodeValue || '').includes('在 Fetchweir 中打开')));
+  const want = targets.find((b) => (b.children || []).some((c) => (c.nodeValue || '').includes('在 Grabio 中打开')));
   if (!want) throw new Error(`未找到浮动条按钮（共 ${targets.length} 个按钮）`);
   const box = await page.send('DOM.getBoxModel', { backendNodeId: want.backendNodeId });
   const q = box.model.border;
@@ -172,7 +172,7 @@ try {
   await sleep(1800);
   const bar = (await page.send('Runtime.evaluate', {
     returnByValue: true,
-    expression: `(() => { const h = document.getElementById('fetchweir-bar-host'); return { host: !!h, display: h ? getComputedStyle(h).display : null }; })()`,
+    expression: `(() => { const h = document.getElementById('grabio-bar-host'); return { host: !!h, display: h ? getComputedStyle(h).display : null }; })()`,
   })).result.value;
   if (bar && bar.host && bar.display !== 'none') ok('浮动条出现', JSON.stringify(bar));
   else bad('浮动条出现', JSON.stringify(bar));

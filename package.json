@@ -1,8 +1,8 @@
 {
-  "name": "fetchweir",
+  "name": "grabio",
   "private": true,
   "version": "0.0.0",
-  "description": "Fetchweir 下载管理器（Tauri 2 + Rust）",
+  "description": "Grabio 下载管理器（Tauri 2 + Rust）",
   "scripts": {
     "tauri": "tauri",
     "dev": "tauri dev",

@@ -16,8 +16,8 @@
 param(
   [string]$FwExtensionDir = 'extension',
   [string]$FwOutDir = 'dist/extension-firefox',
-  [string]$FwZipPath = 'dist/fetchweir-extension-firefox.zip',
-  [string]$FwGeckoId = 'fetchweir@yunyu697'
+  [string]$FwZipPath = 'dist/grabio-extension-firefox.zip',
+  [string]$FwGeckoId = 'grabio@yunyu697'
 )
 
 $ErrorActionPreference = 'Stop'

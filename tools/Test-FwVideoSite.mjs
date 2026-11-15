@@ -1,7 +1,7 @@
 // 真实站点视频链路实测：界面解析 → 选择格式 → 加入下载 → 解析器进度 → ffprobe 核对成品。
 //
 // 应用以 FW_SMOKE=1 隐藏启动，只通过 WebView2 远程调试操作；下载目录用临时目录，不污染 Downloads。
-// 用法：node tools/Test-FwVideoSite.mjs <fetchweir.exe> <视频页 URL> [formatId|auto] [标签]
+// 用法：node tools/Test-FwVideoSite.mjs <grabio.exe> <视频页 URL> [formatId|auto] [标签]
 import { execFileSync, spawn } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
@@ -14,7 +14,7 @@ const PAGE = process.argv[3];
 const WANT = process.argv[4] || 'auto';
 const LABEL = process.argv[5] || 'site';
 if (!EXE || !PAGE) {
-  console.error('用法: node tools/Test-FwVideoSite.mjs <fetchweir.exe> <url> [formatId|auto] [label]');
+  console.error('用法: node tools/Test-FwVideoSite.mjs <grabio.exe> <url> [formatId|auto] [label]');
   process.exit(2);
 }
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');

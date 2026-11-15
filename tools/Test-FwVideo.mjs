@@ -7,7 +7,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 const EXE = process.argv[2];
-const DATA = path.join(process.env.LOCALAPPDATA || os.homedir(), 'Fetchweir');
+const DATA = path.join(process.env.LOCALAPPDATA || os.homedir(), 'Grabio');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const results = [];
 const ok = (n, d) => results.push({ name: n, pass: true, detail: d });

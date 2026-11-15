@@ -1,6 +1,6 @@
 // 离屏验证：扩展 → Native Messaging 宿主 → 主进程 回环链路。
 // 不启动任何可见窗口（应用以 FW_SMOKE=1 隐藏运行），不下发真实键鼠事件。
-// 用法：node tools/Test-FwNm.mjs <fetchweir.exe>
+// 用法：node tools/Test-FwNm.mjs <grabio.exe>
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import http from 'node:http';
@@ -10,10 +10,10 @@ import path from 'node:path';
 
 const EXE = process.argv[2];
 if (!EXE || !fs.existsSync(EXE)) {
-  console.error('用法: node tools/Test-FwNm.mjs <fetchweir.exe>');
+  console.error('用法: node tools/Test-FwNm.mjs <grabio.exe>');
   process.exit(2);
 }
-const DATA = path.join(process.env.LOCALAPPDATA || os.homedir(), 'Fetchweir');
+const DATA = path.join(process.env.LOCALAPPDATA || os.homedir(), 'Grabio');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const results = [];
 const ok = (name, detail) => results.push({ name, pass: true, detail });
@@ -134,8 +134,8 @@ try {
     const edge = path.join(home, 'Library/Application Support/Microsoft Edge/NativeMessagingHosts');
     const linux = path.join(home, '.config/microsoft-edge/NativeMessagingHosts');
     const dir = fs.existsSync(edge) ? edge : linux;
-    if (fs.existsSync(path.join(dir, 'dev.fetchweir.nmh.json'))) ok('用户目录清单', path.join(dir, 'dev.fetchweir.nmh.json'));
-    else bad('用户目录清单', path.join(dir, 'dev.fetchweir.nmh.json'));
+    if (fs.existsSync(path.join(dir, 'dev.grabio.nmh.json'))) ok('用户目录清单', path.join(dir, 'dev.grabio.nmh.json'));
+    else bad('用户目录清单', path.join(dir, 'dev.grabio.nmh.json'));
   }
 
   host = spawn(EXE, ['--nm-host'], { stdio: ['pipe', 'pipe', 'ignore'], windowsHide: true });

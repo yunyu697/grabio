@@ -1,5 +1,5 @@
 // 性能量化探针：冷启动、空闲 CPU/内存、点击响应、主线程长任务。
-// 用法：node tools/Measure-FwPerf.mjs --exe <Fetchweir.exe> --label before [--load]
+// 用法：node tools/Measure-FwPerf.mjs --exe <Grabio.exe> --label before [--load]
 // 依赖 WebView2 远程调试端口（脚本自动设置 WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS）。
 import { spawn, execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -136,7 +136,7 @@ async function evaluate(ws, id, expression, awaitPromise = false) {
   return r.result.value;
 }
 
-const dataDir = path.join(process.env.APPDATA || os.homedir(), 'Fetchweir');
+const dataDir = path.join(process.env.APPDATA || os.homedir(), 'Grabio');
 const readyFile = path.join(dataDir, 'ui-ready.txt');
 
 if (fs.existsSync(readyFile)) fs.unlinkSync(readyFile);

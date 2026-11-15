@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fetchweir · 下载管理器</title>
+<title>Grabio · 下载管理器</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%236C8CFF'/%3E%3Cpath d='M12 5v10M8 11l4 4 4-4M5 19h14' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
 /* ============ tokens ============ */
@@ -751,7 +751,7 @@ html[data-theme="light"] .sn-thumb .mini{color:#4A5573;opacity:.85}
         </svg>
       </div>
       <div>
-        <div class="brand-name">Fetchweir</div>
+        <div class="brand-name">Grabio</div>
       </div>
       <div class="brand-sub" style="margin-left:2px">下载管理</div>
     </div>
@@ -1917,7 +1917,7 @@ const store = {
 
 /* ---------- 主题 ---------- */
 const mq = window.matchMedia('(prefers-color-scheme: light)');
-let themePref = store.get('fetchweir-theme', 'dark');
+let themePref = store.get('grabio-theme', 'dark');
 
 function paintTheme() {
   const t = themePref === 'system' ? (mq.matches ? 'light' : 'dark') : themePref;
@@ -1929,12 +1929,12 @@ paintTheme();
 
 $('#themeBtn').addEventListener('click', () => {
   themePref = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  store.set('fetchweir-theme', themePref);
+  store.set('grabio-theme', themePref);
   paintTheme();
 });
 $$('[data-theme-set]').forEach(b => b.addEventListener('click', () => {
   themePref = b.dataset.themeSet;
-  store.set('fetchweir-theme', themePref);
+  store.set('grabio-theme', themePref);
   paintTheme();
 }));
 
@@ -2115,9 +2115,9 @@ $$('.sw-dot').forEach(d => d.addEventListener('click', () => {
   d.classList.add('on');
   root.style.setProperty('--accent', d.dataset.accent);
   root.style.setProperty('--accent-2', lighten(d.dataset.accent, 0.22));
-  store.set('fetchweir-accent', d.dataset.accent);
+  store.set('grabio-accent', d.dataset.accent);
 }));
-const savedAccent = store.get('fetchweir-accent', '');
+const savedAccent = store.get('grabio-accent', '');
 if (savedAccent) {
   const dot = $$('.sw-dot').find(d => d.dataset.accent === savedAccent);
   if (dot) dot.click();

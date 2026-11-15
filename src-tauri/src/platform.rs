@@ -14,9 +14,9 @@ use serde::Serialize;
 
 use crate::settings;
 
-pub const TASK_NAME: &str = "FetchweirElevated";
+pub const TASK_NAME: &str = "GrabioElevated";
 const RUN_KEY: &str = r"HKCU\Software\Microsoft\Windows\CurrentVersion\Run";
-const RUN_VALUE: &str = "Fetchweir";
+const RUN_VALUE: &str = "Grabio";
 
 #[derive(Clone, Debug, Serialize)]
 #[serde(rename_all = "camelCase")]

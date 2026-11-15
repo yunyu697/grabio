@@ -361,7 +361,7 @@ impl Engine {
             .read_timeout(Duration::from_secs(settings.read_timeout_sec.clamp(5, 300) as u64))
             .redirect(reqwest::redirect::Policy::limited(10))
             .user_agent(format!(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Fetchweir/{}",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Grabio/{}",
                 crate::VERSION
             ))
             .build()

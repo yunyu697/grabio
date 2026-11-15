@@ -19,7 +19,7 @@
 
 .EXAMPLE
   # 同时打 CRX3（私钥不入库，由发布者本地持有）
-  ./tools/Build-FwExtension.ps1 -FwKeyPath D:\keys\fetchweir-extension.pem
+  ./tools/Build-FwExtension.ps1 -FwKeyPath D:\keys\grabio-extension.pem
 #>
 param(
   [string]$FwExtensionDir = 'extension',
@@ -40,7 +40,7 @@ New-Item -ItemType Directory -Force -Path $FwOutDir | Out-Null
 $out = (Resolve-Path $FwOutDir).Path
 
 # 1) 商店上传用的 zip（清单必须在压缩包根目录）
-$zipPath = Join-Path $out "fetchweir-extension-$version.zip"
+$zipPath = Join-Path $out "grabio-extension-$version.zip"
 if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
 Compress-Archive -Path (Join-Path $src '*') -DestinationPath $zipPath -CompressionLevel Optimal
 Write-Host "已生成 zip：$zipPath（$([math]::Round((Get-Item $zipPath).Length / 1KB, 1)) KB）"
@@ -48,9 +48,9 @@ Write-Host "已生成 zip：$zipPath（$([math]::Round((Get-Item $zipPath).Lengt
 if (-not $FwKeyPath) {
   Write-Host ''
   Write-Host '未提供 -FwKeyPath，跳过 .crx。'
-  Write-Host '生成签名密钥：openssl genrsa -out fetchweir-extension.pem 2048'
+  Write-Host '生成签名密钥：openssl genrsa -out grabio-extension.pem 2048'
   Write-Host '若用的是 OpenSSL 1.x（PKCS#1 格式），浏览器会拒绝，需要转换：'
-  Write-Host '  openssl pkcs8 -topk8 -nocrypt -in fetchweir-extension.pem -out fetchweir-extension-pkcs8.pem'
+  Write-Host '  openssl pkcs8 -topk8 -nocrypt -in grabio-extension.pem -out grabio-extension-pkcs8.pem'
   Write-Host '（密钥须与 manifest.json 的 key 字段配对，否则扩展 ID 变化、Native Messaging 会失效）'
   return
 }
@@ -117,7 +117,7 @@ if ($bytes.Length -lt 12 -or [Text.Encoding]::ASCII.GetString($bytes, 0, 4) -ne 
 $crxVersion = [BitConverter]::ToUInt32($bytes, 4)
 if ($crxVersion -ne 3) { throw "CRX 版本为 $crxVersion，预期 CRX3" }
 
-$crxPath = Join-Path $out "fetchweir-extension-$version.crx"
+$crxPath = Join-Path $out "grabio-extension-$version.crx"
 Move-Item $rawCrx $crxPath -Force
 Remove-Item $stage -Recurse -Force
 

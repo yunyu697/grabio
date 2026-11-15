@@ -1,7 +1,7 @@
 #Requires -Version 7.0
 <#
 .SYNOPSIS
-  Fetchweir 本地构建入口：自动补全 Rust / mingw 工具链 PATH 后执行 cargo 或 tauri 命令。
+  Grabio 本地构建入口：自动补全 Rust / mingw 工具链 PATH 后执行 cargo 或 tauri 命令。
 .DESCRIPTION
   在只有 GNU 工具链的 Windows 机器上，rustc 需要 dlltool.exe / windres.exe；
   且 mingw 安装路径不能含空格，否则 ld 会解析失败。脚本按顺序探测可用路径。
@@ -45,7 +45,7 @@ $FwCargoArgs = @('--manifest-path', (Join-Path $FwRepoRoot 'src-tauri\Cargo.toml
 
 # windres 无法处理含空格的输出路径：仓库路径有空格时，把 target 目录指到无空格位置
 if ($FwRepoRoot -match ' ') {
-    $FwTargetDir = 'D:\fw-build\fetchweir'
+    $FwTargetDir = 'D:\fw-build\grabio'
     if (-not (Test-Path $FwTargetDir)) {
         New-Item -ItemType Directory -Path $FwTargetDir -Force | Out-Null
     }
@@ -66,7 +66,7 @@ switch ($FwTask) {
             $FwBundleRoot = if ($env:CARGO_TARGET_DIR) { $env:CARGO_TARGET_DIR } else { Join-Path $FwRepoRoot 'src-tauri\target' }
             $FwNsisDir = Join-Path $FwBundleRoot 'release\bundle\nsis'
             $FwVer = (Get-Content (Join-Path $FwRepoRoot 'version.json') -Raw | ConvertFrom-Json).version
-            $FwSetup = Join-Path $FwNsisDir "Fetchweir_${FwVer}_x64-setup.exe"
+            $FwSetup = Join-Path $FwNsisDir "Grabio_${FwVer}_x64-setup.exe"
             $FwBackup = "$FwSetup.userbak"
             $FwHadUser = Test-Path $FwSetup
             if ($FwHadUser) { Copy-Item $FwSetup $FwBackup -Force }
@@ -109,8 +109,8 @@ switch ($FwTask) {
         $FwRelDist = Join-Path $FwRepoRoot 'dist'
         New-Item -ItemType Directory -Path $FwRelDist -Force | Out-Null
         $FwRelNames = @(
-            "Fetchweir_${FwRelVer}_x64-setup.exe",
-            "Fetchweir_${FwRelVer}_x64-setup-allusers.exe"
+            "Grabio_${FwRelVer}_x64-setup.exe",
+            "Grabio_${FwRelVer}_x64-setup-allusers.exe"
         )
         foreach ($FwName in $FwRelNames) {
             $FwSrc = Join-Path $FwRelNsis $FwName

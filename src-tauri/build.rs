@@ -19,7 +19,7 @@ fn main() {
         .to_string();
 
     validate_version(&version);
-    println!("cargo:rustc-env=FETCHWEIR_VERSION={version}");
+    println!("cargo:rustc-env=GRABIO_VERSION={version}");
 
     tauri_build::build();
 
