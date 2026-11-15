@@ -120,7 +120,13 @@ async function cdp(port) {
   throw new Error('浏览器 CDP 未就绪');
 }
 
-// 浮动条在 closed shadow root 里：用 CDP DOM 树（pierce）找到按钮并取坐标，再用真实鼠标事件点击。
+// 浮动条在 closed shadow root 里：用 CDP DOM 树（pierce）找到按钮并取坐标，再用指针事件点击。
+//
+// 这里用 Input.dispatchMouseEvent 而不是 element.click()，是因为本项要验证的是「用户真的点得到」：
+// 按钮所在的浮动条是注入到第三方页面的浮层，必须证明它的命中位置没被页面其他元素盖住、
+// 坐标落在按钮上。element.click() 直接调 DOM 事件，绕过命中测试，按钮被遮挡也会"通过"。
+// CDP 的输入事件只送进目标页面，不移动真实光标、不进桌面输入队列，不占用用户鼠标键盘。
+// 其它只需要「点一下某个元素」的地方一律用 element.click()，见 docs/验证基线.md。
 async function clickBarOpen(page) {
   await page.send('DOM.enable');
   const doc = await page.send('DOM.getDocument', { depth: -1, pierce: true });

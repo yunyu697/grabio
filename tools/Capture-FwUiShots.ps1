@@ -28,14 +28,10 @@ using System.Runtime.InteropServices;
 public class FwWin {
     [DllImport("user32.dll")] public static extern bool SetProcessDpiAwarenessContext(IntPtr ctx);
     [DllImport("user32.dll")] public static extern bool SetWindowPos(IntPtr h, IntPtr after, int x, int y, int cx, int cy, uint flags);
-    [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
     [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr h, int cmd);
     [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out RECT r);
     [DllImport("user32.dll")] public static extern bool GetClientRect(IntPtr h, out RECT r);
     [DllImport("user32.dll")] public static extern uint GetDpiForWindow(IntPtr h);
-    [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr h, ref POINT p);
-    [DllImport("user32.dll")] public static extern bool SetCursorPos(int x, int y);
-    [DllImport("user32.dll")] public static extern void mouse_event(uint f, uint dx, uint dy, uint d, IntPtr e);
     [StructLayout(LayoutKind.Sequential)] public struct POINT { public int X, Y; }
     [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr h);
     [DllImport("user32.dll")] public static extern bool PrintWindow(IntPtr h, IntPtr hdc, uint flags);
@@ -140,7 +136,17 @@ function Save-FwShot {
     Set-FwTheme -theme $Theme -color $Color
     [IO.File]::WriteAllText((Join-Path $fwData 'tasks.json'), (New-FwTasks), $fwUtf8)
 
+    $fwDebugPort = 0
+    if ($ClickAt) {
+        # 本张图要切视图：挑一个空闲回环端口，让 WebView2 开出 CDP 调试端口。
+        $ln = New-Object System.Net.Sockets.TcpListener ([System.Net.IPAddress]::Loopback), 0
+        $ln.Start()
+        $fwDebugPort = ([System.Net.IPEndPoint]$ln.LocalEndpoint).Port
+        $ln.Stop()
+        $env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = "--remote-debugging-port=$fwDebugPort"
+    }
     $proc = Start-Process -FilePath $FwExe -PassThru
+    Remove-Item Env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS -ErrorAction SilentlyContinue
     $h = [IntPtr]::Zero
     for ($i = 0; $i -lt 60 -and $h -eq [IntPtr]::Zero; $i++) {
         Start-Sleep -Milliseconds 250
@@ -163,34 +169,35 @@ function Save-FwShot {
     $dH = ($r0.Bottom - $r0.Top) - ($c0.Bottom - $c0.Top)
     $w = [int]($LogicalW * $scale) + $dW
     $hh = [int]($LogicalH * $scale) + $dH
-    [void][FwWin]::SetWindowPos($h, [IntPtr]::Zero, 0, 0, $w, $hh, 0x0004)  # SWP_NOZORDER
-    [void][FwWin]::SetForegroundWindow($h)
+    [void][FwWin]::SetWindowPos($h, [IntPtr]::Zero, 0, 0, $w, $hh, 0x0004)  # SWP_NOZORDER：只改尺寸，不动 Z 序、不抬前台
     Start-Sleep -Milliseconds 1800   # 等 WebView2 重排 + 字体落位
 
     $c = New-Object FwWin+RECT
     [void][FwWin]::GetClientRect($h, [ref]$c)
-    $pt = New-Object FwWin+POINT
-    [void][FwWin]::ClientToScreen($h, [ref]$pt)
+    [void][FwWin]::GetWindowRect($h, [ref]$r0)
 
-    # 需要切到别的视图（设置页）时，按逻辑坐标点一下侧栏入口。
+    # 需要切到别的视图（设置页）时，用 CDP 在页面里点元素。
+    # 不开远程调试端口时无法切视图；这里只在本张图需要点击时才开，且只绑 127.0.0.1。
     if ($ClickAt) {
-        $xy = $ClickAt.Split(',')
-        $cx = $pt.X + [int]([double]$xy[0] * $scale)
-        $cy = $pt.Y + [int]([double]$xy[1] * $scale)
-        [void][FwWin]::SetCursorPos($cx, $cy)
-        Start-Sleep -Milliseconds 150
-        [FwWin]::mouse_event(0x0002, 0, 0, 0, [IntPtr]::Zero)
-        [FwWin]::mouse_event(0x0004, 0, 0, 0, [IntPtr]::Zero)
+        & node (Join-Path $PSScriptRoot 'Click-FwUi.mjs') $fwDebugPort $ClickAt | Out-Null
+        if ($LASTEXITCODE -ne 0) { throw "点击 $ClickAt 失败（CDP）" }
         Start-Sleep -Milliseconds 900
     }
     $pw = $c.Right - $c.Left
     $ph = $c.Bottom - $c.Top
-    $bmp = New-Object System.Drawing.Bitmap $pw, $ph
-    $g = [System.Drawing.Graphics]::FromImage($bmp)
-    # PrintWindow 只取窗口自身内容，不会被别的窗口盖住；WebView2 需 PW_RENDERFULLCONTENT。
-    # 注意 PrintWindow 画的是整个窗口矩形，客户区在 (dW/2, dH/2) 处偏移，这里用屏幕拷贝更稳。
-    $g.CopyFromScreen($pt.X, $pt.Y, 0, 0, $bmp.Size)
+    # PrintWindow 只问目标窗口要内容：被别的窗口挡住也能截、不需要前台。
+    # WebView2 需 PW_RENDERFULLCONTENT；它画的是整个窗口矩形，客户区居中偏移，截完裁掉边框。
+    $fwW = $r0.Right - $r0.Left
+    $fwH = $r0.Bottom - $r0.Top
+    $full = New-Object System.Drawing.Bitmap $fwW, $fwH
+    $g = [System.Drawing.Graphics]::FromImage($full)
+    $hdc = $g.GetHdc()
+    [void][FwWin]::PrintWindow($h, $hdc, 2)
+    $g.ReleaseHdc($hdc)
     $g.Dispose()
+    $crop = New-Object System.Drawing.Rectangle ([int](($fwW - $pw) / 2)), ([int](($fwH - $ph) / 2)), $pw, $ph
+    $bmp = $full.Clone($crop, $full.PixelFormat)
+    $full.Dispose()
     $path = Join-Path $fwOutDir ($Name + '.png')
     $bmp.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
     $bmp.Dispose()
@@ -216,8 +223,8 @@ try {
     Save-FwShot -Name 'theme-emerald-light-1180' -LogicalW 1180 -LogicalH 760 -Theme 'light' -Color 'emerald'
     Save-FwShot -Name 'theme-amber-light-1180'   -LogicalW 1180 -LogicalH 760 -Theme 'light' -Color 'amber'
     # 设置页：开关、色卡、输入框、导航项都在这里，单独补两张极端宽度
-    Save-FwShot -Name 'settings-1440-dark-violet' -LogicalW 1440 -LogicalH 900 -Theme 'dark'  -Color 'violet' -ClickAt '33,703'
-    Save-FwShot -Name 'settings-760-light-violet' -LogicalW 760  -LogicalH 680 -Theme 'light' -Color 'violet' -ClickAt '24,612'
+    Save-FwShot -Name 'settings-1440-dark-violet' -LogicalW 1440 -LogicalH 900 -Theme 'dark'  -Color 'violet' -ClickAt '#navSettings'
+    Save-FwShot -Name 'settings-760-light-violet' -LogicalW 760  -LogicalH 680 -Theme 'light' -Color 'violet' -ClickAt '#navSettings'
 }
 finally {
     Stop-FwApp
