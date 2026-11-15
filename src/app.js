@@ -178,7 +178,7 @@
     if (!text) return;
     const msg = el('div', 'dim err-color', text);
     msg.dataset.areaErr = '1';
-    msg.style.padding = '6px 2px';
+    msg.style.padding = 'var(--space-6) var(--space-2)';
     msg.style.flexBasis = '100%';
     container.prepend(msg);
   }
@@ -451,8 +451,8 @@
     const more = el('button', 'ico');
     more.innerHTML = ACT_ICON.more;
     more.title = '查看详情';
-    more.style.width = '28px';
-    more.style.height = '28px';
+    more.style.width = 'var(--ctl-md)';
+    more.style.height = 'var(--ctl-md)';
     more.dataset.act = 'detail';
 
     row.append(cbWrap, thumb, main, size, speed, stCell, acts, more);
