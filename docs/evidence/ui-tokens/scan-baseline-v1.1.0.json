@@ -1,0 +1,5564 @@
+{
+  "summary": {
+    "files": [
+      "src/app.js",
+      "src/index.html",
+      "src/styles.css"
+    ],
+    "errors": 523,
+    "errorsExcepted": 0,
+    "infos": 93,
+    "exceptions": 0,
+    "staleExceptions": 0
+  },
+  "errors": [
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 146,
+      "selector": "body",
+      "text": "font:400 13px/1.55 var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 154,
+      "selector": "::-webkit-scrollbar-thumb",
+      "text": "border-radius:8px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 165,
+      "selector": ".titlebar",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 165,
+      "selector": ".titlebar",
+      "text": "padding:0 10px 0 16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 169,
+      "selector": ".brand",
+      "text": "gap:9px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 171,
+      "selector": ".mark",
+      "text": "border-radius:7px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 177,
+      "selector": "html[data-theme=\"dark\"] .mark img.brand-logo-dark html[data-theme=\"light\"] .mark img.brand-logo-light .brand-name",
+      "text": "font-size:13px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 178,
+      "selector": ".brand-sub",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 178,
+      "selector": ".brand-sub",
+      "text": "margin-top:-2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 181,
+      "selector": ".tb-pill",
+      "text": "gap:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 181,
+      "selector": ".tb-pill",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 182,
+      "selector": ".tb-pill",
+      "text": "border-radius:20px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 182,
+      "selector": ".tb-pill",
+      "text": "padding:3px 10px 3px 8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 185,
+      "selector": ".wincontrols",
+      "text": "gap:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 185,
+      "selector": ".wincontrols",
+      "text": "margin-left:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 186,
+      "selector": ".wc",
+      "text": "height:26px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 186,
+      "selector": ".wc",
+      "text": "border-radius:6px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 188,
+      "selector": ".wc.close:hover",
+      "text": "background:#E5484D",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 188,
+      "selector": ".wc.close:hover",
+      "text": "color:#fff",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 194,
+      "selector": ".sidebar",
+      "text": "padding:14px 12px 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 194,
+      "selector": ".sidebar",
+      "text": "gap:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 197,
+      "selector": ".grp-label",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 199,
+      "selector": ".grp-label",
+      "text": "padding:0 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 199,
+      "selector": ".grp-label",
+      "text": "margin:14px 0 6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 202,
+      "selector": ".sb",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 202,
+      "selector": ".sb",
+      "text": "padding:0 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 203,
+      "selector": ".sb",
+      "text": "font-size:13px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 215,
+      "selector": ".sb.active::before",
+      "text": "left:-12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 215,
+      "selector": ".sb.active::before",
+      "text": "top:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 215,
+      "selector": ".sb.active::before",
+      "text": "bottom:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 216,
+      "selector": ".sb.active::before",
+      "text": "border-radius:0 2px 2px 0",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 218,
+      "selector": ".sb .n",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 221,
+      "selector": ".sb-badge",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 221,
+      "selector": ".sb-badge",
+      "text": "padding:1px 6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 221,
+      "selector": ".sb-badge",
+      "text": "border-radius:20px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 224,
+      "selector": ".side-foot",
+      "text": "padding-top:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 226,
+      "selector": ".limit-card",
+      "text": "padding:11px 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 229,
+      "selector": ".limit-head",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 229,
+      "selector": ".limit-head",
+      "text": "margin-bottom:7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 230,
+      "selector": ".limit-val",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 231,
+      "selector": ".mini-track",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 233,
+      "selector": ".limit-foot",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 233,
+      "selector": ".limit-foot",
+      "text": "margin-top:7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 234,
+      "selector": ".user",
+      "text": "gap:9px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 234,
+      "selector": ".user",
+      "text": "padding:8px 6px 2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 234,
+      "selector": ".user",
+      "text": "margin-top:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 236,
+      "selector": ".avatar",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 240,
+      "selector": ".user .who",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 241,
+      "selector": ".user .who small",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 257,
+      "selector": ".statusbar",
+      "text": "gap:16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 257,
+      "selector": ".statusbar",
+      "text": "padding:0 16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 258,
+      "selector": ".statusbar",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 262,
+      "selector": ".statusbar .right",
+      "text": "gap:16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 265,
+      "selector": ".h1",
+      "text": "font-size:19px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 266,
+      "selector": ".h2",
+      "text": "font-size:13px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 267,
+      "selector": ".muted",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 268,
+      "selector": ".dim",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 269,
+      "selector": ".row",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 270,
+      "selector": ".head-row",
+      "text": "gap:12px 16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 270,
+      "selector": ".head-row",
+      "text": "margin-bottom:16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 271,
+      "selector": ".head-actions",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 274,
+      "selector": ".btn",
+      "text": "gap:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 274,
+      "selector": ".btn",
+      "text": "height:32px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 275,
+      "selector": ".btn",
+      "text": "padding:0 13px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 276,
+      "selector": ".btn",
+      "text": "font:500 12.5px var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 295,
+      "selector": ".btn.sm",
+      "text": "height:27px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 295,
+      "selector": ".btn.sm",
+      "text": "padding:0 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 295,
+      "selector": ".btn.sm",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 295,
+      "selector": ".btn.sm",
+      "text": "border-radius:6px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 298,
+      "selector": ".ico",
+      "text": "height:30px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "border-width",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 298,
+      "selector": ".ico",
+      "text": "border:1px solid transparent",
+      "hint": "描边宽度必须用 var(--bw) / var(--bw-strong)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 306,
+      "selector": ".field",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 306,
+      "selector": ".field",
+      "text": "height:32px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 306,
+      "selector": ".field",
+      "text": "padding:0 11px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 311,
+      "selector": ".field input",
+      "text": "font:400 12.5px var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 317,
+      "selector": ".chip",
+      "text": "height:26px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 318,
+      "selector": ".chip",
+      "text": "padding:0 11px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 318,
+      "selector": ".chip",
+      "text": "border-radius:20px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 319,
+      "selector": ".chip",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 320,
+      "selector": ".chip",
+      "text": "gap:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 328,
+      "selector": ".chip .c",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 333,
+      "selector": ".card-h",
+      "text": "padding:13px 16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 334,
+      "selector": ".card-b",
+      "text": "padding:16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 336,
+      "selector": ".stat-grid",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 336,
+      "selector": ".stat-grid",
+      "text": "margin-bottom:16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 338,
+      "selector": ".stat",
+      "text": "padding:12px 14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 341,
+      "selector": ".stat .k",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 341,
+      "selector": ".stat .k",
+      "text": "gap:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 342,
+      "selector": ".stat .v",
+      "text": "font-size:20px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 342,
+      "selector": ".stat .v",
+      "text": "margin-top:3px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 342,
+      "selector": ".stat .v",
+      "text": "gap:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 343,
+      "selector": ".stat .v span",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 344,
+      "selector": ".stat .d",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 344,
+      "selector": ".stat .d",
+      "text": "margin-top:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 345,
+      "selector": ".stat .u",
+      "text": "right:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 345,
+      "selector": ".stat .u",
+      "text": "top:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 345,
+      "selector": ".stat .u",
+      "text": "border-radius:7px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 348,
+      "selector": ".bar",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 349,
+      "selector": ".bar i",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 359,
+      "selector": ".toolbar",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 359,
+      "selector": ".toolbar",
+      "text": "margin-bottom:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 363,
+      "selector": ".list-head",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 363,
+      "selector": ".list-head",
+      "text": "padding:0 12px 7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 363,
+      "selector": ".list-head",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 368,
+      "selector": ".list-head .hbtn",
+      "text": "gap:3px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 373,
+      "selector": ".list-head .hbtn .ar",
+      "text": "font-size:9px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 377,
+      "selector": ".task",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 377,
+      "selector": ".task",
+      "text": "padding:0 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "border-width",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 378,
+      "selector": ".task",
+      "text": "border:1px solid transparent",
+      "hint": "描边宽度必须用 var(--bw) / var(--bw-strong)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 386,
+      "selector": ".t-acts",
+      "text": "gap:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 387,
+      "selector": ".tbtn",
+      "text": "height:24px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 388,
+      "selector": ".tbtn",
+      "text": "padding:0 6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 388,
+      "selector": ".tbtn",
+      "text": "border-radius:6px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 389,
+      "selector": ".tbtn",
+      "text": "gap:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 389,
+      "selector": ".tbtn",
+      "text": "font:500 11px var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 401,
+      "selector": ".nw",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 403,
+      "selector": ".sort-ctl",
+      "text": "gap:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 404,
+      "selector": ".sort-ctl .lbl",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 405,
+      "selector": "#sortDir .ar",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 405,
+      "selector": "#sortDir .ar",
+      "text": "line-height:1",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 407,
+      "selector": ".task-bulk",
+      "text": "left:18px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 407,
+      "selector": ".task-bulk",
+      "text": "right:18px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 407,
+      "selector": ".task-bulk",
+      "text": "bottom:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 408,
+      "selector": ".task-bulk",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 408,
+      "selector": ".task-bulk",
+      "text": "padding:9px 14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 411,
+      "selector": ".task-bulk",
+      "text": "box-shadow:0 14px 30px -14px rgba(0,0,0,.65)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 415,
+      "selector": ".main.has-sel .view[data-view=\"main\"]",
+      "text": "bottom:66px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 416,
+      "selector": ".task-bulk .sum",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 418,
+      "selector": ".task-bulk .right",
+      "text": "gap:7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 422,
+      "selector": ".add-panel",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 422,
+      "selector": ".add-panel",
+      "text": "margin-bottom:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 423,
+      "selector": ".add-panel .field",
+      "text": "height:36px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 425,
+      "selector": ".add-panel .btn",
+      "text": "height:36px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 429,
+      "selector": ".empty",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 429,
+      "selector": ".empty",
+      "text": "padding:62px 20px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 434,
+      "selector": ".empty .big",
+      "text": "border-radius:16px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 440,
+      "selector": ".cb",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 450,
+      "selector": ".modal",
+      "text": "padding:22px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 451,
+      "selector": ".modal",
+      "text": "background:color-mix(in srgb,#05070C 46%,transparent)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 457,
+      "selector": ".modal-card",
+      "text": "border-radius:14px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 458,
+      "selector": ".modal-card",
+      "text": "box-shadow:0 32px 80px -24px rgba(0,0,0,.75)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 462,
+      "selector": ".modal-bar",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 462,
+      "selector": ".modal-bar",
+      "text": "padding:9px 10px 9px 16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 465,
+      "selector": ".modal-bar .t",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 466,
+      "selector": ".modal-bar .dim",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 468,
+      "selector": ".modal-x",
+      "text": "height:28px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 468,
+      "selector": ".modal-x",
+      "text": "border-radius:7px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 473,
+      "selector": ".modal-body",
+      "text": "padding:16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 474,
+      "selector": ".modal-body .det-head",
+      "text": "margin-bottom:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 477,
+      "selector": ".thumb",
+      "text": "border-radius:9px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 480,
+      "selector": ".thumb.v",
+      "text": "background:linear-gradient(150deg,#243055,#161B2B)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 480,
+      "selector": ".thumb.v",
+      "text": "color:#9FB4E8",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 481,
+      "selector": ".thumb.a",
+      "text": "background:linear-gradient(150deg,#1E3B36,#141F1E)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 481,
+      "selector": ".thumb.a",
+      "text": "color:#7BD9C4",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 482,
+      "selector": ".thumb.i",
+      "text": "background:linear-gradient(150deg,#3A2A42,#1D1622)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 482,
+      "selector": ".thumb.i",
+      "text": "color:#C99BE8",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 483,
+      "selector": ".thumb.d",
+      "text": "background:linear-gradient(150deg,#3C3221,#1F1A12)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 483,
+      "selector": ".thumb.d",
+      "text": "color:#E5C489",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 489,
+      "selector": ".t-name",
+      "text": "font-size:13px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 489,
+      "selector": ".t-name",
+      "text": "gap:7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 490,
+      "selector": ".t-sub",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 490,
+      "selector": ".t-sub",
+      "text": "gap:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 490,
+      "selector": ".t-sub",
+      "text": "margin-top:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 491,
+      "selector": ".t-sub .sep",
+      "text": "border-radius:2px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 493,
+      "selector": ".t-bar",
+      "text": "margin-top:7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 493,
+      "selector": ".t-bar",
+      "text": "gap:9px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 495,
+      "selector": ".t-bar .pct",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 496,
+      "selector": ".t-size",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 497,
+      "selector": ".t-size b",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 498,
+      "selector": ".t-size small",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 499,
+      "selector": ".t-speed",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 500,
+      "selector": ".t-speed small",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 502,
+      "selector": ".st",
+      "text": "gap:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 502,
+      "selector": ".st",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 502,
+      "selector": ".st",
+      "text": "padding:3px 8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 503,
+      "selector": ".st",
+      "text": "border-radius:6px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 513,
+      "selector": ".tag",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 514,
+      "selector": ".tag",
+      "text": "padding:1px 5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 514,
+      "selector": ".tag",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 524,
+      "selector": ".det-head",
+      "text": "gap:16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 524,
+      "selector": ".det-head",
+      "text": "margin-bottom:18px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 525,
+      "selector": ".det-icon",
+      "text": "border-radius:12px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 526,
+      "selector": ".det-title",
+      "text": "font-size:18px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 526,
+      "selector": ".det-title",
+      "text": "gap:9px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 528,
+      "selector": ".det-url",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 528,
+      "selector": ".det-url",
+      "text": "margin-top:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 531,
+      "selector": ".det-actions",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 533,
+      "selector": ".hero",
+      "text": "padding:18px 20px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 534,
+      "selector": ".hero",
+      "text": "margin-bottom:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 536,
+      "selector": ".hero-top",
+      "text": "margin-bottom:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 537,
+      "selector": ".big-speed",
+      "text": "font-size:30px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 537,
+      "selector": ".big-speed",
+      "text": "line-height:1.1",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 538,
+      "selector": ".big-speed span",
+      "text": "font-size:13px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 538,
+      "selector": ".big-speed span",
+      "text": "margin-left:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 539,
+      "selector": ".hero-meta",
+      "text": "gap:22px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 540,
+      "selector": ".hero-meta .m",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 541,
+      "selector": ".hero-meta .m b",
+      "text": "font-size:13px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 541,
+      "selector": ".hero-meta .m b",
+      "text": "margin-top:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 543,
+      "selector": ".segmap",
+      "text": "gap:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 543,
+      "selector": ".segmap",
+      "text": "margin-top:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 544,
+      "selector": ".seg",
+      "text": "gap:3px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 545,
+      "selector": ".seg i",
+      "text": "border-radius:3px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 549,
+      "selector": ".seg-legend",
+      "text": "gap:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 549,
+      "selector": ".seg-legend",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 549,
+      "selector": ".seg-legend",
+      "text": "margin-top:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 550,
+      "selector": ".seg-legend span",
+      "text": "gap:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 551,
+      "selector": ".seg-legend b",
+      "text": "border-radius:2px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 552,
+      "selector": ".two-col",
+      "text": "gap:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 553,
+      "selector": ".kv",
+      "text": "padding:7px 0",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 553,
+      "selector": ".kv",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 553,
+      "selector": ".kv",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 556,
+      "selector": ".kv .v",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 557,
+      "selector": ".conn-row",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 557,
+      "selector": ".conn-row",
+      "text": "padding:7px 0",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 557,
+      "selector": ".conn-row",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 558,
+      "selector": ".conn-row .id",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 560,
+      "selector": ".conn-row .sp",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 561,
+      "selector": ".log",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 561,
+      "selector": ".log",
+      "text": "line-height:1.9",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 568,
+      "selector": ".vid-empty",
+      "text": "padding:42px 20px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 569,
+      "selector": ".vid-empty",
+      "text": "font-size:12.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 569,
+      "selector": ".vid-empty",
+      "text": "margin-bottom:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 571,
+      "selector": ".vid-auth",
+      "text": "line-height:1.65",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 572,
+      "selector": ".vid-auth-text",
+      "text": "font-size:12.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 573,
+      "selector": ".vid-auth-actions",
+      "text": "margin-top:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 573,
+      "selector": ".vid-auth-actions",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 574,
+      "selector": ".vid-auth-raw",
+      "text": "margin-top:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 575,
+      "selector": ".vid-auth-raw summary",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 576,
+      "selector": ".vid-auth-raw pre",
+      "text": "margin:8px 0 0",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 577,
+      "selector": ".vid-auth-raw pre",
+      "text": "padding:10px 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 578,
+      "selector": ".vid-auth-raw pre",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 578,
+      "selector": ".vid-auth-raw pre",
+      "text": "line-height:1.55",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 581,
+      "selector": ".vid-top",
+      "text": "gap:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 581,
+      "selector": ".vid-top",
+      "text": "margin-bottom:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 582,
+      "selector": ".vid-grid",
+      "text": "gap:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 584,
+      "selector": ".poster",
+      "text": "background:\n    radial-gradient(120% 90% at 20% 10%,#2B3B72 0%,transparent 60%),\n    radial-gradient(100% 80% at 90% 100%,#4A2B62 0%,transparent 55%),\n    linear-gradient(160deg,#111726,#0B0E16)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 592,
+      "selector": ".poster .play",
+      "text": "background:rgba(255,255,255,.12)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 592,
+      "selector": ".poster .play",
+      "text": "border:1px solid rgba(255,255,255,.22)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 596,
+      "selector": ".poster .dur",
+      "text": "right:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 596,
+      "selector": ".poster .dur",
+      "text": "bottom:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 596,
+      "selector": ".poster .dur",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 596,
+      "selector": ".poster .dur",
+      "text": "background:rgba(0,0,0,.65)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 596,
+      "selector": ".poster .dur",
+      "text": "color:#fff",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 597,
+      "selector": ".poster .dur",
+      "text": "padding:2px 6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 597,
+      "selector": ".poster .dur",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 600,
+      "selector": ".poster .res",
+      "text": "left:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 600,
+      "selector": ".poster .res",
+      "text": "top:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 600,
+      "selector": ".poster .res",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 600,
+      "selector": ".poster .res",
+      "text": "background:rgba(0,0,0,.6)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 600,
+      "selector": ".poster .res",
+      "text": "color:#fff",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 600,
+      "selector": ".poster .res",
+      "text": "padding:2px 6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 601,
+      "selector": ".poster .res",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 603,
+      "selector": ".vid-info h2",
+      "text": "font-size:16px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 603,
+      "selector": ".vid-info h2",
+      "text": "margin-bottom:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 604,
+      "selector": ".vid-chips",
+      "text": "gap:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 604,
+      "selector": ".vid-chips",
+      "text": "margin-top:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 605,
+      "selector": ".vid-chips .tag",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 605,
+      "selector": ".vid-chips .tag",
+      "text": "padding:2px 7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 606,
+      "selector": ".seg-tabs",
+      "text": "border-radius:9px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 606,
+      "selector": ".seg-tabs",
+      "text": "padding:3px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 606,
+      "selector": ".seg-tabs",
+      "text": "gap:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 608,
+      "selector": ".seg-tabs button",
+      "text": "font:500 12px var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 608,
+      "selector": ".seg-tabs button",
+      "text": "padding:5px 13px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 609,
+      "selector": ".seg-tabs button",
+      "text": "border-radius:7px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 611,
+      "selector": ".seg-tabs button.on",
+      "text": "box-shadow:0 2px 8px rgba(0,0,0,.18)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 614,
+      "selector": "table.fmt th",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 616,
+      "selector": "table.fmt th",
+      "text": "padding:0 8px 8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 626,
+      "selector": "table.fmt td",
+      "text": "padding:9px 8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 626,
+      "selector": "table.fmt td",
+      "text": "font-size:12.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 627,
+      "selector": "table.fmt .dim",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 639,
+      "selector": ".mono",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 640,
+      "selector": ".q-badge",
+      "text": "font-size:9.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 641,
+      "selector": ".q-badge",
+      "text": "padding:1px 5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 641,
+      "selector": ".q-badge",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 647,
+      "selector": ".out-item",
+      "text": "gap:9px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 647,
+      "selector": ".out-item",
+      "text": "padding:9px 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 647,
+      "selector": ".out-item",
+      "text": "border-radius:8px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 647,
+      "selector": ".out-item",
+      "text": "margin-bottom:7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 648,
+      "selector": ".out-item .k",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 649,
+      "selector": ".out-item .v",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 650,
+      "selector": ".out-item .x",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 651,
+      "selector": ".out-plus",
+      "text": "font-size:14px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 651,
+      "selector": ".out-plus",
+      "text": "margin:-2px 0 5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 652,
+      "selector": ".opt-row",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 652,
+      "selector": ".opt-row",
+      "text": "padding:9px 0",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 652,
+      "selector": ".opt-row",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 653,
+      "selector": ".opt-row .r",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 654,
+      "selector": ".compat",
+      "text": "gap:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 654,
+      "selector": ".compat",
+      "text": "margin-top:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 656,
+      "selector": ".compat .cv",
+      "text": "gap:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 656,
+      "selector": ".compat .cv",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 656,
+      "selector": ".compat .cv",
+      "text": "padding:3px 7px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 656,
+      "selector": ".compat .cv",
+      "text": "border-radius:5px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 661,
+      "selector": ".video-job",
+      "text": "margin-top:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 662,
+      "selector": ".video-job",
+      "text": "padding:10px 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 666,
+      "selector": ".video-job .line",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 666,
+      "selector": ".video-job .line",
+      "text": "margin-top:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 670,
+      "selector": ".sniff-head",
+      "text": "gap:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 670,
+      "selector": ".sniff-head",
+      "text": "padding:12px 16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 670,
+      "selector": ".sniff-head",
+      "text": "margin-bottom:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 673,
+      "selector": ".sniff-url",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 674,
+      "selector": ".filter-bar",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 674,
+      "selector": ".filter-bar",
+      "text": "margin-bottom:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 676,
+      "selector": ".grp",
+      "text": "margin-bottom:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 679,
+      "selector": ".grp-h",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 679,
+      "selector": ".grp-h",
+      "text": "padding:10px 14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 680,
+      "selector": ".grp-h .t",
+      "text": "font-size:12.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 681,
+      "selector": ".grp-h .c",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 682,
+      "selector": ".grp-h .acts",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 683,
+      "selector": ".grp-body",
+      "text": "padding:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 686,
+      "selector": ".sn",
+      "text": "gap:11px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 686,
+      "selector": ".sn",
+      "text": "padding:7px 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 686,
+      "selector": ".sn",
+      "text": "border-radius:8px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 692,
+      "selector": ".sn-thumb",
+      "text": "border-radius:5px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 693,
+      "selector": ".sn-thumb .g1",
+      "text": "background:linear-gradient(140deg,#3B4A7A,#171C2C)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 694,
+      "selector": ".sn-thumb .g2",
+      "text": "background:linear-gradient(140deg,#2E4B3D,#141C18)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 695,
+      "selector": ".sn-thumb .g3",
+      "text": "background:linear-gradient(140deg,#4A3651,#1B1622)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 699,
+      "selector": "html[data-theme=\"light\"] .sn-thumb .g1 html[data-theme=\"light\"] .sn-thumb .g2 html[data-theme=\"light\"] .sn-thumb .g3 .sn-thumb .mini",
+      "text": "color:#fff",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 699,
+      "selector": "html[data-theme=\"light\"] .sn-thumb .g1 html[data-theme=\"light\"] .sn-thumb .g2 html[data-theme=\"light\"] .sn-thumb .g3 .sn-thumb .mini",
+      "text": "font-size:9px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 701,
+      "selector": "html[data-theme=\"light\"] .sn-thumb .mini .sn-name",
+      "text": "font-size:12.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 702,
+      "selector": ".sn-url",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 702,
+      "selector": ".sn-url",
+      "text": "margin-top:1px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 703,
+      "selector": ".sn-size",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 704,
+      "selector": ".sn-badges",
+      "text": "gap:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 705,
+      "selector": ".sn-act",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 706,
+      "selector": ".sn-act .tbtn",
+      "text": "height:22px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 707,
+      "selector": ".dup",
+      "text": "font-size:9.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 708,
+      "selector": ".dup",
+      "text": "padding:1px 5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 708,
+      "selector": ".dup",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "border-width",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 709,
+      "selector": ".dup",
+      "text": "border:1px solid transparent",
+      "hint": "描边宽度必须用 var(--bw) / var(--bw-strong)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 717,
+      "selector": ".bulk-bar",
+      "text": "gap:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 719,
+      "selector": ".bulk-bar .sum",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 721,
+      "selector": ".bulk-bar .right",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 722,
+      "selector": ".sniff-empty",
+      "text": "padding:56px 20px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 722,
+      "selector": ".sniff-empty",
+      "text": "font-size:12.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 725,
+      "selector": ".set-wrap",
+      "text": "gap:24px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 726,
+      "selector": ".set-nav",
+      "text": "gap:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 727,
+      "selector": ".set-nav a",
+      "text": "padding:7px 11px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 728,
+      "selector": ".set-nav a",
+      "text": "border-radius:7px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 728,
+      "selector": ".set-nav a",
+      "text": "font-size:12.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 733,
+      "selector": ".sec",
+      "text": "margin-bottom:22px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 734,
+      "selector": ".sec-h",
+      "text": "font-size:13px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 734,
+      "selector": ".sec-h",
+      "text": "margin-bottom:3px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 735,
+      "selector": ".sec-d",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 735,
+      "selector": ".sec-d",
+      "text": "margin-bottom:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 737,
+      "selector": ".set-row",
+      "text": "gap:16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 737,
+      "selector": ".set-row",
+      "text": "padding:12px 16px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 741,
+      "selector": ".set-row .lab",
+      "text": "font-size:12.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 742,
+      "selector": ".set-row .lab small",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 742,
+      "selector": ".set-row .lab small",
+      "text": "margin-top:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 743,
+      "selector": ".set-row .ctl",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 746,
+      "selector": ".sw",
+      "text": "height:20px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 746,
+      "selector": ".sw",
+      "text": "border-radius:20px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 751,
+      "selector": ".sw::after",
+      "text": "left:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 751,
+      "selector": ".sw::after",
+      "text": "top:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 755,
+      "selector": ".sw.on::after",
+      "text": "left:18px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 755,
+      "selector": ".sw.on::after",
+      "text": "background:#fff",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 759,
+      "selector": ".mini-select",
+      "text": "height:29px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 760,
+      "selector": ".mini-select",
+      "text": "border-radius:6px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 761,
+      "selector": ".mini-select",
+      "text": "font:400 12px var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 761,
+      "selector": ".mini-select",
+      "text": "padding:0 8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 766,
+      "selector": ".color-grid",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 768,
+      "selector": ".color-card",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 768,
+      "selector": ".color-card",
+      "text": "height:32px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 768,
+      "selector": ".color-card",
+      "text": "padding:0 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 768,
+      "selector": ".color-card",
+      "text": "border-radius:9px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 770,
+      "selector": ".color-card",
+      "text": "font:500 12px var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 778,
+      "selector": ".color-card .cc-dots",
+      "text": "gap:3px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 783,
+      "selector": ".warn-box",
+      "text": "padding:12px 14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 783,
+      "selector": ".warn-box",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 783,
+      "selector": ".warn-box",
+      "text": "line-height:1.7",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 786,
+      "selector": ".warn-box .t",
+      "text": "margin-bottom:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 786,
+      "selector": ".warn-box .t",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 788,
+      "selector": ".ext-guide",
+      "text": "padding:12px 16px 14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 788,
+      "selector": ".ext-guide",
+      "text": "gap:9px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 789,
+      "selector": ".ext-guide ol",
+      "text": "padding-left:19px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 789,
+      "selector": ".ext-guide ol",
+      "text": "gap:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 789,
+      "selector": ".ext-guide ol",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-family",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 790,
+      "selector": ".ext-guide code",
+      "text": "font-family:ui-monospace,Consolas,monospace",
+      "hint": "字体族必须用 var(--font) 或 var(--mono)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 790,
+      "selector": ".ext-guide code",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 790,
+      "selector": ".ext-guide code",
+      "text": "padding:1px 5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 790,
+      "selector": ".ext-guide code",
+      "text": "border-radius:4px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 791,
+      "selector": ".ext-line",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 792,
+      "selector": ".ext-actions",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 792,
+      "selector": ".ext-actions",
+      "text": "margin-top:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 793,
+      "selector": ".path-field",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 794,
+      "selector": ".path-field .field",
+      "text": "height:30px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 797,
+      "selector": ".update-card",
+      "text": "margin-top:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 798,
+      "selector": ".update-card .card-b",
+      "text": "padding:12px 16px 6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 799,
+      "selector": ".update-bar",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 800,
+      "selector": ".update-bar .dim",
+      "text": "margin-left:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 801,
+      "selector": ".update-panel",
+      "text": "margin-top:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 802,
+      "selector": ".update-panel",
+      "text": "padding:12px 13px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 803,
+      "selector": ".update-panel",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 806,
+      "selector": ".update-head",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 807,
+      "selector": ".update-ver",
+      "text": "font-size:13px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 808,
+      "selector": ".update-badge",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 809,
+      "selector": ".update-badge",
+      "text": "line-height:1",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 809,
+      "selector": ".update-badge",
+      "text": "padding:3px 6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 809,
+      "selector": ".update-badge",
+      "text": "border-radius:5px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 809,
+      "selector": ".update-badge",
+      "text": "color:var(--ok,#3fb950)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "border-width",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 810,
+      "selector": ".update-badge",
+      "text": "border:1px solid currentColor",
+      "hint": "描边宽度必须用 var(--bw) / var(--bw-strong)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 813,
+      "selector": ".update-notes",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 814,
+      "selector": ".update-notes",
+      "text": "line-height:1.65",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 815,
+      "selector": ".update-notes",
+      "text": "padding-right:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 817,
+      "selector": ".update-mirror-row",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 818,
+      "selector": ".update-mirror-row .lbl",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 821,
+      "selector": ".select-wrap select",
+      "text": "font:400 12.5px var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 825,
+      "selector": ".update-progress",
+      "text": "gap:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 826,
+      "selector": ".update-line",
+      "text": "font-size:11px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 827,
+      "selector": ".update-actions",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 829,
+      "selector": ".update-msg",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "line-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 829,
+      "selector": ".update-msg",
+      "text": "line-height:1.6",
+      "hint": "行高必须用 var(--lh-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 832,
+      "selector": ".update-card .set-row",
+      "text": "padding:11px 0",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "control-height",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 833,
+      "selector": ".update-card .set-row .field",
+      "text": "height:30px",
+      "hint": "控件高度必须用 var(--ctl-*)"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 837,
+      "selector": ".toast",
+      "text": "bottom:52px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 837,
+      "selector": ".toast",
+      "text": "padding:9px 14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 838,
+      "selector": ".toast",
+      "text": "border-radius:9px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 838,
+      "selector": ".toast",
+      "text": "font-size:12px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 851,
+      "selector": ".vp-dock",
+      "text": "bottom:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 852,
+      "selector": ".vp-dock",
+      "text": "gap:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 852,
+      "selector": ".vp-dock",
+      "text": "padding:4px 6px 4px 11px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 852,
+      "selector": ".vp-dock",
+      "text": "border-radius:20px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "color",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 853,
+      "selector": ".vp-dock",
+      "text": "box-shadow:0 12px 30px rgba(0,0,0,.38)",
+      "hint": "颜色必须用 --bg/--fg/--accent/--ok/--warn/--err 等 token，或 color-mix(var(--x) …)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 854,
+      "selector": ".vp-dock",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 858,
+      "selector": ".vp-dock .tag-w",
+      "text": "margin-right:2px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 860,
+      "selector": ".vp-dock button",
+      "text": "padding:0 8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 860,
+      "selector": ".vp-dock button",
+      "text": "border-radius:14px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "border-width",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 860,
+      "selector": ".vp-dock button",
+      "text": "border:1px solid transparent",
+      "hint": "描边宽度必须用 var(--bw) / var(--bw-strong)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 861,
+      "selector": ".vp-dock button",
+      "text": "font:500 11px var(--font)",
+      "hint": "font 简写里的字号必须写成 var(--fs-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 865,
+      "selector": ".vp-dock .now",
+      "text": "font-size:10.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 865,
+      "selector": ".vp-dock .now",
+      "text": "margin-left:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 865,
+      "selector": ".vp-dock .now",
+      "text": "padding-left:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 867,
+      "selector": ".minw-note",
+      "text": "top:52px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 867,
+      "selector": ".minw-note",
+      "text": "padding:7px 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "radius",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 868,
+      "selector": ".minw-note",
+      "text": "border-radius:8px",
+      "hint": "圆角必须用 var(--r-*)"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 868,
+      "selector": ".minw-note",
+      "text": "font-size:11.5px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 884,
+      "selector": ".sidebar",
+      "text": "padding:12px 10px 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 896,
+      "selector": ".sidebar",
+      "text": "padding:12px 8px 8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 896,
+      "selector": ".sidebar",
+      "text": "gap:5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 901,
+      "selector": ".side-foot",
+      "text": "padding-top:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 904,
+      "selector": ".set-wrap",
+      "text": "gap:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 905,
+      "selector": ".set-nav",
+      "text": "gap:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 905,
+      "selector": ".set-nav",
+      "text": "padding-bottom:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 906,
+      "selector": ".set-nav a",
+      "text": "padding:6px 10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 915,
+      "selector": ".sniff-head",
+      "text": "row-gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 924,
+      "selector": ".task-bulk",
+      "text": "left:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 924,
+      "selector": ".task-bulk",
+      "text": "right:14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 924,
+      "selector": ".task-bulk",
+      "text": "bottom:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 924,
+      "selector": ".task-bulk",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 925,
+      "selector": ".sidebar",
+      "text": "padding:10px 6px 8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 930,
+      "selector": ".tbtn",
+      "text": "padding:0 5px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 933,
+      "selector": ".stat-grid",
+      "text": "gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 934,
+      "selector": ".stat",
+      "text": "padding:10px 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 935,
+      "selector": ".stat .v",
+      "text": "font-size:17px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 936,
+      "selector": ".stat .u",
+      "text": "right:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 936,
+      "selector": ".stat .u",
+      "text": "top:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 937,
+      "selector": ".stat .d",
+      "text": "font-size:10px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 937,
+      "selector": ".stat .d",
+      "text": "padding-right:20px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 944,
+      "selector": ".titlebar",
+      "text": "padding:0 8px 0 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 944,
+      "selector": ".titlebar",
+      "text": "gap:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 945,
+      "selector": ".det-title",
+      "text": "font-size:16px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 947,
+      "selector": ".hero",
+      "text": "padding:14px 14px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 948,
+      "selector": ".hero-top",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 949,
+      "selector": ".hero-meta",
+      "text": "gap:14px 18px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "font-size",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 950,
+      "selector": ".big-speed",
+      "text": "font-size:26px",
+      "hint": "字号必须用 var(--fs-*)，阶梯见规范第 3 节"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 956,
+      "selector": "table.fmt th,table.fmt td",
+      "text": "padding-left:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 956,
+      "selector": "table.fmt th,table.fmt td",
+      "text": "padding-right:6px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 957,
+      "selector": ".segmap",
+      "text": "gap:4px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 958,
+      "selector": ".sn",
+      "text": "gap:9px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 960,
+      "selector": ".sniff-head",
+      "text": "padding:10px 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 962,
+      "selector": ".set-row",
+      "text": "row-gap:8px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 966,
+      "selector": ".statusbar",
+      "text": "gap:10px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 966,
+      "selector": ".statusbar",
+      "text": "padding:0 12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 967,
+      "selector": ".statusbar .right",
+      "text": "gap:12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/app.js",
+      "line": 181,
+      "selector": ".style.padding",
+      "text": "6px 2px",
+      "hint": "动态样式也要用 var(--*)，或在 CSS 里加工具类"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/app.js",
+      "line": 454,
+      "selector": ".style.width",
+      "text": "28px",
+      "hint": "动态样式也要用 var(--*)，或在 CSS 里加工具类"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/app.js",
+      "line": 455,
+      "selector": ".style.height",
+      "text": "28px",
+      "hint": "动态样式也要用 var(--*)，或在 CSS 里加工具类"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 92,
+      "selector": "style=\"…\"",
+      "text": "margin-top:6px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 6px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 188,
+      "selector": "style=\"…\"",
+      "text": "height:27px;padding:0 8px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 27px/8px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 189,
+      "selector": "style=\"…\"",
+      "text": "height:25px;border:0;background:transparent;padding:0",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 25px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 215,
+      "selector": "style=\"…\"",
+      "text": "font-size:13px;color:var(--fg-2)",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 13px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 250,
+      "selector": "style=\"…\"",
+      "text": "display:flex;gap:5px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 5px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 270,
+      "selector": "style=\"…\"",
+      "text": "height:6px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 6px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 273,
+      "selector": "style=\"…\"",
+      "text": "justify-content:space-between;margin-top:7px;font-size:11px;color:var(--fg-3)",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 7px/11px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 279,
+      "selector": "style=\"…\"",
+      "text": "margin-bottom:14px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 14px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 295,
+      "selector": "style=\"…\"",
+      "text": "margin-bottom:14px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 14px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 298,
+      "selector": "style=\"…\"",
+      "text": "padding-top:8px;padding-bottom:8px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 8px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 304,
+      "selector": "style=\"…\"",
+      "text": "padding-top:6px;padding-bottom:6px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 6px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 317,
+      "selector": "style=\"…\"",
+      "text": "padding-top:10px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 10px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 334,
+      "selector": "style=\"…\"",
+      "text": "width:min(420px,48vw)",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 420px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 367,
+      "selector": "style=\"…\"",
+      "text": "margin-top:14px;gap:8px;flex-wrap:wrap",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 14px/8px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 387,
+      "selector": "style=\"…\"",
+      "text": "padding-top:12px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 12px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 403,
+      "selector": "style=\"…\"",
+      "text": "position:static;margin:14px 0 0;padding:10px 0 0;background:transparent;backdrop-filter:none",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 14px/10px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 415,
+      "selector": "style=\"…\"",
+      "text": "margin-top:10px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 10px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 436,
+      "selector": "style=\"…\"",
+      "text": "margin-top:10px;font-size:11px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 10px/11px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 439,
+      "selector": "style=\"…\"",
+      "text": "width:100%;margin-top:12px;height:34px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 12px/34px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 442,
+      "selector": "style=\"…\"",
+      "text": "margin-top:6px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 6px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 467,
+      "selector": "style=\"…\"",
+      "text": "width:32px;height:32px;border-radius:8px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 32px/8px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 471,
+      "selector": "style=\"…\"",
+      "text": "font-size:12.5px;font-weight:600",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 12.5px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 475,
+      "selector": "style=\"…\"",
+      "text": "margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 10px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 478,
+      "selector": "style=\"…\"",
+      "text": "gap:6px;font-size:11.5px;color:var(--fg-2)",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 6px/11.5px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 480,
+      "selector": "style=\"…\"",
+      "text": "max-width:120px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 120px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 851,
+      "selector": "style=\"…\"",
+      "text": "margin-top:12px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 12px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 855,
+      "selector": "style=\"…\"",
+      "text": "margin-top:12px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 12px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 922,
+      "selector": "style=\"…\"",
+      "text": "gap:8px;flex-wrap:wrap",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 8px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 930,
+      "selector": "style=\"…\"",
+      "text": "width:190px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 190px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 935,
+      "selector": "style=\"…\"",
+      "text": "gap:8px;flex-wrap:wrap",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 8px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 936,
+      "selector": "style=\"…\"",
+      "text": "width:min(320px,34vw)",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 320px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 970,
+      "selector": "style=\"…\"",
+      "text": "background:#8434DE",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 970,
+      "selector": "style=\"…\"",
+      "text": "background:#A78BFA",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 970,
+      "selector": "style=\"…\"",
+      "text": "background:#C58DFF",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 971,
+      "selector": "style=\"…\"",
+      "text": "background:#0B63C5",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 971,
+      "selector": "style=\"…\"",
+      "text": "background:#6BB8FF",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 971,
+      "selector": "style=\"…\"",
+      "text": "background:#4FE0E0",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 972,
+      "selector": "style=\"…\"",
+      "text": "background:#0B6B48",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 972,
+      "selector": "style=\"…\"",
+      "text": "background:#47D6A0",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 972,
+      "selector": "style=\"…\"",
+      "text": "background:#A3E635",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 973,
+      "selector": "style=\"…\"",
+      "text": "background:#B45309",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 973,
+      "selector": "style=\"…\"",
+      "text": "background:#FBBF5C",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 973,
+      "selector": "style=\"…\"",
+      "text": "background:#FF9E64",
+      "hint": "行内样式必须用 var(--*)：颜色字面量"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 1030,
+      "selector": "style=\"…\"",
+      "text": "margin-top:12px",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 12px"
+    },
+    {
+      "rule": "inline-style",
+      "severity": "error",
+      "file": "src/index.html",
+      "line": 1049,
+      "selector": "style=\"…\"",
+      "text": "width:1px;height:10px;background:var(--line)",
+      "hint": "行内样式必须用 var(--*)：尺寸字面量 1px/10px"
+    }
+  ],
+  "infos": [
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 152,
+      "selector": "::-webkit-scrollbar",
+      "text": "width:10px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 152,
+      "selector": "::-webkit-scrollbar",
+      "text": "height:10px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 170,
+      "selector": ".mark",
+      "text": "width:24px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 171,
+      "selector": ".mark",
+      "text": "height:24px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 174,
+      "selector": ".mark img",
+      "text": "width:24px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 174,
+      "selector": ".mark img",
+      "text": "height:24px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 184,
+      "selector": ".dot",
+      "text": "width:6px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 184,
+      "selector": ".dot",
+      "text": "height:6px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 186,
+      "selector": ".wc",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 202,
+      "selector": ".sb",
+      "text": "height:34px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 215,
+      "selector": ".sb.active::before",
+      "text": "width:2px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 231,
+      "selector": ".mini-track",
+      "text": "height:4px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 235,
+      "selector": ".avatar",
+      "text": "width:26px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 236,
+      "selector": ".avatar",
+      "text": "height:26px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 261,
+      "selector": ".spark",
+      "text": "width:120px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 261,
+      "selector": ".spark",
+      "text": "height:16px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 297,
+      "selector": ".ico",
+      "text": "width:30px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 315,
+      "selector": ".field.w240",
+      "text": "width:240px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 345,
+      "selector": ".stat .u",
+      "text": "width:24px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 345,
+      "selector": ".stat .u",
+      "text": "height:24px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 348,
+      "selector": ".bar",
+      "text": "height:5px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 354,
+      "selector": ".seg-ticks span",
+      "text": "width:1px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 385,
+      "selector": ".t-cb .cb",
+      "text": "width:15px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 385,
+      "selector": ".t-cb .cb",
+      "text": "height:15px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 388,
+      "selector": ".tbtn",
+      "text": "min-width:24px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 433,
+      "selector": ".empty .big",
+      "text": "width:54px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 434,
+      "selector": ".empty .big",
+      "text": "height:54px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 439,
+      "selector": ".cb",
+      "text": "width:15px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 440,
+      "selector": ".cb",
+      "text": "height:15px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 455,
+      "selector": ".modal-card",
+      "text": "width:min(940px,100%)",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 468,
+      "selector": ".modal-x",
+      "text": "width:28px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 476,
+      "selector": ".thumb",
+      "text": "width:40px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 477,
+      "selector": ".thumb",
+      "text": "height:40px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 491,
+      "selector": ".t-sub .sep",
+      "text": "width:2px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 491,
+      "selector": ".t-sub .sep",
+      "text": "height:2px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 495,
+      "selector": ".t-bar .pct",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 510,
+      "selector": ".st .d",
+      "text": "width:5px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 510,
+      "selector": ".st .d",
+      "text": "height:5px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 525,
+      "selector": ".det-icon",
+      "text": "width:52px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 525,
+      "selector": ".det-icon",
+      "text": "height:52px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 529,
+      "selector": ".det-url",
+      "text": "max-width:640px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 545,
+      "selector": ".seg i",
+      "text": "height:8px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 551,
+      "selector": ".seg-legend b",
+      "text": "width:8px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 551,
+      "selector": ".seg-legend b",
+      "text": "height:8px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 558,
+      "selector": ".conn-row .id",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 559,
+      "selector": ".conn-row .bar",
+      "text": "height:3px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 560,
+      "selector": ".conn-row .sp",
+      "text": "width:64px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 561,
+      "selector": ".log",
+      "text": "max-height:190px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 578,
+      "selector": ".vid-auth-raw pre",
+      "text": "max-height:220px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 591,
+      "selector": ".poster .play",
+      "text": "width:46px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 592,
+      "selector": ".poster .play",
+      "text": "height:46px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 618,
+      "selector": "table.fmt th:nth-child(1)",
+      "text": "width:30px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 619,
+      "selector": "table.fmt th:nth-child(2)",
+      "text": "width:106px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 620,
+      "selector": "table.fmt th:nth-child(3)",
+      "text": "width:98px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 621,
+      "selector": "table.fmt th:nth-child(4)",
+      "text": "width:42px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 622,
+      "selector": "table.fmt th:nth-child(5)",
+      "text": "width:50px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 623,
+      "selector": "table.fmt th:nth-child(6)",
+      "text": "width:72px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 624,
+      "selector": "table.fmt th:nth-child(7)",
+      "text": "width:74px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 634,
+      "selector": ".radio",
+      "text": "width:15px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 635,
+      "selector": ".radio",
+      "text": "height:15px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 638,
+      "selector": ".radio.on::after",
+      "text": "width:7px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 638,
+      "selector": ".radio.on::after",
+      "text": "height:7px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 648,
+      "selector": ".out-item .k",
+      "text": "width:26px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 665,
+      "selector": ".video-job .track",
+      "text": "height:4px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 692,
+      "selector": ".sn-thumb",
+      "text": "width:44px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 692,
+      "selector": ".sn-thumb",
+      "text": "height:30px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 745,
+      "selector": ".sw",
+      "text": "width:36px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 751,
+      "selector": ".sw::after",
+      "text": "width:14px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 751,
+      "selector": ".sw::after",
+      "text": "height:14px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 761,
+      "selector": ".mini-select",
+      "text": "max-width:230px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 764,
+      "selector": ".slider",
+      "text": "width:150px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 779,
+      "selector": ".color-card .cc-dots i",
+      "text": "width:9px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 779,
+      "selector": ".color-card .cc-dots i",
+      "text": "height:9px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 794,
+      "selector": ".path-field .field",
+      "text": "width:min(330px,46vw)",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 814,
+      "selector": ".update-notes",
+      "text": "max-height:132px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 819,
+      "selector": ".select-wrap",
+      "text": "width:220px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 833,
+      "selector": ".update-card .set-row .field",
+      "text": "width:min(300px,42vw)",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 848,
+      "selector": "body.minw-demo .vp-frame",
+      "text": "min-width:900px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 859,
+      "selector": ".vp-dock button",
+      "text": "height:22px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 890,
+      "selector": ".poster",
+      "text": "height:200px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 898,
+      "selector": ".sb",
+      "text": "width:44px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 898,
+      "selector": ".sb",
+      "text": "height:40px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 926,
+      "selector": ".sb",
+      "text": "width:40px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 926,
+      "selector": ".sb",
+      "text": "height:38px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 930,
+      "selector": ".tbtn",
+      "text": "min-width:22px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 932,
+      "selector": ".thumb",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 932,
+      "selector": ".thumb",
+      "text": "height:34px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 936,
+      "selector": ".stat .u",
+      "text": "width:20px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 936,
+      "selector": ".stat .u",
+      "text": "height:20px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 951,
+      "selector": ".poster",
+      "text": "height:170px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 959,
+      "selector": ".sn-thumb",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 959,
+      "selector": ".sn-thumb",
+      "text": "height:24px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 961,
+      "selector": ".filter-bar .mini-select",
+      "text": "max-width:150px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    }
+  ],
+  "excepted": [],
+  "staleExceptions": []
+}

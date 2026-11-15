@@ -1,0 +1,939 @@
+{
+  "summary": {
+    "files": [
+      "src/app.js",
+      "src/index.html",
+      "src/styles.css"
+    ],
+    "errors": 0,
+    "errorsExcepted": 5,
+    "infos": 96,
+    "exceptions": 5,
+    "staleExceptions": 0
+  },
+  "errors": [],
+  "infos": [
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 213,
+      "selector": "::-webkit-scrollbar",
+      "text": "width:10px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 213,
+      "selector": "::-webkit-scrollbar",
+      "text": "height:10px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 231,
+      "selector": ".mark",
+      "text": "width:24px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 232,
+      "selector": ".mark",
+      "text": "height:24px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 235,
+      "selector": ".mark img",
+      "text": "width:24px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 235,
+      "selector": ".mark img",
+      "text": "height:24px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 245,
+      "selector": ".dot",
+      "text": "width:6px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 245,
+      "selector": ".dot",
+      "text": "height:6px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 247,
+      "selector": ".wc",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 276,
+      "selector": ".sb.active::before",
+      "text": "width:2px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 292,
+      "selector": ".mini-track",
+      "text": "height:4px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 296,
+      "selector": ".avatar",
+      "text": "width:26px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 297,
+      "selector": ".avatar",
+      "text": "height:26px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 322,
+      "selector": ".spark",
+      "text": "width:120px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 322,
+      "selector": ".spark",
+      "text": "height:16px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 358,
+      "selector": ".ico",
+      "text": "width:30px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 376,
+      "selector": ".field.w240",
+      "text": "width:240px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 377,
+      "selector": ".field.w190",
+      "text": "width:190px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 378,
+      "selector": ".field.w320",
+      "text": "width:min(320px,34vw)",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 379,
+      "selector": ".field.w420",
+      "text": "width:min(420px,48vw)",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 380,
+      "selector": ".mini-select.w120",
+      "text": "max-width:120px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 410,
+      "selector": ".stat .u",
+      "text": "width:24px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 410,
+      "selector": ".stat .u",
+      "text": "height:24px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 413,
+      "selector": ".bar",
+      "text": "height:5px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 414,
+      "selector": ".bar.tall",
+      "text": "height:6px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 420,
+      "selector": ".seg-ticks span",
+      "text": "width:1px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 451,
+      "selector": ".t-cb .cb",
+      "text": "width:15px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 451,
+      "selector": ".t-cb .cb",
+      "text": "height:15px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 454,
+      "selector": ".tbtn",
+      "text": "min-width:24px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 499,
+      "selector": ".empty .big",
+      "text": "width:54px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 500,
+      "selector": ".empty .big",
+      "text": "height:54px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 505,
+      "selector": ".cb",
+      "text": "width:15px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 506,
+      "selector": ".cb",
+      "text": "height:15px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 521,
+      "selector": ".modal-card",
+      "text": "width:min(940px,100%)",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 534,
+      "selector": ".modal-x",
+      "text": "width:28px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 542,
+      "selector": ".thumb",
+      "text": "width:40px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 543,
+      "selector": ".thumb",
+      "text": "height:40px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 546,
+      "selector": ".thumb.sm",
+      "text": "width:32px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 546,
+      "selector": ".thumb.sm",
+      "text": "height:32px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 559,
+      "selector": ".t-sub .sep",
+      "text": "width:2px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 559,
+      "selector": ".t-sub .sep",
+      "text": "height:2px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 563,
+      "selector": ".t-bar .pct",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 578,
+      "selector": ".st .d",
+      "text": "width:5px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 578,
+      "selector": ".st .d",
+      "text": "height:5px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 593,
+      "selector": ".det-icon",
+      "text": "width:52px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 593,
+      "selector": ".det-icon",
+      "text": "height:52px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 597,
+      "selector": ".det-url",
+      "text": "max-width:640px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 613,
+      "selector": ".seg i",
+      "text": "height:8px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 619,
+      "selector": ".seg-legend b",
+      "text": "width:8px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 619,
+      "selector": ".seg-legend b",
+      "text": "height:8px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 626,
+      "selector": ".conn-row .id",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 627,
+      "selector": ".conn-row .bar",
+      "text": "height:3px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 628,
+      "selector": ".conn-row .sp",
+      "text": "width:64px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 629,
+      "selector": ".log",
+      "text": "max-height:190px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 646,
+      "selector": ".vid-auth-raw pre",
+      "text": "max-height:220px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 659,
+      "selector": ".poster .play",
+      "text": "width:46px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 660,
+      "selector": ".poster .play",
+      "text": "height:46px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 686,
+      "selector": "table.fmt th:nth-child(1)",
+      "text": "width:30px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 687,
+      "selector": "table.fmt th:nth-child(2)",
+      "text": "width:106px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 688,
+      "selector": "table.fmt th:nth-child(3)",
+      "text": "width:98px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 689,
+      "selector": "table.fmt th:nth-child(4)",
+      "text": "width:42px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 690,
+      "selector": "table.fmt th:nth-child(5)",
+      "text": "width:50px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 691,
+      "selector": "table.fmt th:nth-child(6)",
+      "text": "width:72px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 692,
+      "selector": "table.fmt th:nth-child(7)",
+      "text": "width:74px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 702,
+      "selector": ".radio",
+      "text": "width:15px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 703,
+      "selector": ".radio",
+      "text": "height:15px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 706,
+      "selector": ".radio.on::after",
+      "text": "width:7px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 706,
+      "selector": ".radio.on::after",
+      "text": "height:7px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 716,
+      "selector": ".out-item .k",
+      "text": "width:26px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 733,
+      "selector": ".video-job .track",
+      "text": "height:4px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 760,
+      "selector": ".sn-thumb",
+      "text": "width:44px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 760,
+      "selector": ".sn-thumb",
+      "text": "height:30px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 813,
+      "selector": ".sw",
+      "text": "width:36px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 819,
+      "selector": ".sw::after",
+      "text": "width:14px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 819,
+      "selector": ".sw::after",
+      "text": "height:14px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 829,
+      "selector": ".mini-select",
+      "text": "max-width:230px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 832,
+      "selector": ".slider",
+      "text": "width:150px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 847,
+      "selector": ".color-card .cc-dots i",
+      "text": "width:9px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 847,
+      "selector": ".color-card .cc-dots i",
+      "text": "height:9px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 862,
+      "selector": ".path-field .field",
+      "text": "width:min(330px,46vw)",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 882,
+      "selector": ".update-notes",
+      "text": "max-height:132px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 887,
+      "selector": ".select-wrap",
+      "text": "width:220px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 901,
+      "selector": ".update-card .set-row .field",
+      "text": "width:min(300px,42vw)",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 916,
+      "selector": "body.minw-demo .vp-frame",
+      "text": "min-width:900px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 958,
+      "selector": ".poster",
+      "text": "height:200px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 966,
+      "selector": ".sb",
+      "text": "width:44px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 994,
+      "selector": ".sb",
+      "text": "width:40px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 998,
+      "selector": ".tbtn",
+      "text": "min-width:22px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 1000,
+      "selector": ".thumb",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 1000,
+      "selector": ".thumb",
+      "text": "height:34px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 1004,
+      "selector": ".stat .u",
+      "text": "width:20px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 1004,
+      "selector": ".stat .u",
+      "text": "height:20px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 1019,
+      "selector": ".poster",
+      "text": "height:170px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 1027,
+      "selector": ".sn-thumb",
+      "text": "width:34px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 1027,
+      "selector": ".sn-thumb",
+      "text": "height:24px",
+      "hint": "容器/装饰尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    },
+    {
+      "rule": "size-info",
+      "severity": "info",
+      "file": "src/styles.css",
+      "line": 1029,
+      "selector": ".filter-bar .mini-select",
+      "text": "max-width:150px",
+      "hint": "容器尺寸，不强制 token；若与相邻值只差 1–2px 视为漂移"
+    }
+  ],
+  "excepted": [
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 276,
+      "selector": ".sb.active::before",
+      "text": "left:-12px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）",
+      "excepted": true,
+      "reason": "侧栏选中指示条的位移 = 侧栏内边距 12px 的负值，属于派生值；侧栏内边距改动时必须同步改这里，不进间距阶梯"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 481,
+      "selector": ".main.has-sel .view[data-view=\"main\"]",
+      "text": "bottom:66px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）",
+      "excepted": true,
+      "reason": "列表区为批量操作条让出的高度 = 批量条 54px + 12px 间距，与 .task-bulk 的 height 绑定，属派生值"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 823,
+      "selector": ".sw.on::after",
+      "text": "left:18px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）",
+      "excepted": true,
+      "reason": "开关滑块位移 = 轨道宽 36 − 滑块 14 − 两侧留白 2×2，几何派生值，不参与间距阶梯"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 905,
+      "selector": ".toast",
+      "text": "bottom:52px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）",
+      "excepted": true,
+      "reason": "轻提示离底距离 = 状态栏 30px + 22px 呼吸位，跟随外壳高度，属派生值"
+    },
+    {
+      "rule": "spacing",
+      "severity": "error",
+      "file": "src/styles.css",
+      "line": 935,
+      "selector": ".minw-note",
+      "text": "top:52px",
+      "hint": "间距必须用 var(--space-*)（2px 阶梯）",
+      "excepted": true,
+      "reason": "窄窗提示离顶距离 = 标题栏 44px + 8px 间距，跟随外壳高度，属派生值"
+    }
+  ],
+  "staleExceptions": []
+}
