@@ -118,11 +118,26 @@ v1 用例外放行 5 个"魔法数"。v2 把它们全部改写成由 token 推�
 - **发现并修复 1 处真实缺陷**：760 宽、长中文文件名（任务 2 `Adobe_Photoshop_2024_v25.12.1_macOS_中文版.dmg`）把尾部"断点已保存"标签挤出行右边界被裁掉。修复：`src/app.js` 把文件名包进 `.nm`，CSS 由文件名自己省略、标签按内容占位（`.t-name > .nm{min-width:0;overflow:hidden;text-overflow:ellipsis}`、`.t-name > .tag{flex:0 0 auto}`）。1440 / 960 / 760 复拍确认标签完整、文件名正常省略。
 - 另修 4 处同角色不一致：`.add-panel` 输入框与主按钮统一 32（原 36）；`.ico` 30→28；`.set-nav a` 12.5→13（导航项定档）；删除窄窗下与基准同档的冗余覆盖（`.stat .d`、`.det-title` 字号），并将窄窗 `.stat .v` 20→16、`.big-speed` 28→20 收进标题允许档位。
 
-## 7. 复现
+## 7. 对比度（v2 按当前 token 重算）
+
+字号并档后 11px 元信息变多，颜色侧又新增了文件类型色板、缩略图渐变、海报与遮罩，旧对比度基线不再适用。
+[tools/Check-FwContrast.mjs](../../../tools/Check-FwContrast.mjs) 直接解析 `src/styles.css` 的 token 定义，
+按明暗 × 四套配色实算，正文类 4.5:1、图标/图形 3:1。
+
+- 结果：8 套 × 24 个检查项全部达标，0 处低于阈值（明细 [contrast-v2.md](contrast-v2.md) / [contrast-v2.json](contrast-v2.json)）。
+- 11px 小字最低 4.57:1（明/azure 选中导航强调文字），弱化文字最低 4.59:1（明/azure）。
+- 首轮实测不达标 7 处，全部**改色**而非写进限制：四套明色 `--fg-3` 调深、`--accent`（森绿/暖砂）调深、
+  明色 `--err` / `--info` 调深、明色音频/文档缩略图前景调深、明色嗅探小字 `--sn-mini` 调深；
+  默认 `.tag` 前景由 `--fg-3` 改为 `--fg-2`（11px 压在 panel-3 上原仅 4.09:1）。
+- 调色后的明色四套已用真实构建复拍：[visual-v3/](visual-v3/)（1180×760 × 紫罗兰/海蓝/森绿/暖砂）。
+
+## 8. 复现
 
 ```powershell
 node tools/Check-FwUiTokens.mjs --strict   # 期望：违规 0、例外 0、过期例外 0；exit 0
 node tools/Check-FwUiTokens.mjs --json > docs/evidence/ui-tokens/scan-v2.json
+node tools/Check-FwContrast.mjs            # 期望：8 套配色全部达标；exit 0
+node tools/Check-FwContrast.mjs --md > docs/evidence/ui-tokens/contrast-v2.md
 
 # 视觉验收（需先构建：CARGO_TARGET_DIR=C:\fw-target npm run tauri build -- --debug --no-bundle）
 powershell -ExecutionPolicy Bypass -File tools/Capture-FwUiShots.ps1 `

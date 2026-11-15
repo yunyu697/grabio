@@ -210,6 +210,11 @@ try {
     Save-FwShot -Name 'theme-azure-1180'       -LogicalW 1180 -LogicalH 760 -Theme 'dark'  -Color 'azure'
     Save-FwShot -Name 'theme-emerald-1180'     -LogicalW 1180 -LogicalH 760 -Theme 'dark'  -Color 'emerald'
     Save-FwShot -Name 'theme-amber-1180'       -LogicalW 1180 -LogicalH 760 -Theme 'dark'  -Color 'amber'
+    # 明色四套：v2 为过 4.5:1 调过 --fg-3 / --err / --info / 缩略图前景，必须逐套看淡底效果
+    Save-FwShot -Name 'theme-violet-light-1180'  -LogicalW 1180 -LogicalH 760 -Theme 'light' -Color 'violet'
+    Save-FwShot -Name 'theme-azure-light-1180'   -LogicalW 1180 -LogicalH 760 -Theme 'light' -Color 'azure'
+    Save-FwShot -Name 'theme-emerald-light-1180' -LogicalW 1180 -LogicalH 760 -Theme 'light' -Color 'emerald'
+    Save-FwShot -Name 'theme-amber-light-1180'   -LogicalW 1180 -LogicalH 760 -Theme 'light' -Color 'amber'
     # 设置页：开关、色卡、输入框、导航项都在这里，单独补两张极端宽度
     Save-FwShot -Name 'settings-1440-dark-violet' -LogicalW 1440 -LogicalH 900 -Theme 'dark'  -Color 'violet' -ClickAt '33,703'
     Save-FwShot -Name 'settings-760-light-violet' -LogicalW 760  -LogicalH 680 -Theme 'light' -Color 'violet' -ClickAt '24,612'

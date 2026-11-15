@@ -65,6 +65,14 @@ jobs:
           # 这里失败就不出包：宁可不发版，也不要带着散落的硬编码尺寸发出去。
           node tools/Check-FwUiTokens.mjs --strict
 
+      - name: 界面对比度检查（WCAG AA）
+        shell: pwsh
+        run: |
+          # 字号并档后 11px 元信息变多、颜色 token 也新增了文件类型色板/缩略图渐变/海报遮罩，
+          # 旧对比度基线已失效：这里按 src/styles.css 的当前取值重算 8 套配色。
+          # 正文类 4.5:1、图标/图形 3:1；不达标直接失败，不接受“先发再补”。
+          node tools/Check-FwContrast.mjs
+
       - name: 安装前端依赖
         run: npm ci --no-audit --no-fund
 

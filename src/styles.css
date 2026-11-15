@@ -93,12 +93,12 @@ html[data-theme="light"]{
   --bg:#F4EFFB; --bg-2:#F9F5FE;
   --panel:#FFFFFF; --panel-2:#FAF7FE; --panel-3:#F1EAFA;
   --line:#E2D7F1; --line-2:#EDE5F7;
-  --fg:#1A1226; --fg-2:#5C4F70; --fg-3:#7A6C8D;
+  --fg:#1A1226; --fg-2:#5C4F70; --fg-3:#746682;
   --accent:#6D28D9; --accent-2:#9333EA;
   --accent-solid:#6D28D9; --accent-solid-2:#7C3AED;
   --accent-solid-hover:#5B21B6; --accent-solid-active:#4C1D95;
   --accent-fg:#FFFFFF;
-  --ok:#116B33; --warn:#9A4508; --err:#BE123C; --info:#0E7490;
+  --ok:#116B33; --warn:#9A4508; --err:#B51038; --info:#0C6882;
   --track:#E6DCF5;
   --chart-1:#7C3AED; --chart-2:#A855F7; --chart-3:#0E7490; --chart-4:#15803D;
   --shadow:0 14px 34px rgba(40,20,70,.10);
@@ -106,10 +106,10 @@ html[data-theme="light"]{
   --tick:rgba(255,255,255,.75);
   --titlebar:#F9F5FE;
   --file-video-1:#DCE6FF; --file-video-2:#EEF3FF; --file-video-fg:#4E6BC4;
-  --file-audio-1:#D8F2EA; --file-audio-2:#EDFBF6; --file-audio-fg:#2E9C81;
+  --file-audio-1:#D8F2EA; --file-audio-2:#EDFBF6; --file-audio-fg:#278C74;
   --file-image-1:#F0E1FA; --file-image-2:#FAF2FF; --file-image-fg:#9B5FC4;
-  --file-doc-1:#F7E9CE;   --file-doc-2:#FEF8EC;   --file-doc-fg:#B08A3C;
-  --sn-mini:#4A5573;
+  --file-doc-1:#F7E9CE;   --file-doc-2:#FEF8EC;   --file-doc-fg:#9E7A33;
+  --sn-mini:#3E4863;
   --sn-g1a:#D8E2FA; --sn-g1b:#EDF2FE;
   --sn-g2a:#D9F0E6; --sn-g2b:#EEFAF5;
   --sn-g3a:#EFDFF6; --sn-g3b:#FAF2FE;
@@ -133,12 +133,12 @@ html[data-color="azure"][data-theme="light"]{
   --bg:#EEF4FB; --bg-2:#F5F9FE;
   --panel:#FFFFFF; --panel-2:#F6FAFE; --panel-3:#E9F1FA;
   --line:#D5E3F2; --line-2:#E4EEF8;
-  --fg:#0D1726; --fg-2:#47596F; --fg-3:#64768B;
+  --fg:#0D1726; --fg-2:#47596F; --fg-3:#5E7085;
   --accent:#0B63C5; --accent-2:#0E8FA8;
   --accent-solid:#0A56AC; --accent-solid-2:#0B63C5;
   --accent-solid-hover:#084787; --accent-solid-active:#063A70;
   --accent-fg:#FFFFFF;
-  --ok:#116B33; --warn:#9A4508; --err:#BE123C; --info:#0E7490;
+  --ok:#116B33; --warn:#9A4508; --err:#B51038; --info:#0C6882;
   --track:#DCE9F6;
   --chart-1:#0B63C5; --chart-2:#0E8FA8; --chart-3:#4F46E5; --chart-4:#15803D;
   --titlebar:#F5F9FE;
@@ -162,12 +162,12 @@ html[data-color="emerald"][data-theme="light"]{
   --bg:#EEF7F1; --bg-2:#F5FBF7;
   --panel:#FFFFFF; --panel-2:#F5FBF7; --panel-3:#E7F4EC;
   --line:#CFE6D8; --line-2:#DFF0E5;
-  --fg:#0B1A13; --fg-2:#3F5A4B; --fg-3:#617868;
-  --accent:#0F7A52; --accent-2:#3F8F2F;
+  --fg:#0B1A13; --fg-2:#3F5A4B; --fg-3:#5B7262;
+  --accent:#0C6E4A; --accent-2:#3F8F2F;
   --accent-solid:#095C3D; --accent-solid-2:#0B6B48;
   --accent-solid-hover:#074B32; --accent-solid-active:#063D29;
   --accent-fg:#FFFFFF;
-  --ok:#116B33; --warn:#9A4508; --err:#BE123C; --info:#0E7490;
+  --ok:#116B33; --warn:#9A4508; --err:#B51038; --info:#0C6882;
   --track:#DCEFE3;
   --chart-1:#0B6B48; --chart-2:#3F8F2F; --chart-3:#0E7490; --chart-4:#B45309;
   --titlebar:#F5FBF7;
@@ -191,12 +191,12 @@ html[data-color="amber"][data-theme="light"]{
   --bg:#FBF3E8; --bg-2:#FEF8F0;
   --panel:#FFFFFF; --panel-2:#FDF7EE; --panel-3:#F6EBD9;
   --line:#E9D8BF; --line-2:#F1E4D1;
-  --fg:#241A0E; --fg-2:#6B573F; --fg-3:#846C50;
-  --accent:#A8540A; --accent-2:#C2410C;
+  --fg:#241A0E; --fg-2:#6B573F; --fg-3:#7F674B;
+  --accent:#9C4C09; --accent-2:#C2410C;
   --accent-solid:#9A4508; --accent-solid-2:#B45309;
   --accent-solid-hover:#833A06; --accent-solid-active:#6C3005;
   --accent-fg:#FFFFFF;
-  --ok:#116B33; --warn:#8A5306; --err:#BE123C; --info:#0E7490;
+  --ok:#116B33; --warn:#8A5306; --err:#B51038; --info:#0C6882;
   --track:#F0E2CE;
   --chart-1:#B45309; --chart-2:#C2410C; --chart-3:#0E7490; --chart-4:#15803D;
   --titlebar:#FEF8F0;
@@ -592,8 +592,9 @@ html[data-theme="light"] .thumb.d{background:linear-gradient(150deg,var(--file-d
 .st .d{width:5px;height:5px;border-radius:var(--r-full);background:currentColor}
 .st.dl .d{animation:pulse 1.4s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+/* 默认标签用 --fg-2：11px 小字压在 panel-3 上时 --fg-3 只有 4.1:1，达不到 4.5:1。 */
 .tag{
-  font-size:var(--fs-caption);padding:var(--space-4) var(--space-8);border-radius:var(--r-xs);background:var(--panel-3);color:var(--fg-3);
+  font-size:var(--fs-caption);padding:var(--space-4) var(--space-8);border-radius:var(--r-xs);background:var(--panel-3);color:var(--fg-2);
   border:var(--bw) solid var(--line-2);font-weight:500;flex:0 0 auto;white-space:nowrap;
 }
 .tag.hls{background:color-mix(in srgb,var(--info) 13%,transparent);color:var(--info);border-color:transparent}
